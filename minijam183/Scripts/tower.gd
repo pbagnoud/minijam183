@@ -7,8 +7,8 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @export var number : int
 var color: int = 1
 var power: int = 1
-var range: int = 100
-var shot_speed: int = 400
+var range: int = 200
+var shot_speed: int = 600
 var closestDistance: int
 
 func _on_tower_timer_timeout() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fk1sfppmxfiq"]
 
-[ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
-[ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
+[ext_resource type="Script" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
+[ext_resource type="Script" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
 
 [node name="UpgradeScreen" type="Control"]
 layout_mode = 3
