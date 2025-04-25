@@ -35,9 +35,16 @@ curve = SubResource("Curve2D_jjvhh")
 script = ExtResource("3_jjvhh")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
-position = Vector2(1151, 108)
-progress = 2916.07
-loop = true
+position = Vector2(-2, 109)
+
+[node name="ButtonAcceleration" type="Button" parent="."]
+offset_left = 1109.0
+offset_top = 615.0
+offset_right = 1151.0
+offset_bottom = 646.0
+text = ">>"
 
 [connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
 [connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
+[connection signal="button_up" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_up"]
