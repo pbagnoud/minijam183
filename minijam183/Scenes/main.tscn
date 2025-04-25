@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=6 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
+
+[sub_resource type="Curve2D" id="Curve2D_jjvhh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 109, 0, 0, 0, 0, 233, 108, 0, 0, 0, 0, 245, 258, 0, 0, 0, 0, 52, 256, 0, 0, 0, 0, 53, 541, 0, 0, 0, 0, 929, 536, 0, 0, 0, 0, 926, 262, 0, 0, 0, 0, 658, 262, 0, 0, 0, 0, 671, 108, 0, 0, 0, 0, 1151, 108)
+}
+point_count = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bo1nx")
@@ -17,6 +25,13 @@ script = ExtResource("1_bo1nx")
 [node name="Round_timer" type="Timer" parent="."]
 
 [node name="Spawn_timer" type="Timer" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jjvhh")
+script = ExtResource("3_jjvhh")
+
+[node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
+position = Vector2(235.619, 140.744)
 
 [connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
 [connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
