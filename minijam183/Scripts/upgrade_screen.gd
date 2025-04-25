@@ -11,6 +11,11 @@ extends Control
 
 @onready var button_tower_1: Button = $Button_tower_1
 
+@onready var button_next_wave: Button = $Button_next_wave
+
+@onready var selected_upgrade=0
+@onready var selected_tower=0
+
 
 func _ready():
 	pool_indices.shuffle()
@@ -19,12 +24,23 @@ func _ready():
 	button_upgrade_1.text=str(pool_upgrades[pool_indices[0]])
 	button_upgrade_2.text=str(pool_upgrades[pool_indices[1]])
 	
-	
+	button_next_wave.disabled=true
 
-func _on_button_upgrade_1_up() -> void:
-	pass
+func _process(delta)-> void:
+	if selected_tower >0.5 and selected_upgrade >0.5:
+		button_next_wave.disabled=false
 		
 
+func _on_button_upgrade_1_pressed() -> void:
+	selected_upgrade=1
 
-func _on_button_upgrade_2_up() -> void:
-	pass # Replace with function body.
+
+func _on_button_upgrade_2_pressed() -> void:
+	selected_upgrade=2
+
+
+func _on_button_tower_1_pressed() -> void:
+	selected_tower=1
+
+func _on_button_next_wave_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
