@@ -18,6 +18,7 @@ animations = [{
 }]
 
 [node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_xjght")
 
 [node name="bullet_collision" type="CollisionShape2D" parent="."]
@@ -26,3 +27,7 @@ shape = SubResource("RectangleShape2D_oduel")
 
 [node name="bullet_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ycag2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

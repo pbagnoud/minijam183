@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=7 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
-[ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
+[ext_resource type="Script" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dk1h6dnsl2hej" path="res://Scenes/enemy.tscn" id="5_kry3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
@@ -15,12 +16,19 @@ point_count = 10
 script = ExtResource("1_bo1nx")
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(143, 187)
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
+visible = false
+position = Vector2(141, 401)
 
 [node name="Tower4" parent="." instance=ExtResource("2_8gbba")]
+visible = false
+position = Vector2(778, 180)
 
 [node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
+visible = false
+position = Vector2(782, 399)
 
 [node name="Round_timer" type="Timer" parent="."]
 
@@ -32,6 +40,9 @@ script = ExtResource("3_jjvhh")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
 position = Vector2(235.619, 140.744)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(370, 102)
 
 [connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
 [connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
