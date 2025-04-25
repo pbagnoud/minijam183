@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=7 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
 [ext_resource type="Script" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
@@ -27,6 +28,9 @@ position = Vector2(778, 180)
 position = Vector2(782, 399)
 
 [node name="Round_timer" type="Timer" parent="."]
+wait_time = 37.53
+one_shot = true
+autostart = true
 
 [node name="Spawn_timer" type="Timer" parent="."]
 
@@ -43,6 +47,9 @@ offset_top = 615.0
 offset_right = 1151.0
 offset_bottom = 646.0
 text = ">>"
+
+[node name="UpgradeScreen" parent="." instance=ExtResource("5_kry3j")]
+visible = false
 
 [connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
 [connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]

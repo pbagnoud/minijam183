@@ -2,6 +2,7 @@ extends Node2D
 
 var is_holding = false
 
+@onready var upgrade_screen: Control = $UpgradeScreen
 
 func _process(delta):
 	if is_holding:
@@ -15,12 +16,13 @@ func _on_spawn_timer_timeout() -> void:
 
 
 func _on_round_timer_timeout() -> void:
-	# Ouvrir le menu des upgrades
-	pass # Replace with function body.
-
+	upgrade_screen.reset()
 
 func _on_button_acceleration_button_down() -> void:
 	is_holding = true
 
 func _on_button_acceleration_button_up() -> void:
 	is_holding = false
+	
+func _clear():
+	pass
