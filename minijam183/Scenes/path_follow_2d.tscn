@@ -5,8 +5,8 @@
 
 [node name="PathFollow2D" type="PathFollow2D"]
 rotation = -0.00425529
-progress = 267.86
 rotates = false
+loop = false
 script = ExtResource("1_a0hxn")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_qdug8")]

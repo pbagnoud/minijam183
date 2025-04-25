@@ -39,7 +39,8 @@ curve = SubResource("Curve2D_jjvhh")
 script = ExtResource("3_jjvhh")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
-position = Vector2(235.619, 140.744)
+position = Vector2(1151, 108)
+progress = 2916.07
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(370, 102)
