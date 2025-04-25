@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="minijam183"
+run/main_scene="uid://cmncqxuqr8v2a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 enemy=""
+bullet=""

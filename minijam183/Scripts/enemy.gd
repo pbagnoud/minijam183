@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 signal hit
 
+var real_position: Vector2
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("bullet") :
+		get_parent().queue_free()
 	
+func _process(delta: float) -> void:
+	pass
 
 func on_hit() :
 	hit.emit()
