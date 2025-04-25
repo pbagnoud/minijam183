@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=3 format=3 uid="uid://cmncqxuqr8v2a"]
+
+[ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_bo1nx")
+
+[node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="Tower4" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="Round_timer" type="Timer" parent="."]
+
+[node name="Spawn_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
+[connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]

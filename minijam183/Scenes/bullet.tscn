@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://x4b4nx0ajnww"]
+[gd_scene load_steps=2 format=3 uid="uid://x4b4nx0ajnww"]
 
-[node name="Bullet" type="Node2D"]
+[ext_resource type="Script" uid="uid://bmlqrunyjue8o" path="res://Scripts/bullet.gd" id="1_xjght"]
+
+[node name="Bullet" type="RigidBody2D"]
+script = ExtResource("1_xjght")
+
+[node name="bullet_collision" type="CollisionShape2D" parent="."]
+
+[node name="bullet_sprite" type="AnimatedSprite2D" parent="."]
