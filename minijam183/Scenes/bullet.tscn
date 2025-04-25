@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://x4b4nx0ajnww"]
+[gd_scene load_steps=5 format=3 uid="uid://x4b4nx0ajnww"]
 
 [ext_resource type="Script" uid="uid://bmlqrunyjue8o" path="res://Scripts/bullet.gd" id="1_xjght"]
+[ext_resource type="Texture2D" uid="uid://bx14fd08mf28k" path="res://Assets/bullet_placeholder.png" id="2_oduel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
+size = Vector2(13, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycag2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oduel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bullet" type="RigidBody2D"]
 script = ExtResource("1_xjght")
 
 [node name="bullet_collision" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, -2.5)
+shape = SubResource("RectangleShape2D_oduel")
 
 [node name="bullet_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ycag2")
