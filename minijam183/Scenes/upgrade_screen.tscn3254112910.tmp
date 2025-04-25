@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://fk1sfppmxfiq"]
+
+[ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
+
+[node name="UpgradeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5sws")
+
+[node name="Button_upgrade_1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 173.0
+offset_right = 399.0
+offset_bottom = 258.0
+
+[node name="Button_tower1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 362.0
+offset_right = 428.0
+offset_bottom = 434.0
+text = "Tour 1"
+
+[connection signal="button_up" from="Button_upgrade_1" to="." method="_on_button_up"]
+[connection signal="button_up" from="Button_tower1" to="." method="_on_button_up"]
