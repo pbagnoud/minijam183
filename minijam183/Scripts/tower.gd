@@ -19,12 +19,11 @@ var shot_speed: int = 400
 var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 var lifespan_bullet : int = 0.8
+
 var has_triple_shoot =false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = 15
 var has_color_change = false
-
-
 
 
 func change_color(new_color):
@@ -70,6 +69,7 @@ func fire():
 			create_bullet(direction.rotated(triple_shot_angle))
 			create_bullet(direction.rotated(-triple_shot_angle))
 		
+
 	
 func create_bullet(direction):
 	var bullet = bullet_scene.instantiate()
@@ -129,3 +129,11 @@ func enable_enemy_color_change()->bool:
 		return true
 func increase_damage_over_time()->bool:
 	return true
+
+
+func set_start_time(time):
+	tower_start_timer.wait_time = time
+
+func start_start_timer():
+	tower_start_timer.start()
+
