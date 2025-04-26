@@ -5,24 +5,40 @@ signal new_bullet(direction, speed, characteristics)
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
 var bullet_scene = load("res://Scenes/bullet.tscn")
 
+@onready var tower_timer: Timer = $tower_timer
+@onready var tower_start_timer: Timer = $tower_start_timer
+
 @export var number : int
+
+
 var color: int = 1
 var power: int = 1
-var range: int = 200
-var shot_speed: int = 1000
+var detection_range: int = 200
+var shot_speed: int = 400
 var closestDistance: int
+var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
+var lifespan_bullet : int = 0.8
+
+var ready_to_start_firing : bool = false
+
+
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
 	color = new_color
 
+
+#Avoid the 1.5 s firing cycles to be synchronized
+func _on_tower_start_timer_timeout() -> void:
+	tower_timer.start()
+	
 func _on_tower_timer_timeout() -> void:
 	if visible :
 		fire()
 
 func find_closest_enemy():
 	var closestEnemy = null
-	closestDistance = range
+	closestDistance = detection_range
 	var all_enemy = get_tree().get_nodes_in_group("enemy")
 	#print(all_enemy)
 	print("start loop")
@@ -47,6 +63,7 @@ func fire():
 		print(direction)
 		#new_bullet.emit(direction.normalized(), shot_speed, [])
 		var bullet = bullet_scene.instantiate()
+		var bullet_timer = bullet.get_node("bullet_timer")
 		# Choose a random location on Path2D.
 		#var mob_spawn_location = $MobPath/MobSpawnLocation
 		#mob_spawn_location.progress_ratio = randf()
@@ -60,4 +77,8 @@ func fire():
 
 		# Spawn the mob by adding it to the Main scene.
 		add_child(bullet)
+		
+		#Manage the lifetime of the bullet
+		bullet_timer.start()
+		bullet_timer.wait_time=lifespan_bullet
 	pass

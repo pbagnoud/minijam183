@@ -27,13 +27,6 @@ position = Vector2(778, 180)
 [node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(782, 399)
 
-[node name="Round_timer" type="Timer" parent="."]
-wait_time = 37.53
-one_shot = true
-autostart = true
-
-[node name="Spawn_timer" type="Timer" parent="."]
-
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jjvhh")
 script = ExtResource("3_jjvhh")
@@ -51,7 +44,7 @@ text = ">>"
 [node name="UpgradeScreen" parent="." instance=ExtResource("5_kry3j")]
 visible = false
 
-[connection signal="timeout" from="Round_timer" to="." method="_on_round_timer_timeout"]
-[connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="empty_list" from="Path2D" to="." method="_on_round_timeout"]
 [connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
 [connection signal="button_up" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_up"]
+[connection signal="round_start" from="UpgradeScreen" to="." method="_on_upgrade_screen_finished"]
