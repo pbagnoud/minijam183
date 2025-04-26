@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal hit
+signal freeze(time)
 @onready var blink_component: BlinkComponent = $BlinkComponent
 @onready var shake_component: ShakeComponent = $ShakeComponent
 @onready var color_change: ColorChange = $ColorChange
@@ -20,7 +21,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullet") :
 		if body.color == color:
-			pv -= body.power * 2
+			pv -= body.power * 2 + body.color_power *3
 			blink_component.blink()
 			shake_component.tween_shake()
 			color_change.color_tween()
@@ -28,6 +29,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			pv -= body.power
 			shake_component.tween_shake()
 			color_change.color_tween()
+		if body.freeze>0:
+			freeze.emit(freeze)
 		body.hit_something()
 		if body.has_color_change:
 			change_color(body.color)
