@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou3m2"]
-size = Vector2(63, 58)
+size = Vector2(81, 73)
 
 [node name="Tower" type="StaticBody2D"]
 input_pickable = true
@@ -78,7 +78,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, -13)
+position = Vector2(7.5, -10.5)
 shape = SubResource("RectangleShape2D_ou3m2")
 one_way_collision = true
 
@@ -90,10 +90,10 @@ target = NodePath("..")
 metadata/_custom_type_script = "uid://bwjs44atw8pfw"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 22.0
-offset_top = -35.0
-offset_right = 62.0
-offset_bottom = -12.0
+offset_left = 51.0
+offset_top = -45.0
+offset_right = 91.0
+offset_bottom = -22.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
