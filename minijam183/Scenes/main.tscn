@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=9 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://c8n5uvok37xij" path="res://Assets/carte mère.png" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2, 109, 0, 0, 0, 0, 233, 108, 0, 0, 0, 0, 245, 258, 0, 0, 0, 0, 52, 256, 0, 0, 0, 0, 53, 541, 0, 0, 0, 0, 929, 536, 0, 0, 0, 0, 926, 262, 0, 0, 0, 0, 658, 262, 0, 0, 0, 0, 671, 108, 0, 0, 0, 0, 1151, 108)
+"points": PackedVector2Array(0, 0, 0, 0, -2, 109, 0, 0, 0, 0, 416, 114, 0, 0, 0, 0, 422, 290, 0, 0, 0, 0, 231, 279, 0, 0, 0, 0, 240, 476, 0, 0, 0, 0, 932, 474, 0, 0, 0, 0, 926, 262, 0, 0, 0, 0, 673, 263, 0, 0, 0, 0, 671, 108, 0, 0, 0, 0, 1151, 108)
 }
 point_count = 10
 
@@ -18,18 +19,24 @@ size = Vector2(21, 685)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bo1nx")
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 627.0
+texture = ExtResource("2_21xkr")
+expand_mode = 1
+
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(152, 186)
+position = Vector2(279, 196)
 has_triple_shoot = true
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(141, 401)
+position = Vector2(350, 375)
 
 [node name="Tower4" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(778, 180)
 
 [node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(782, 399)
+position = Vector2(787, 376)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jjvhh")
