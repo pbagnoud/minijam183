@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
-[ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
-[ext_resource type="ButtonGroup" uid="uid://dfoomrblf4nnw" path="res://Scenes/button_group_upgrades.tres" id="2_g043t"]
+[ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
+[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://base_theme.tres" id="4_l53bo"]
 
 [node name="UpgradeScreen" type="Control"]
 layout_mode = 3
@@ -17,6 +17,7 @@ offset_right = -19.0
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_l53bo")
 script = ExtResource("1_o5sws")
 upgrades = ExtResource("2_54md0")
 
@@ -24,53 +25,96 @@ upgrades = ExtResource("2_54md0")
 layout_mode = 0
 offset_left = 18.0
 offset_top = -41.0
-offset_right = 1171.0
+offset_right = 1167.0
 offset_bottom = 609.0
-
-[node name="Button_upgrade_1" type="Button" parent="."]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 213.0
-offset_right = 428.0
-offset_bottom = 298.0
-toggle_mode = true
-keep_pressed_outside = true
-button_group = ExtResource("2_g043t")
-script = ExtResource("2_g1a74")
-
-[node name="Button_upgrade_2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 497.0
-offset_top = 213.0
-offset_right = 685.0
-offset_bottom = 298.0
-toggle_mode = true
-button_group = ExtResource("2_g043t")
-script = ExtResource("2_g1a74")
+color = Color(0.646029, 0.646029, 0.646029, 1)
 
 [node name="Button_tower_1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 337.0
-offset_top = 374.0
-offset_right = 405.0
-offset_bottom = 446.0
+offset_left = 365.0
+offset_top = 345.0
+offset_right = 447.0
+offset_bottom = 417.0
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
-text = "Tour 1"
+text = "Tower 1"
+
+[node name="Button_tower_2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 345.0
+offset_right = 590.0
+offset_bottom = 417.0
+toggle_mode = true
+button_group = ExtResource("4_kfdqr")
+text = "Tower 2"
+
+[node name="Button_tower_3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 345.0
+offset_right = 734.0
+offset_bottom = 417.0
+toggle_mode = true
+button_group = ExtResource("4_kfdqr")
+text = "Tower 3"
+
+[node name="Button_tower_4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 347.0
+offset_right = 875.0
+offset_bottom = 419.0
+toggle_mode = true
+button_group = ExtResource("4_kfdqr")
+text = "Tower 4"
 
 [node name="Button_next_wave" type="Button" parent="."]
 layout_mode = 0
-offset_left = 641.0
-offset_top = 422.0
-offset_right = 716.0
-offset_bottom = 475.0
+offset_left = 555.0
+offset_top = 464.0
+offset_right = 645.0
+offset_bottom = 517.0
 disabled = true
 text = "Next wave"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 40.0
+offset_right = 891.0
+offset_bottom = 83.0
+theme = ExtResource("4_l53bo")
+text = "Choose an update and a tower to apply it :"
+
+[node name="Button_upgrade_1" parent="." instance=ExtResource("4_54md0")]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 108.0
+offset_right = 391.0
+offset_bottom = 262.0
+
+[node name="Button_upgrade_2" parent="." instance=ExtResource("4_54md0")]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 108.0
+offset_right = 685.0
+offset_bottom = 262.0
+
+[node name="Button_upgrade_3" parent="." instance=ExtResource("4_54md0")]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 108.0
+offset_right = 998.0
+offset_bottom = 262.0
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
-[connection signal="pressed" from="Button_upgrade_1" to="." method="_on_button_upgrade_1_pressed"]
-[connection signal="button_up" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_up"]
-[connection signal="pressed" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_pressed"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]
+[connection signal="pressed" from="Button_tower_2" to="." method="_on_button_tower_2_pressed"]
+[connection signal="pressed" from="Button_tower_3" to="." method="_on_button_tower_3_pressed"]
+[connection signal="pressed" from="Button_tower_4" to="." method="_on_button_tower_4_pressed"]
 [connection signal="button_up" from="Button_next_wave" to="." method="_on_button_next_wave_up"]
 [connection signal="pressed" from="Button_next_wave" to="." method="_on_button_next_wave_pressed"]
+[connection signal="pressed" from="Button_upgrade_1" to="." method="_on_button_upgrade_1_pressed"]
+[connection signal="pressed" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_pressed"]
+[connection signal="pressed" from="Button_upgrade_3" to="." method="_on_button_upgrade_3_pressed"]

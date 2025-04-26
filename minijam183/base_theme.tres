@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dfyp2x2grqp4w"]
+
+[ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="1_6qegq"]
+
+[resource]
+default_font = ExtResource("1_6qegq")
