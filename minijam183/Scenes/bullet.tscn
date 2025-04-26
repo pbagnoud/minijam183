@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmlqrunyjue8o" path="res://Scripts/bullet.gd" id="1_xjght"]
 [ext_resource type="Texture2D" uid="uid://bx14fd08mf28k" path="res://Assets/bullet_placeholder.png" id="2_oduel"]
-[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="3_ycag2"]
+[ext_resource type="Script" path="res://Component/sizeChange.gd" id="3_ycag2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
 size = Vector2(13, 7)

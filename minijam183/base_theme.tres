@@ -4,3 +4,4 @@
 
 [resource]
 default_font = ExtResource("1_6qegq")
+Button/styles/normal = null

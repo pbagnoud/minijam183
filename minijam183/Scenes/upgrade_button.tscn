@@ -18,10 +18,10 @@ script = ExtResource("2_ymg7c")
 [node name="UpgradeDescription_popup" type="RichTextLabel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = -180.0
-offset_top = 5.0
-offset_right = -3.0
-offset_bottom = 181.0
+offset_left = 204.0
+offset_top = 2.0
+offset_right = 375.0
+offset_bottom = 157.0
 text = "Test test test"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

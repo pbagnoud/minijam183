@@ -28,16 +28,16 @@ texture = ExtResource("2_21xkr")
 expand_mode = 1
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(279, 196)
+position = Vector2(279, 201)
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(350, 375)
+position = Vector2(346, 390)
 
 [node name="Tower4" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(778, 180)
+position = Vector2(729, 181)
 
 [node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(787, 376)
+position = Vector2(739, 393)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jjvhh")

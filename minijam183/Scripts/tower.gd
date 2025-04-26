@@ -4,7 +4,6 @@ signal new_bullet(direction, speed, characteristics)
 
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
 var bullet_scene = load("res://Scenes/bullet.tscn")
-
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
 @onready var size_change: SizeChange = $SizeChange
@@ -27,6 +26,8 @@ var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
 @export var has_color_change = false
 
+func _ready():
+	tower_sprite.play("tower_rotation")
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
@@ -156,6 +157,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_mouse_entered() -> void:
+	tower_sprite.modulate = '#edac9b'
 	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
 	if has_triple_shoot:
 		label.text += "\n triple shots"
@@ -165,3 +167,4 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	label.text = ""
+	tower_sprite.modulate = '#ffffff'

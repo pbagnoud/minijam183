@@ -22,11 +22,11 @@ signal round_start
 signal add_upgrade_signal(id: String, tower: int)
 
 func _ready():
-	visible=true
+	visible=false
 	upgrades_list = upgrades.upgrades_list
 	pool_indices = range(len(upgrades_list))
 	# Comment next line to get out of debugging
-	reset()
+	#reset()
 	
 func reset():
 	visible=true
