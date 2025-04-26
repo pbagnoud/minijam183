@@ -8,6 +8,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
 @onready var size_change: SizeChange = $SizeChange
+@onready var label = $Label
 
 @export var number : int
 
@@ -152,3 +153,15 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		color = (color + 1) % 4
 		tower_sprite.frame = color
 		print(color)
+
+
+func _on_mouse_entered() -> void:
+	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
+	if has_triple_shoot:
+		label.text += "\n triple shots"
+	if has_color_change:
+		label.text += "\n change color ennemies"
+
+
+func _on_mouse_exited() -> void:
+	label.text = ""
