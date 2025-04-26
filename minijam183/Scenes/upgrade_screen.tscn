@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=5 format=3 uid="uid://fk1sfppmxfiq"]
 
-[ext_resource type="Script" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
-[ext_resource type="Script" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
+[ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
+[ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
+[ext_resource type="ButtonGroup" uid="uid://dfoomrblf4nnw" path="res://Scenes/button_group_upgrades.tres" id="2_g043t"]
+[ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 
 [node name="UpgradeScreen" type="Control"]
 layout_mode = 3
@@ -22,6 +24,9 @@ offset_left = 240.0
 offset_top = 213.0
 offset_right = 428.0
 offset_bottom = 298.0
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("2_g043t")
 script = ExtResource("2_g1a74")
 
 [node name="Button_upgrade_2" type="Button" parent="."]
@@ -30,16 +35,33 @@ offset_left = 497.0
 offset_top = 213.0
 offset_right = 685.0
 offset_bottom = 298.0
+toggle_mode = true
+button_group = ExtResource("2_g043t")
 script = ExtResource("2_g1a74")
 
-[node name="Button_tower1" type="Button" parent="."]
+[node name="Button_tower_1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 381.0
-offset_right = 434.0
-offset_bottom = 453.0
+offset_left = 337.0
+offset_top = 374.0
+offset_right = 405.0
+offset_bottom = 446.0
+toggle_mode = true
+button_group = ExtResource("4_kfdqr")
 text = "Tour 1"
 
-[connection signal="button_up" from="Button_upgrade_1" to="." method="_on_button_upgrade_1_up"]
+[node name="Button_next_wave" type="Button" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 422.0
+offset_right = 716.0
+offset_bottom = 475.0
+disabled = true
+text = "Next wave"
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="pressed" from="Button_upgrade_1" to="." method="_on_button_upgrade_1_pressed"]
 [connection signal="button_up" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_up"]
-[connection signal="button_up" from="Button_tower1" to="." method="_on_button_up"]
+[connection signal="pressed" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_pressed"]
+[connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]
+[connection signal="button_up" from="Button_next_wave" to="." method="_on_button_next_wave_up"]
+[connection signal="pressed" from="Button_next_wave" to="." method="_on_button_next_wave_pressed"]
