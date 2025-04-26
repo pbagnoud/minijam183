@@ -4,6 +4,8 @@ signal twin_finished
 @export var duration:= .3
 @export var max_size:= Vector2(2,2)
 @export var target: Node2D
+@onready var size_change: SizeChange = $"."
+
 # Called when the node enters the scene tree for the first time.
 func size_tween():
 	var tween = create_tween()
@@ -11,6 +13,8 @@ func size_tween():
 	tween.tween_property(target, "scale",max_size, duration)
 	print('end')
 
+func _ready():
+	size_change.size_tween()
 func _on_tween_finished():
 	print('on twin f')
 	emit_signal('twin_finished')
