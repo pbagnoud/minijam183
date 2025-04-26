@@ -42,4 +42,12 @@ func on_hit() :
 	pass
 
 func change_color(new_color:int):
-	enemy_sprite_2d.frame = new_color
+	#enemy_sprite_2d.frame = new_color
+	if new_color == 0:
+		enemy_sprite_2d.play("blue_enemy")
+	if new_color == 1:
+		enemy_sprite_2d.play("red_enemy")
+	if new_color == 2:
+		enemy_sprite_2d.play("orange_enemy")
+	if new_color == 0:
+		enemy_sprite_2d.play("green_enemy")
