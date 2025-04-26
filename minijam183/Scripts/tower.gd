@@ -84,6 +84,7 @@ func create_bullet(direction):
 	#Choose the velocity for the mob.
 	#var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
 	bullet.linear_velocity = direction.normalized()*shot_speed
+	bullet.position = direction.normalized()
 	bullet.color = color
 	bullet.power = power
 	bullet.has_color_change = has_color_change
