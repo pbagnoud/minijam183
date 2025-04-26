@@ -7,6 +7,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
+@onready var size_change: SizeChange = $SizeChange
 
 @export var number : int
 
@@ -67,6 +68,7 @@ func fire():
 
 		print(direction)
 		create_bullet(direction)
+		size_change.size_tween()
 		if has_triple_shoot:
 			create_bullet(direction.rotated(triple_shot_angle))
 			create_bullet(direction.rotated(-triple_shot_angle))
