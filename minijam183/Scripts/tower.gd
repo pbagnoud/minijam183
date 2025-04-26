@@ -7,12 +7,14 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 
 @onready var tower_timer: Timer = $tower_timer
 @export var number : int
+
 var color: int = 1
 var power: int = 1
-var range: int = 200
-var shot_speed: int = 1000
+var detection_range: int = 200
+var shot_speed: int = 400
 var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
+var lifespan_bullet:int = 0.8
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
@@ -24,7 +26,7 @@ func _on_tower_timer_timeout() -> void:
 
 func find_closest_enemy():
 	var closestEnemy = null
-	closestDistance = range
+	closestDistance = detection_range
 	var all_enemy = get_tree().get_nodes_in_group("enemy")
 	#print(all_enemy)
 	print("start loop")
@@ -49,6 +51,7 @@ func fire():
 		print(direction)
 		#new_bullet.emit(direction.normalized(), shot_speed, [])
 		var bullet = bullet_scene.instantiate()
+		var bullet_timer = bullet.get_node("bullet_timer")
 		# Choose a random location on Path2D.
 		#var mob_spawn_location = $MobPath/MobSpawnLocation
 		#mob_spawn_location.progress_ratio = randf()
@@ -62,4 +65,8 @@ func fire():
 
 		# Spawn the mob by adding it to the Main scene.
 		add_child(bullet)
+		
+		#Manage the lifetime of the bullet
+		bullet_timer.start()
+		bullet_timer.wait_time=lifespan_bullet
 	pass
