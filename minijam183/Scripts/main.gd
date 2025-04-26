@@ -32,9 +32,11 @@ func _ready():
 
 func _process(_delta):
 	if is_holding:
-		Engine.time_scale = 7.0
+		Engine.time_scale = 3.0
+		Engine.physics_ticks_per_second = 180
 	else:
 		Engine.time_scale = 1.0
+		Engine.physics_ticks_per_second = 60
 	if has_to_check_empty_screen:
 		if get_tree().get_nodes_in_group("enemy").is_empty():
 			upgrade_screen.reset()
