@@ -23,7 +23,7 @@ var lifespan_bullet : int = 0.8
 @export var has_triple_shoot =false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
-var has_color_change = false
+@export var has_color_change = false
 
 
 func change_color(new_color):
@@ -95,6 +95,8 @@ func create_bullet(direction):
 	#Manage the lifetime of the bullet
 	bullet_timer.start()
 	bullet_timer.wait_time=lifespan_bullet
+
+
 func add_upgrade(id:String)->bool:
 	match id:
 		'damage+':
@@ -109,13 +111,15 @@ func add_upgrade(id:String)->bool:
 			return increase_damage_over_time()
 	print('no implementation')
 	return false
+
 func increase_damage()->bool:
 	power +=1
 	return true
+
 func decrease_reload_time()->bool:
 	shot_speed *=.8
 	return true
-	
+
 func enable_triple_shoot()->bool:
 	if has_triple_shoot:
 		return false
@@ -137,3 +141,10 @@ func set_start_time(time):
 
 func start_start_timer():
 	tower_start_timer.start()
+	
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		color = (color + 1) % 4
+		tower_sprite.frame = color
+		print(color)
