@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=9 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://dugb8sfrxooc8" path="res://Scripts/world_boundary.gd" id="6_21xkr"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
@@ -48,6 +49,7 @@ text = ">>"
 visible = false
 
 [node name="WorldBoundary" type="Area2D" parent="."]
+script = ExtResource("6_21xkr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
 position = Vector2(1166, 322)
@@ -57,4 +59,4 @@ shape = SubResource("RectangleShape2D_kry3j")
 [connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
 [connection signal="button_up" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_up"]
 [connection signal="round_start" from="UpgradeScreen" to="." method="_on_upgrade_screen_finished"]
-[connection signal="area_entered" from="WorldBoundary" to="." method="_on_world_boundary_area_entered"]
+[connection signal="body_entered" from="WorldBoundary" to="." method="_on_world_boundary_body_entered"]
