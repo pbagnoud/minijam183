@@ -157,6 +157,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_mouse_entered() -> void:
+	tower_sprite.modulate = '#edac9b'
 	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
 	if has_triple_shoot:
 		label.text += "\n triple shots"
@@ -166,3 +167,4 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	label.text = ""
+	tower_sprite.modulate = '#ffffff'
