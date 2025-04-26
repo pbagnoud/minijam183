@@ -19,8 +19,6 @@ var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 var lifespan_bullet : int = 0.8
 
-var ready_to_start_firing : bool = false
-
 
 
 func change_color(new_color):
@@ -82,3 +80,10 @@ func fire():
 		bullet_timer.start()
 		bullet_timer.wait_time=lifespan_bullet
 	pass
+
+
+func set_start_time(time):
+	tower_start_timer.wait_time = time
+
+func start_start_timer():
+	tower_start_timer.start()
