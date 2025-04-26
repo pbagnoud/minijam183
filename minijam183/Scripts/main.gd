@@ -2,7 +2,7 @@ extends Node2D
 
 var is_holding = false
 var has_to_check_empty_screen = false
-var round_id=0
+@export var round_id=0
 @onready var path_2d: Path2D = $Path2D
 
 @onready var upgrade_screen: Control = $UpgradeScreen

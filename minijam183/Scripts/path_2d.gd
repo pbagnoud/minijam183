@@ -9,6 +9,8 @@ var MAX_WAVE = 10
 var check_empty = false
 signal empty_list
 
+var pv : int = 3
+
 func _generate_wave(wave_id:int)-> void:
 	var size_wave = 15 + wave_id * 5
 	for _i in range(size_wave):
@@ -18,9 +20,13 @@ func _generate_wave(wave_id:int)-> void:
 func _speed_up_wave(wave_id:int)->void:
 	spawntime=1-wave_id/MAX_WAVE
 
+func _update_life_ennemies(wave_id:int):
+	pv += wave_id
+
 func new_round(wave_id:int)->float:
 	_generate_wave(wave_id)
 	_speed_up_wave(wave_id)
+	_update_life_ennemies(wave_id)
 	check_empty=true
 	return wave.size()*spawntime
 
@@ -36,4 +42,5 @@ func _process(delta: float) -> void:
 		var new_follower = follower.instantiate()
 		new_follower.color=wave.pop_front()
 		add_child(new_follower)
+		new_follower.pv = pv
 		timer = 0
