@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=6 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
+[ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
 [ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_g1a74"]
 [ext_resource type="ButtonGroup" uid="uid://dfoomrblf4nnw" path="res://Scenes/button_group_upgrades.tres" id="2_g043t"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
@@ -17,6 +18,14 @@ offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o5sws")
+upgrades = ExtResource("2_54md0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -41.0
+offset_right = 1171.0
+offset_bottom = 609.0
 
 [node name="Button_upgrade_1" type="Button" parent="."]
 layout_mode = 0

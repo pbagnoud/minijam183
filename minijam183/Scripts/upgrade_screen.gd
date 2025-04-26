@@ -2,14 +2,16 @@ extends Control
 
 
 @onready var pool_names=["+1 Power","+2 Power","+1 Range","+ 1 shot speed","test2","test3"]
-@onready var pool_upgrades=[[0,1,0,0,0],[0,2,0,0,0],[0,0,20,0,0],[0,0,0,500,0],[0,0,0,0,0],[0,0,0,0,0]]
 @onready var pool_indices=[0,1,2,3,4,5]
-
+@export var upgrades : upgrades
+@onready var upgrades_list: Array
 
 @onready var button_upgrade_1: Button = $Button_upgrade_1
 @onready var button_upgrade_2: Button = $Button_upgrade_2
-
 @onready var button_next_wave: Button = $Button_next_wave
+
+var upgrade_1_Id: int
+var upgrade_2_Id: int
 
 @onready var selected_upgrade=0
 @onready var selected_tower=0
@@ -18,12 +20,14 @@ extends Control
 signal round_start
 
 func _ready():
-	visible=false
+	visible=true
+	upgrades_list = upgrades.upgrades_list
 	
 func reset():
 	visible=true
 	pool_indices.shuffle()
-	pool_indices.slice(0,2)
+	
+	upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
 	
 	button_upgrade_1.text=str(pool_names[pool_indices[0]])
 	button_upgrade_2.text=str(pool_names[pool_indices[1]])
@@ -46,7 +50,7 @@ func _on_button_tower_1_pressed() -> void:
 	selected_tower=1
 
 func _on_button_next_wave_pressed() -> void:
-	var upgrade_index=pool_indices[selected_upgrade-1]
+	#var upgrade_index=pool_indices[selected_upgrade-1]
 	visible=false
 	round_start.emit()
 	#get_tree().change_scene_to_file("res://Scenes/main.tscn")
