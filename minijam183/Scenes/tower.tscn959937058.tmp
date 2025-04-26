@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=11 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
@@ -37,10 +37,7 @@ animations = [{
 "loop": true,
 "name": &"new_animation_1",
 "speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8xwd3"]
-animations = [{
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_8xwd3")
@@ -49,7 +46,7 @@ animations = [{
 "texture": ExtResource("7_7m5bu")
 }],
 "loop": true,
-"name": &"default",
+"name": &"tower_rotate",
 "speed": 2.0
 }]
 
@@ -64,11 +61,7 @@ script = ExtResource("1_ndpwd")
 position = Vector2(5.2225, -12.1875)
 scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_tghyl")
-animation = &"new_animation_1"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tower_sprite"]
-sprite_frames = SubResource("SpriteFrames_8xwd3")
-autoplay = "default"
+animation = &"tower_rotate"
 
 [node name="tower_timer" type="Timer" parent="."]
 wait_time = 1.246

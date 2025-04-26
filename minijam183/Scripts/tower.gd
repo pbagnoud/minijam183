@@ -4,7 +4,6 @@ signal new_bullet(direction, speed, characteristics)
 
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
 var bullet_scene = load("res://Scenes/bullet.tscn")
-
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
 @onready var size_change: SizeChange = $SizeChange
@@ -27,6 +26,8 @@ var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
 @export var has_color_change = false
 
+func _ready():
+	tower_sprite.play("tower_rotation")
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
