@@ -11,8 +11,8 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @export var number : int
 
 
-var color: int = 1
-var power: int = 1
+@export var color: int = 1
+@export var power: int = 1
 
 var detection_range: int = 200
 var shot_speed: int = 400
@@ -20,9 +20,9 @@ var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 var lifespan_bullet : int = 0.8
 
-var has_triple_shoot =false
+@export var has_triple_shoot =false
 var ready_to_start_firing : bool = false
-var triple_shot_angle = 15
+var triple_shot_angle = .75
 var has_color_change = false
 
 
@@ -136,4 +136,3 @@ func set_start_time(time):
 
 func start_start_timer():
 	tower_start_timer.start()
-
