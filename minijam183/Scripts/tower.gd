@@ -9,11 +9,12 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 var color: int = 1
 var power: int = 1
 var range: int = 200
-var shot_speed: int = 600
+var shot_speed: int = 1000
 var closestDistance: int
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
+	color = new_color
 
 func _on_tower_timer_timeout() -> void:
 	if visible :
