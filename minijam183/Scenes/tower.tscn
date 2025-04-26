@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=8 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://b7ku6uakcf2rj" path="res://Assets/tower_placeholer.png" id="2_mh5eo"]
 [ext_resource type="Texture2D" uid="uid://0unb7w6fun7m" path="res://Assets/Palette.png" id="3_tghyl"]
+[ext_resource type="Texture2D" uid="uid://c8n5uvok37xij" path="res://Assets/carte mère.png" id="4_81kva"]
+[ext_resource type="Texture2D" uid="uid://daoihlb3tb25" path="res://icon.svg" id="5_mxwle"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
 animations = [{
@@ -12,6 +14,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_tghyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_81kva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mxwle")
 }],
 "loop": true,
 "name": &"default",
