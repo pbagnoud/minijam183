@@ -63,7 +63,7 @@ func fire():
 	if closestEnemy != null :
 		# create new bullet, with speed and rotation and characteristics (?)
 		
-		var direction = closestEnemy.next_position(20) - self.position
+		var direction = closestEnemy.next_position(75) - self.position
 
 		print(direction)
 		create_bullet(direction)
