@@ -30,9 +30,7 @@ func reset():
 	
 	button_next_wave.disabled=true
 
-func new_round():
-	visible=false
-	round_start.emit()
+
 
 func _process(delta)-> void:
 	if selected_tower >0.5 and selected_upgrade >0.5:
@@ -50,5 +48,6 @@ func _on_button_tower_1_pressed() -> void:
 func _on_button_next_wave_pressed() -> void:
 	var upgrade_index=pool_indices[selected_upgrade-1]
 	visible=false
+	round_start.emit()
 	#get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	

@@ -4,7 +4,6 @@ var is_holding = false
 var has_to_check_empty_screen = false
 var round_id=0
 @onready var path_2d: Path2D = $Path2D
-@onready var round_timer: Timer = $Round_timer
 
 @onready var upgrade_screen: Control = $UpgradeScreen
 
@@ -21,14 +20,14 @@ func _process(delta):
 
 
 func _ready():
-	print('start')
 	_on_upgrade_screen_finished()
 	
 func _on_upgrade_screen_finished():
-	round_timer.wait_time = path_2d.new_round(round_id)
+	print('new_round')
+	path_2d.new_round(round_id)
 	round_id +=1
 
-func _on_round_timer_timeout() -> void:
+func _on_round_timeout() -> void:
 	has_to_check_empty_screen = true # Replace with function body.
 
 func _on_button_acceleration_button_down() -> void:
