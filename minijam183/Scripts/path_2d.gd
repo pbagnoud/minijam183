@@ -7,6 +7,9 @@ var wave = []
 var rng = RandomNumberGenerator.new()
 var MAX_WAVE = 10
 
+func _ready() -> void:
+	new_round(0)
+
 func _generate_wave(wave_id:int)-> void:
 	var size_wave = 15 + wave_id * 5
 	for _i in range(size_wave):
@@ -23,6 +26,7 @@ func new_round(wave_id:int)->float:
 
 func _process(delta: float) -> void:
 	if wave.is_empty():
+		print('empty wave')
 		return
 	timer += delta
 	
