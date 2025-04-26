@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var color: String
+var color: int
 var characteristics : Array
 var power:int =1
 
