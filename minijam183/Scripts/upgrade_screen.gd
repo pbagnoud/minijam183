@@ -1,7 +1,5 @@
 extends Control
 
-
-
 @onready var pool_indices: Array
 @export var upgrades : upgrades
 @onready var upgrades_list: Array
@@ -18,7 +16,6 @@ var upgrade_2_Id: String
 
 @onready var an_update_is_selected = false
 
-@onready var modif = [0,0,0,0,0]
 signal round_start
 signal add_upgrade_signal(id: String, tower: int)
 
@@ -32,7 +29,7 @@ func reset():
 	pool_indices.shuffle()
 	#upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
 	# For Debugging, remove next line and uncomment above line to get intented gameplay 
-	upgrade_1_Id = "damage+"
+	upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
 	upgrade_2_Id = upgrades_list[pool_indices[1]]["Id"]
 	
 	
@@ -62,5 +59,4 @@ func _on_button_next_wave_pressed() -> void:
 	add_upgrade_signal.emit(selected_upgrade, selected_tower)
 	visible=false
 	round_start.emit()
-	#get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	
