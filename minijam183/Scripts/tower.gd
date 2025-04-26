@@ -2,6 +2,7 @@ extends StaticBody2D
 
 signal new_bullet(direction, speed, characteristics)
 
+@onready var tower_sprite: AnimatedSprite2D = $tower_sprite
 var bullet_scene = load("res://Scenes/bullet.tscn")
 
 @export var number : int
@@ -10,6 +11,9 @@ var power: int = 1
 var range: int = 200
 var shot_speed: int = 600
 var closestDistance: int
+
+func change_color(new_color):
+	tower_sprite.frame = new_color
 
 func _on_tower_timer_timeout() -> void:
 	if visible :
