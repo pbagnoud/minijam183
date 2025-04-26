@@ -28,7 +28,7 @@ texture = ExtResource("2_21xkr")
 expand_mode = 1
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
-position = Vector2(274, 199)
+position = Vector2(279, 201)
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(346, 390)
