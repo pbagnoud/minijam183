@@ -11,7 +11,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @export var number : int
 
 
-@export var color: int = 1
+@export var color: int = 0
 @export var power: int = 1
 
 var detection_range: int = 200
