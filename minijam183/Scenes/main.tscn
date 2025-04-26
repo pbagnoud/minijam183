@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
-[ext_resource type="Texture2D" uid="uid://c8n5uvok37xij" path="res://Assets/carte mère.png" id="2_21xkr"]
+[ext_resource type="Texture2D" uid="uid://cfpanogiaqmck" path="res://Assets/carte mère v2.png" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2, 109, 0, 0, 0, 0, 416, 114, 0, 0, 0, 0, 422, 290, 0, 0, 0, 0, 231, 279, 0, 0, 0, 0, 240, 476, 0, 0, 0, 0, 932, 474, 0, 0, 0, 0, 926, 262, 0, 0, 0, 0, 673, 263, 0, 0, 0, 0, 671, 108, 0, 0, 0, 0, 1151, 108)
+"points": PackedVector2Array(0, 0, 0, 0, 18, 95, 0, 0, 0, 0, 417, 96, 0, 0, 0, 0, 424, 280, 0, 0, 0, 0, 235, 288, 0, 0, 0, 0, 242, 484, 0, 0, 0, 0, 875, 488, 0, 0, 0, 0, 867, 272, 0, 0, 0, 0, 650, 268, 0, 0, 0, 0, 649, 96, 0, 0, 0, 0, 1166, 81)
 }
 point_count = 10
 
@@ -20,14 +20,15 @@ size = Vector2(21, 685)
 script = ExtResource("1_bo1nx")
 
 [node name="Background" type="TextureRect" parent="."]
-offset_right = 1159.0
-offset_bottom = 627.0
+offset_left = -52.0
+offset_top = -132.0
+offset_right = 1209.0
+offset_bottom = 745.0
 texture = ExtResource("2_21xkr")
 expand_mode = 1
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(279, 196)
-has_triple_shoot = true
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(350, 375)
@@ -43,7 +44,7 @@ curve = SubResource("Curve2D_jjvhh")
 script = ExtResource("3_jjvhh")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
-position = Vector2(-2, 109)
+position = Vector2(18, 95)
 
 [node name="ButtonAcceleration" type="Button" parent="."]
 offset_left = 1109.0

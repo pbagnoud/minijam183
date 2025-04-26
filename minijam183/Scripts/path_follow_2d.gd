@@ -8,6 +8,12 @@ extends PathFollow2D
 func _ready() -> void:
 	character_body_2d.color = color 
 
+func next_position(futur):
+	var target = PathFollow2D.new()
+	target.progress=progress+futur
+	get_parent().add_child(target)
+	return target.position
+
 
 func _process(delta: float) -> void:
 		set_progress(progress + runspeed * delta)

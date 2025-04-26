@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://x4b4nx0ajnww"]
+[gd_scene load_steps=6 format=3 uid="uid://x4b4nx0ajnww"]
 
 [ext_resource type="Script" uid="uid://bmlqrunyjue8o" path="res://Scripts/bullet.gd" id="1_xjght"]
 [ext_resource type="Texture2D" uid="uid://bx14fd08mf28k" path="res://Assets/bullet_placeholder.png" id="2_oduel"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="3_ycag2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
 size = Vector2(13, 7)
@@ -32,6 +33,13 @@ sprite_frames = SubResource("SpriteFrames_ycag2")
 
 [node name="bullet_timer" type="Timer" parent="."]
 wait_time = 0.7
+
+[node name="SizeChange" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_ycag2")
+duration = 0.2
+max_size = Vector2(1.5, 1.5)
+target = NodePath("..")
+metadata/_custom_type_script = "uid://bwjs44atw8pfw"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="bullet_timer" to="." method="_on_timer_timeout"]

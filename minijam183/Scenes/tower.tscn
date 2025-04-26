@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=9 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
 [ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
 [ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
 animations = [{
@@ -27,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou3m2"]
-size = Vector2(39, 66)
+size = Vector2(42, 71)
 
 [node name="Tower" type="StaticBody2D"]
 input_pickable = true
@@ -46,10 +47,25 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -2)
+position = Vector2(-3, -1.5)
 shape = SubResource("RectangleShape2D_ou3m2")
 one_way_collision = true
 
+[node name="SizeChange" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("6_mxwle")
+duration = 0.1
+max_size = Vector2(1.3, 1.3)
+target = NodePath("..")
+metadata/_custom_type_script = "uid://bwjs44atw8pfw"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 22.0
+offset_top = -35.0
+offset_right = 62.0
+offset_bottom = -12.0
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="tower_timer" to="." method="_on_tower_timer_timeout"]
 [connection signal="timeout" from="tower_start_timer" to="." method="_on_tower_start_timer_timeout"]
