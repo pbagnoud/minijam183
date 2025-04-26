@@ -2,7 +2,10 @@ extends StaticBody2D
 
 signal new_bullet(direction, speed, characteristics)
 
+@onready var color_sprite: AnimatedSprite2D = $color_sprite
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
+
+
 var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
@@ -20,14 +23,23 @@ var shot_speed: int = 400
 var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 var lifespan_bullet : int = 0.8
+var color_power = 0
+var bullet_durability = 0
+var has_explosive_bullets = false
+var dot_damage = 0
+var enemy_pushback_dist = 0
+var enemy_slowdown = 0
+var is_sniper = false
+var is_gatling = false
 
-@export var has_triple_shoot =false
+@export var has_triple_shoot = false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
 @export var has_color_change = false
 
 func _ready():
 	tower_sprite.play("tower_rotation")
+	color_sprite.play("default")
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
@@ -108,12 +120,31 @@ func add_upgrade(id:String)->bool:
 			return increase_damage()
 		'reload+':
 			return decrease_reload_time()
-		'triple':
-			return enable_triple_shoot()
+		'special':
+			return increase_color_damage()
+		'pierce':
+			return increase_bullet_durability()
 		'paint':
 			return enable_enemy_color_change()
+		'missile':
+			return explode_bullet()
 		'fire':
 			return increase_damage_over_time()
+		'push':
+			return push_back_enemy()
+		'triple':
+			return enable_triple_shoot()
+		'freeze':
+			return slow_down_enemy()
+		'sniper':
+			return tower_is_sniper()
+		'gatling':
+			return tower_is_gatling()
+		'addTower':
+			print('no fifth tower')
+			return false
+			
+		
 	print('no implementation')
 	return false
 
@@ -123,7 +154,37 @@ func increase_damage()->bool:
 	return true
 
 func decrease_reload_time()->bool:
-	shot_speed *=.8
+	cooldown *=.8
+	return true
+
+func increase_color_damage() -> bool:
+	color_power += 1
+	return true
+
+func increase_bullet_durability() -> bool:
+	bullet_durability += 1
+	return true
+
+func enable_enemy_color_change()->bool:
+	if has_color_change:
+		return false
+	else:
+		has_color_change = true
+		return true
+		
+func explode_bullet() -> bool:
+	if has_explosive_bullets:
+		return false
+	else:
+		has_explosive_bullets = true
+		return true
+
+func increase_damage_over_time()->bool:
+	dot_damage += 1
+	return true
+
+func push_back_enemy() -> bool:
+	enemy_pushback_dist += 0.1
 	return true
 
 func enable_triple_shoot()->bool:
@@ -132,15 +193,29 @@ func enable_triple_shoot()->bool:
 	else:
 		has_triple_shoot = true
 		return true
-func enable_enemy_color_change()->bool:
-	if has_color_change:
-		return false
-	else:
-		has_color_change = true
-		return true
-func increase_damage_over_time()->bool:
+
+func slow_down_enemy() -> bool:
+	enemy_slowdown += 1
 	return true
 
+func tower_is_sniper() -> bool:
+	if is_sniper or is_gatling:
+		return false
+	else:
+		cooldown += 0.5
+		shot_speed *= 2
+		detection_range *= 2
+		is_sniper = true
+		return true
+
+func tower_is_gatling() -> bool:
+	if is_gatling or is_sniper:
+		return false
+	else:
+		cooldown -= 0.7
+		is_gatling = true
+		return true
+		
 
 func set_start_time(time):
 	tower_start_timer.wait_time = time

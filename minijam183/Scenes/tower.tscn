@@ -1,13 +1,39 @@
-[gd_scene load_steps=12 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=18 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
 [ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
 [ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
-[ext_resource type="Texture2D" uid="uid://ut4p8sl64i0u" path="res://Assets/Tower still/Tower1_anim1.png" id="6_8xwd3"]
-[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
-[ext_resource type="Texture2D" uid="uid://bqbosc4wvm5n5" path="res://Assets/Tower still/Tower1_anim2.png" id="7_7m5bu"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
+[ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
+[ext_resource type="Texture2D" uid="uid://cbh1sa3h4s4nc" path="res://Assets/Rotation/Rotation3.png" id="8_h264x"]
+[ext_resource type="Texture2D" uid="uid://dw1ynn6410qt0" path="res://Assets/Rotation/Rotation4.png" id="9_ixbif"]
+[ext_resource type="Texture2D" uid="uid://dplxn8cnwlcb" path="res://Assets/Blue/Blue1.png" id="10_arclx"]
+[ext_resource type="Texture2D" uid="uid://mmcvwxxggk4b" path="res://Assets/Blue/Blue2.png" id="11_5csd1"]
+[ext_resource type="Texture2D" uid="uid://b0naacd1w7bv2" path="res://Assets/Blue/Blue3.png" id="12_tpvf4"]
+[ext_resource type="Texture2D" uid="uid://cfvm5auyuqi8v" path="res://Assets/Blue/Blue4.png" id="13_co81g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_arclx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5csd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tpvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_co81g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
 animations = [{
@@ -30,26 +56,24 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
 "name": &"new_animation_1",
 "speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8xwd3"]
-animations = [{
+}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_8xwd3")
+"texture": ExtResource("6_wnl86")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_7m5bu")
+"texture": ExtResource("7_a4lnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h264x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ixbif")
 }],
 "loop": true,
-"name": &"default",
+"name": &"rotation",
 "speed": 2.0
 }]
 
@@ -60,15 +84,18 @@ size = Vector2(81, 73)
 input_pickable = true
 script = ExtResource("1_ndpwd")
 
+[node name="color_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(0.435237, 0.4425)
+sprite_frames = SubResource("SpriteFrames_ueiky")
+autoplay = "default"
+
 [node name="tower_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.2225, -12.1875)
+position = Vector2(3, -3)
 scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_tghyl")
-animation = &"new_animation_1"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tower_sprite"]
-sprite_frames = SubResource("SpriteFrames_8xwd3")
-autoplay = "default"
+animation = &"rotation"
+autoplay = "rotation"
 
 [node name="tower_timer" type="Timer" parent="."]
 wait_time = 1.246
