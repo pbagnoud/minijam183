@@ -1,25 +1,25 @@
 [gd_scene load_steps=8 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
-[ext_resource type="Texture2D" uid="uid://b7ku6uakcf2rj" path="res://Assets/tower_placeholer.png" id="2_mh5eo"]
-[ext_resource type="Texture2D" uid="uid://0unb7w6fun7m" path="res://Assets/Palette.png" id="3_tghyl"]
-[ext_resource type="Texture2D" uid="uid://c8n5uvok37xij" path="res://Assets/carte mère.png" id="4_81kva"]
-[ext_resource type="Texture2D" uid="uid://daoihlb3tb25" path="res://icon.svg" id="5_mxwle"]
+[ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
+[ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
+[ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
+[ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mh5eo")
+"texture": ExtResource("2_81kva")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_tghyl")
+"texture": ExtResource("3_mxwle")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_81kva")
+"texture": ExtResource("4_oh166")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_mxwle")
+"texture": ExtResource("5_8xwd3")
 }],
 "loop": true,
 "name": &"default",
@@ -34,6 +34,8 @@ input_pickable = true
 script = ExtResource("1_ndpwd")
 
 [node name="tower_sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -1.5)
+scale = Vector2(0.38, 0.67)
 sprite_frames = SubResource("SpriteFrames_tghyl")
 
 [node name="tower_timer" type="Timer" parent="."]
