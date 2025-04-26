@@ -5,9 +5,7 @@ signal new_virus(progress: float)
 @onready var character_body_2d: CharacterBody2D = $CharacterBody2D
 @export var color = 0
 
-var pv : 
-	set(value): 
-		pv = value
+var pv = 1
 		
 var is_split:
 	set(value): 
@@ -26,6 +24,9 @@ func _ready() -> void:
 	character_body_2d.is_split = is_split  
 	if color == 1 :
 		runspeed += 100
+
+func set_pv(pv):
+	character_body_2d.pv = pv  
 
 func next_position(futur):
 	var target = PathFollow2D.new()

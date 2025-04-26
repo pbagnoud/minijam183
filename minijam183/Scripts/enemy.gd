@@ -59,5 +59,5 @@ func change_color(new_color:int):
 		enemy_sprite_2d.play("red_enemy")
 	if new_color == 2:
 		enemy_sprite_2d.play("orange_enemy")
-	if new_color == 0:
+	if new_color == 3:
 		enemy_sprite_2d.play("green_enemy")

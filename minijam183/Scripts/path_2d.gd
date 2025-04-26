@@ -43,5 +43,6 @@ func _process(delta: float) -> void:
 		var new_follower = follower.instantiate()
 		new_follower.color=wave.pop_front()
 		add_child(new_follower)
-		new_follower.pv = current_pv
+		new_follower.pv = current_pv 
+		new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
 		timer = 0
