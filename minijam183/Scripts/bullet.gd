@@ -1,7 +1,11 @@
 extends RigidBody2D
-
+var c=['#00FFC3','#FF00D8','#FFB200','#96FF00']
 var durability=1
-var color: int
+var color: int:
+	set(value):
+		color = value
+		modulate = c[color]
+	
 var characteristics : Array
 var power:int = 1
 var has_color_change : bool
