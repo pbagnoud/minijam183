@@ -13,13 +13,17 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 
 var color: int = 1
 var power: int = 1
+
 var detection_range: int = 200
 var shot_speed: int = 400
 var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 var lifespan_bullet : int = 0.8
-
+var has_triple_shoot =false
 var ready_to_start_firing : bool = false
+var triple_shot_angle = 15
+var has_color_change = false
+
 
 
 
@@ -61,24 +65,67 @@ func fire():
 		# create new bullet, with speed and rotation and characteristics (?)
 		var direction = closestEnemy.position - self.position
 		print(direction)
-		#new_bullet.emit(direction.normalized(), shot_speed, [])
-		var bullet = bullet_scene.instantiate()
-		var bullet_timer = bullet.get_node("bullet_timer")
-		# Choose a random location on Path2D.
-		#var mob_spawn_location = $MobPath/MobSpawnLocation
-		#mob_spawn_location.progress_ratio = randf()
-
-		# Set the mob's position to the random location.
-		#bullet.position = self.position
-
-		#Choose the velocity for the mob.
-		#var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-		bullet.linear_velocity = direction.normalized()*shot_speed
-
-		# Spawn the mob by adding it to the Main scene.
-		add_child(bullet)
+		create_bullet(direction)
+		if has_triple_shoot:
+			create_bullet(direction.rotated(triple_shot_angle))
+			create_bullet(direction.rotated(-triple_shot_angle))
 		
-		#Manage the lifetime of the bullet
-		bullet_timer.start()
-		bullet_timer.wait_time=lifespan_bullet
-	pass
+	
+func create_bullet(direction):
+	var bullet = bullet_scene.instantiate()
+	var bullet_timer = bullet.get_node("bullet_timer")
+	# Choose a random location on Path2D.
+	#var mob_spawn_location = $MobPath/MobSpawnLocation
+	#mob_spawn_location.progress_ratio = randf()
+
+	# Set the mob's position to the random location.
+	#bullet.position = self.position
+
+	#Choose the velocity for the mob.
+	#var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	bullet.linear_velocity = direction.normalized()*shot_speed
+	bullet.color = color
+	bullet.power = power
+	bullet.has_color_change = has_color_change
+
+	# Spawn the mob by adding it to the Main scene.
+	add_child(bullet)
+	
+	#Manage the lifetime of the bullet
+	bullet_timer.start()
+	bullet_timer.wait_time=lifespan_bullet
+func add_upgrade(id:String)->bool:
+	match id:
+		'damage+':
+			return increase_damage()
+		'reload+':
+			return decrease_reload_time()
+		'triple':
+			return enable_triple_shoot()
+		'paint':
+			return enable_enemy_color_change()
+		'fire':
+			return increase_damage_over_time()
+	print('no implementation')
+	return false
+func increase_damage()->bool:
+	power +=1
+	return true
+func decrease_reload_time()->bool:
+	shot_speed *=.8
+	return true
+	
+func enable_triple_shoot()->bool:
+	if has_triple_shoot:
+		return false
+	else:
+		has_triple_shoot = true
+		return true
+func enable_enemy_color_change()->bool:
+	if has_color_change:
+		return false
+	else:
+		has_color_change = true
+		return true
+func increase_damage_over_time()->bool:
+	return true
