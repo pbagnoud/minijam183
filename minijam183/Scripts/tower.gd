@@ -5,15 +5,18 @@ signal new_bullet(direction, speed, characteristics)
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
 var bullet_scene = load("res://Scenes/bullet.tscn")
 
+@onready var tower_timer: Timer = $tower_timer
 @export var number : int
 var color: int = 1
 var power: int = 1
 var range: int = 200
-var shot_speed: int = 600
+var shot_speed: int = 1000
 var closestDistance: int
+var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
+	color = new_color
 
 func _on_tower_timer_timeout() -> void:
 	if visible :
