@@ -1,8 +1,8 @@
 extends Control
 
 
-@onready var pool_names=["+1 Power","+2 Power","+1 Range","+ 1 shot speed","test2","test3"]
-@onready var pool_indices=[0,1,2,3,4,5]
+
+@onready var pool_indices: Array
 @export var upgrades : upgrades
 @onready var upgrades_list: Array
 
@@ -25,18 +25,19 @@ signal add_upgrade_signal(id: String, tower: int)
 func _ready():
 	visible=false
 	upgrades_list = upgrades.upgrades_list
+	pool_indices = range(len(upgrades_list))
 	
 func reset():
 	visible=true
 	pool_indices.shuffle()
-	
 	#upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
-	# For Debugging : 
+	# For Debugging, remove next line and uncomment above line to get intented gameplay 
 	upgrade_1_Id = "damage+"
 	upgrade_2_Id = upgrades_list[pool_indices[1]]["Id"]
 	
-	button_upgrade_1.text=str(pool_names[pool_indices[0]])
-	button_upgrade_2.text=str(pool_names[pool_indices[1]])
+	
+	button_upgrade_1.text=upgrades_list[pool_indices[0]]["Name"]
+	button_upgrade_2.text=upgrades_list[pool_indices[1]]["Name"]
 	
 	button_next_wave.disabled=true
 
