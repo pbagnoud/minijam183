@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk1h6dnsl2hej"]
+[gd_scene load_steps=8 format=3 uid="uid://dk1h6dnsl2hej"]
 
 [ext_resource type="Script" uid="uid://81f3glc5devx" path="res://Scripts/enemy.gd" id="1_hghv2"]
-[ext_resource type="Texture2D" uid="uid://dkjpbso00x1m1" path="res://Assets/enemy_playeholder.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cpj7eb0et8w1o" path="res://Assets/enemy_0.png" id="2_0830c"]
+[ext_resource type="Texture2D" uid="uid://wrked32hpbt1" path="res://Assets/enemy_1.png" id="3_ghaa6"]
+[ext_resource type="Texture2D" uid="uid://btl5u1j303ght" path="res://Assets/enemy_2.png" id="4_1dp5w"]
+[ext_resource type="Texture2D" uid="uid://c52h7l1wk84vl" path="res://Assets/enemy_3.png" id="5_auwsv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afpow"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1f0kj")
+"texture": ExtResource("2_0830c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ghaa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1dp5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_auwsv")
 }],
 "loop": true,
 "name": &"default",
