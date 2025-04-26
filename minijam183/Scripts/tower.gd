@@ -2,7 +2,10 @@ extends StaticBody2D
 
 signal new_bullet(direction, speed, characteristics)
 
+@onready var color_sprite: AnimatedSprite2D = $color_sprite
 @onready var tower_sprite: AnimatedSprite2D = $tower_sprite
+
+
 var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
@@ -36,6 +39,7 @@ var triple_shot_angle = .75
 
 func _ready():
 	tower_sprite.play("tower_rotation")
+	color_sprite.play("default")
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
