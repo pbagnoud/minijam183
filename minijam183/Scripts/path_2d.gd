@@ -29,5 +29,6 @@ func _process(delta: float) -> void:
 	
 	if timer > spawntime:
 		var new_follower = follower.instantiate()
+		follower.color=wave.pop_front()
 		add_child(new_follower)
 		timer = 0
