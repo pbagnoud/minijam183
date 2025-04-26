@@ -4,12 +4,14 @@ signal new_bullet(direction, speed, characteristics)
 
 var bullet_scene = load("res://Scenes/bullet.tscn")
 
+@onready var tower_timer: Timer = $tower_timer
 @export var number : int
 var color: int = 1
 var power: int = 1
 var range: int = 100
 var shot_speed: int = 400
 var closestDistance: int
+var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
 
 func _on_tower_timer_timeout() -> void:
 	if visible :

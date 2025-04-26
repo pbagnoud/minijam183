@@ -10,7 +10,7 @@ func _process(delta):
 	else:
 		Engine.time_scale = 1.0
 
-
+	
 func _on_spawn_timer_timeout() -> void:
 	pass # Replace with function body.
 
