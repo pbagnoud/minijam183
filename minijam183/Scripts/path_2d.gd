@@ -9,7 +9,7 @@ var MAX_WAVE = 10
 var check_empty = false
 signal empty_list
 
-var pv_min : int = 3
+var pv_min : int = 2
 var current_pv : int
 
 func _generate_wave(wave_id:int)-> void:
