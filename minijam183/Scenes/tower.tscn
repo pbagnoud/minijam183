@@ -1,39 +1,39 @@
-[gd_scene load_steps=19 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=18 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
-[ext_resource type="Texture2D" uid="uid://dp7wmfbx826ju" path="res://Assets/Orange/Orange1.png" id="2_wnl86"]
-[ext_resource type="Texture2D" uid="uid://cm7oqegwkwjha" path="res://Assets/Orange/Orange2.png" id="3_a4lnx"]
 [ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
-[ext_resource type="Texture2D" uid="uid://cylwhyqhutnhk" path="res://Assets/Orange/Orange3.png" id="4_h264x"]
 [ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
-
 [ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
+[ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
+[ext_resource type="Texture2D" uid="uid://cbh1sa3h4s4nc" path="res://Assets/Rotation/Rotation3.png" id="8_h264x"]
+[ext_resource type="Texture2D" uid="uid://dw1ynn6410qt0" path="res://Assets/Rotation/Rotation4.png" id="9_ixbif"]
+[ext_resource type="Texture2D" uid="uid://dplxn8cnwlcb" path="res://Assets/Blue/Blue1.png" id="10_arclx"]
+[ext_resource type="Texture2D" uid="uid://mmcvwxxggk4b" path="res://Assets/Blue/Blue2.png" id="11_5csd1"]
+[ext_resource type="Texture2D" uid="uid://b0naacd1w7bv2" path="res://Assets/Blue/Blue3.png" id="12_tpvf4"]
+[ext_resource type="Texture2D" uid="uid://cfvm5auyuqi8v" path="res://Assets/Blue/Blue4.png" id="13_co81g"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wnl86"]
-resource_local_to_scene = true
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wnl86")
+"texture": ExtResource("10_arclx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_a4lnx")
+"texture": ExtResource("11_5csd1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_h264x")
+"texture": ExtResource("12_tpvf4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ixbif")
+"texture": ExtResource("13_co81g")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
-animations = []
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
 animations = [{
@@ -84,28 +84,15 @@ size = Vector2(81, 73)
 input_pickable = true
 script = ExtResource("1_ndpwd")
 
-[node name="Colors" type="Node" parent="."]
-
-[node name="OrangeSide_sprite" type="AnimatedSprite2D" parent="Colors"]
-position = Vector2(2.00002, -4)
-scale = Vector2(0.378188, 0.468602)
-sprite_frames = SubResource("SpriteFrames_wnl86")
-
-[node name="BlueSide_sprite" type="AnimatedSprite2D" parent="Colors"]
-
-[node name="RedSide_sprite" type="AnimatedSprite2D" parent="Colors"]
-
-[node name="GreenSide_sprite" type="AnimatedSprite2D" parent="Colors"]
-
 [node name="color_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(3, -4)
 scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_ueiky")
-animation = &""
+autoplay = "default"
 
 [node name="tower_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.99998, -2)
-scale = Vector2(0.430262, 0.441376)
+position = Vector2(3, -3)
+scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_tghyl")
 animation = &"rotation"
 autoplay = "rotation"
