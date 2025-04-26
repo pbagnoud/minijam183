@@ -110,6 +110,7 @@ func add_upgrade(id:String)->bool:
 	print('no implementation')
 	return false
 func increase_damage()->bool:
+	print("Damage Increased")
 	power +=1
 	return true
 func decrease_reload_time()->bool:

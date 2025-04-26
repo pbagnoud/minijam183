@@ -56,3 +56,14 @@ func _on_button_acceleration_button_up() -> void:
 	
 func _clear():
 	pass
+
+
+func _on_upgrade_screen_add_upgrade_signal(id: String, tower: int) -> void:
+	if tower == 1:
+		tower_1.add_upgrade(id)
+	if tower == 2:
+		tower_2.add_upgrade(id)
+	if tower == 3:
+		tower_3.add_upgrade(id)
+	if tower == 4:
+		tower_4.add_upgrade(id)
