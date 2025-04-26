@@ -1,12 +1,21 @@
 extends CharacterBody2D
 
 signal hit
+@onready var blink_component: BlinkComponent = $BlinkComponent
+@onready var shake_component: ShakeComponent = $ShakeComponent
+@onready var color_change: ColorChange = $ColorChange
 
 @onready var enemy_sprite_2d: AnimatedSprite2D = $EnemySprite2D
 
 var real_position: Vector2
 var pv: int = 2
-var color: int = 1
+var color: int = 1:
+	set(value):
+		color=value
+		change_color(value)
+
+func _ready() -> void:
+	change_color(color)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullet") :
@@ -15,6 +24,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		else:
 			pv -= body.power
 		body.hit_something()
+		if body.has_color_change:
+			change_color(body.color)
+		blink_component.blink()
+		shake_component.tween_shake()
+		color_change.color_tween()
 	if pv <= 0:
 		get_parent().queue_free()
 	

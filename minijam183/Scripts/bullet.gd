@@ -12,5 +12,6 @@ func hit_something():
 	durability-=1
 	if durability==0:
 		queue_free()
+
 func _on_timer_timeout() -> void:
 	queue_free()
