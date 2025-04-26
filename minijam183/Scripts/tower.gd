@@ -108,12 +108,30 @@ func add_upgrade(id:String)->bool:
 			return increase_damage()
 		'reload+':
 			return decrease_reload_time()
-		'triple':
-			return enable_triple_shoot()
+		'special':
+			return false
+		'pierce':
+			return false
 		'paint':
 			return enable_enemy_color_change()
+		'missile':
+			return false
 		'fire':
 			return increase_damage_over_time()
+		'push':
+			return false
+		'triple':
+			return enable_triple_shoot()
+		'freeze':
+			return false
+		'sniper':
+			return false
+		'gatling':
+			return false
+		'addTower':
+			return false
+			
+		
 	print('no implementation')
 	return false
 
@@ -126,20 +144,22 @@ func decrease_reload_time()->bool:
 	shot_speed *=.8
 	return true
 
-func enable_triple_shoot()->bool:
-	if has_triple_shoot:
-		return false
-	else:
-		has_triple_shoot = true
-		return true
 func enable_enemy_color_change()->bool:
 	if has_color_change:
 		return false
 	else:
 		has_color_change = true
 		return true
+
 func increase_damage_over_time()->bool:
 	return true
+
+func enable_triple_shoot()->bool:
+	if has_triple_shoot:
+		return false
+	else:
+		has_triple_shoot = true
+		return true
 
 
 func set_start_time(time):
