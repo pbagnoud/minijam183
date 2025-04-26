@@ -44,17 +44,17 @@ func find_closest_enemy():
 	closestDistance = detection_range
 	var all_enemy = get_tree().get_nodes_in_group("enemy")
 	#print(all_enemy)
-	print("start loop")
-	print("ma position :", position)
+	#print("start loop")
+	#print("ma position :", position)
 	for enemy in all_enemy:
-		print("position ennemi :", enemy.position)
+		#print("position ennemi :", enemy.position)
 		var gun2enemy_distance = position.distance_to(enemy.position)
 		if gun2enemy_distance < closestDistance:
 			closestDistance = gun2enemy_distance
-			print("plus proche", closestDistance)
+			#print("plus proche", closestDistance)
 			closestEnemy = enemy
-		else :
-			print("nobody in range")
+		#else :
+			#print("nobody in range")
 	return closestEnemy
 
 func fire():
@@ -63,12 +63,12 @@ func fire():
 	if closestEnemy != null :
 		# create new bullet, with speed and rotation and characteristics (?)
 		var direction = closestEnemy.position - self.position
+
 		print(direction)
 		create_bullet(direction)
 		if has_triple_shoot:
 			create_bullet(direction.rotated(triple_shot_angle))
 			create_bullet(direction.rotated(-triple_shot_angle))
-		
 
 	
 func create_bullet(direction):
