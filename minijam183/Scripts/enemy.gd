@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 signal hit
+signal split
+
 @onready var blink_component: BlinkComponent = $BlinkComponent
 @onready var shake_component: ShakeComponent = $ShakeComponent
 @onready var color_change: ColorChange = $ColorChange
 
 @onready var enemy_sprite_2d: AnimatedSprite2D = $EnemySprite2D
+
 
 var real_position: Vector2
 var pv: int = 4
@@ -13,6 +16,8 @@ var color: int = 1:
 	set(value):
 		color=value
 		change_color(value)
+		
+var is_split: bool
 
 func _ready() -> void:
 	change_color(color)
@@ -32,6 +37,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if body.has_color_change:
 			change_color(body.color)
 	if pv <= 0:
+		# If the character is a Green virus, which is not already small, split it
+		if color == 3:
+			print(is_split)
+			if not is_split:
+				split.emit()
 		get_parent().queue_free()
 	
 func _process(delta: float) -> void:

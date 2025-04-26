@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://kc0l0i2b0o7t"]
+
+[ext_resource type="PackedScene" uid="uid://dk1h6dnsl2hej" path="res://Scenes/enemy.tscn" id="1_yslv1"]
+[ext_resource type="Script" uid="uid://p4pftyrlyakx" path="res://Scenes/tiny_virus.gd" id="2_pwmmh"]
+
+[node name="tiny_virus_character" instance=ExtResource("1_yslv1")]
+script = ExtResource("2_pwmmh")
