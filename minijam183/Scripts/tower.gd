@@ -23,7 +23,7 @@ var lifespan_bullet : int = 0.8
 @export var has_triple_shoot =false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
-var has_color_change = false
+@export var has_color_change = false
 
 
 func change_color(new_color):
@@ -44,17 +44,17 @@ func find_closest_enemy():
 	closestDistance = detection_range
 	var all_enemy = get_tree().get_nodes_in_group("enemy")
 	#print(all_enemy)
-	print("start loop")
-	print("ma position :", position)
+	#print("start loop")
+	#print("ma position :", position)
 	for enemy in all_enemy:
-		print("position ennemi :", enemy.position)
+		#print("position ennemi :", enemy.position)
 		var gun2enemy_distance = position.distance_to(enemy.position)
 		if gun2enemy_distance < closestDistance:
 			closestDistance = gun2enemy_distance
-			print("plus proche", closestDistance)
+			#print("plus proche", closestDistance)
 			closestEnemy = enemy
-		else :
-			print("nobody in range")
+		#else :
+			#print("nobody in range")
 	return closestEnemy
 
 func fire():
@@ -63,12 +63,12 @@ func fire():
 	if closestEnemy != null :
 		# create new bullet, with speed and rotation and characteristics (?)
 		var direction = closestEnemy.position - self.position
+
 		print(direction)
 		create_bullet(direction)
 		if has_triple_shoot:
 			create_bullet(direction.rotated(triple_shot_angle))
 			create_bullet(direction.rotated(-triple_shot_angle))
-		
 
 	
 func create_bullet(direction):
@@ -95,6 +95,8 @@ func create_bullet(direction):
 	#Manage the lifetime of the bullet
 	bullet_timer.start()
 	bullet_timer.wait_time=lifespan_bullet
+
+
 func add_upgrade(id:String)->bool:
 	match id:
 		'damage+':
@@ -109,13 +111,15 @@ func add_upgrade(id:String)->bool:
 			return increase_damage_over_time()
 	print('no implementation')
 	return false
+
 func increase_damage()->bool:
 	power +=1
 	return true
+
 func decrease_reload_time()->bool:
 	shot_speed *=.8
 	return true
-	
+
 func enable_triple_shoot()->bool:
 	if has_triple_shoot:
 		return false
@@ -137,3 +141,10 @@ func set_start_time(time):
 
 func start_start_timer():
 	tower_start_timer.start()
+	
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		color = (color + 1) % 4
+		tower_sprite.frame = color
+		print(color)

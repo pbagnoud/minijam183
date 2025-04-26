@@ -20,7 +20,6 @@ script = ExtResource("1_bo1nx")
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(152, 186)
-has_triple_shoot = true
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(141, 401)
@@ -58,4 +57,4 @@ shape = SubResource("RectangleShape2D_kry3j")
 [connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
 [connection signal="button_up" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_up"]
 [connection signal="round_start" from="UpgradeScreen" to="." method="_on_upgrade_screen_finished"]
-[connection signal="area_entered" from="WorldBoundary" to="." method="_on_world_boundary_area_entered"]
+[connection signal="body_entered" from="WorldBoundary" to="." method="_on_world_boundary_body_entered"]
