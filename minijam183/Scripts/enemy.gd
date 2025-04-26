@@ -8,7 +8,7 @@ signal hit
 @onready var enemy_sprite_2d: AnimatedSprite2D = $EnemySprite2D
 
 var real_position: Vector2
-var pv: int = 2
+var pv: int = 4
 var color: int = 1:
 	set(value):
 		color=value
