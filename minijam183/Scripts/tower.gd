@@ -6,7 +6,10 @@ signal new_bullet(direction, speed, characteristics)
 var bullet_scene = load("res://Scenes/bullet.tscn")
 
 @onready var tower_timer: Timer = $tower_timer
+@onready var tower_start_timer: Timer = $tower_start_timer
+
 @export var number : int
+
 
 var color: int = 1
 var power: int = 1
@@ -14,12 +17,21 @@ var detection_range: int = 200
 var shot_speed: int = 400
 var closestDistance: int
 var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
-var lifespan_bullet:int = 0.8
+var lifespan_bullet : int = 0.8
+
+var ready_to_start_firing : bool = false
+
+
 
 func change_color(new_color):
 	tower_sprite.frame = new_color
 	color = new_color
 
+
+#Avoid the 1.5 s firing cycles to be synchronized
+func _on_tower_start_timer_timeout() -> void:
+	tower_timer.start()
+	
 func _on_tower_timer_timeout() -> void:
 	if visible :
 		fire()
