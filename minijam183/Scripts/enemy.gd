@@ -21,14 +21,16 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullet") :
 		if body.color == color:
 			pv -= body.power * 2
+			blink_component.blink()
+			shake_component.tween_shake()
+			color_change.color_tween()
 		else:
 			pv -= body.power
+			shake_component.tween_shake()
+			color_change.color_tween()
 		body.hit_something()
 		if body.has_color_change:
 			change_color(body.color)
-		blink_component.blink()
-		shake_component.tween_shake()
-		color_change.color_tween()
 	if pv <= 0:
 		get_parent().queue_free()
 	
