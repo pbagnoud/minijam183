@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk1h6dnsl2hej"]
+[gd_scene load_steps=11 format=3 uid="uid://dk1h6dnsl2hej"]
 
 [ext_resource type="Script" uid="uid://81f3glc5devx" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://cpj7eb0et8w1o" path="res://Assets/enemy_0.png" id="2_0830c"]
 [ext_resource type="Texture2D" uid="uid://wrked32hpbt1" path="res://Assets/enemy_1.png" id="3_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://btl5u1j303ght" path="res://Assets/enemy_2.png" id="4_1dp5w"]
 [ext_resource type="Texture2D" uid="uid://c52h7l1wk84vl" path="res://Assets/enemy_3.png" id="5_auwsv"]
+[ext_resource type="Script" uid="uid://0b38uskfw86e" path="res://Component/blink.gd" id="6_ghaa6"]
+[ext_resource type="Script" uid="uid://bfwdt8dlrqn1m" path="res://Component/shake.gd" id="7_1dp5w"]
+[ext_resource type="Script" uid="uid://dnaxqeu0w6871" path="res://Component/colorChange.gd" id="8_auwsv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afpow"]
 animations = [{
@@ -41,5 +44,25 @@ sprite_frames = SubResource("SpriteFrames_afpow")
 [node name="enemy_detect_collision" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_287tu")
+
+[node name="BlinkComponent" type="Node" parent="." node_paths=PackedStringArray("image")]
+script = ExtResource("6_ghaa6")
+image = NodePath("../EnemySprite2D")
+duration = 0.5
+metadata/_custom_type_script = "uid://0b38uskfw86e"
+
+[node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
+script = ExtResource("7_1dp5w")
+node = NodePath("../EnemySprite2D")
+max_shake_px = 8.0
+shake_decrease_duration = 0.4
+shake_increase_duration = 0.01
+metadata/_custom_type_script = "uid://bfwdt8dlrqn1m"
+
+[node name="ColorChange" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("8_auwsv")
+color = Color(0.180005, 0.180005, 0.180005, 1)
+target = NodePath("../EnemySprite2D")
+metadata/_custom_type_script = "uid://dnaxqeu0w6871"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

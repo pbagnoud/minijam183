@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 signal hit
+@onready var blink_component: BlinkComponent = $BlinkComponent
+@onready var shake_component: ShakeComponent = $ShakeComponent
+@onready var color_change: ColorChange = $ColorChange
 
 @onready var enemy_sprite_2d: AnimatedSprite2D = $EnemySprite2D
 
@@ -23,6 +26,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.hit_something()
 		if body.has_color_change:
 			change_color(body.color)
+		blink_component.blink()
+		shake_component.tween_shake()
+		color_change.color_tween()
 	if pv <= 0:
 		get_parent().queue_free()
 	
