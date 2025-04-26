@@ -15,7 +15,7 @@ extends Control
 @onready var selected_tower=0
 
 @onready var modif = [0,0,0,0,0]
-
+signal round_start
 
 func _ready():
 	visible=false
@@ -29,6 +29,10 @@ func reset():
 	button_upgrade_2.text=str(pool_names[pool_indices[1]])
 	
 	button_next_wave.disabled=true
+
+func new_round():
+	visible=false
+	round_start.emit()
 
 func _process(delta)-> void:
 	if selected_tower >0.5 and selected_upgrade >0.5:

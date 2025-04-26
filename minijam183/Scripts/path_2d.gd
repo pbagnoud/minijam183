@@ -23,7 +23,6 @@ func new_round(wave_id:int)->float:
 
 func _process(delta: float) -> void:
 	if wave.is_empty():
-		
 		return
 	timer += delta
 	
