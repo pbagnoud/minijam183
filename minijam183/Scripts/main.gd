@@ -8,6 +8,7 @@ var round_id=0
 
 @onready var upgrade_screen: Control = $UpgradeScreen
 
+
 func _process(delta):
 	if is_holding:
 		Engine.time_scale = 7.0
@@ -16,8 +17,13 @@ func _process(delta):
 	if has_to_check_empty_screen:
 		if get_tree().get_nodes_in_group("enemy").is_empty():
 			upgrade_screen.reset()
+			has_to_check_empty_screen = false
 
 
+func _ready():
+	print('start')
+	_on_upgrade_screen_finished()
+	
 func _on_upgrade_screen_finished():
 	round_timer.wait_time = path_2d.new_round(round_id)
 	round_id +=1

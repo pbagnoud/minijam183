@@ -7,8 +7,7 @@ var wave = []
 var rng = RandomNumberGenerator.new()
 var MAX_WAVE = 10
 
-func _ready() -> void:
-	new_round(0)
+
 
 func _generate_wave(wave_id:int)-> void:
 	var size_wave = 15 + wave_id * 5
@@ -26,12 +25,11 @@ func new_round(wave_id:int)->float:
 
 func _process(delta: float) -> void:
 	if wave.is_empty():
-		print('empty wave')
 		return
 	timer += delta
 	
 	if timer > spawntime:
 		var new_follower = follower.instantiate()
-		follower.color=wave.pop_front()
+		new_follower.color=wave.pop_front()
 		add_child(new_follower)
 		timer = 0
