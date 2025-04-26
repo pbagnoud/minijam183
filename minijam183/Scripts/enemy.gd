@@ -14,6 +14,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			pv -= body.power * 2
 		else:
 			pv -= body.power
+		body.hit_something()
 	if pv <= 0:
 		get_parent().queue_free()
 	

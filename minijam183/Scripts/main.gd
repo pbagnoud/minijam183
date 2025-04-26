@@ -7,6 +7,13 @@ var round_id=0
 
 @onready var upgrade_screen: Control = $UpgradeScreen
 
+@onready var tower_1: StaticBody2D = $Tower1
+@onready var tower_2: StaticBody2D = $Tower2
+@onready var tower_3: StaticBody2D = $Tower3
+@onready var tower_4: StaticBody2D = $Tower4
+
+
+
 
 func _process(delta):
 	if is_holding:
@@ -20,7 +27,18 @@ func _process(delta):
 
 
 func _ready():
+	tower_1.set_start_time(0.05)
+	tower_2.set_start_time(0.8)
+	tower_3.set_start_time(0.5)
+	tower_4.set_start_time(0.3)
+	
+	tower_1.start_start_timer()
+	tower_2.start_start_timer()
+	tower_3.start_start_timer()
+	tower_4.start_start_timer()
 	_on_upgrade_screen_finished()
+	
+	
 	
 func _on_upgrade_screen_finished():
 	print('new_round')

@@ -17,6 +17,7 @@ script = ExtResource("1_bo1nx")
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(152, 186)
+has_triple_shoot = true
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(141, 401)
