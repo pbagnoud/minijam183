@@ -5,14 +5,13 @@ func show_tuto_window(wave_id):
 	visible = true
 	match wave_id:
 		0:
-			text = "Your towers will fire on
-			enemies."
+			text = "Your turrets will fire on enemies. "
 		1:
-			text = "Towers deal more damage to same-color enemies ! Change tower color by clicking."
+			text = "Turrets deal more damage to same-color enemies ! Change tower color by clicking."
 		2: 
 			text = "Purple bats fly faster !"
 		3: 
-			text = "Orange invaders are sometimes shielded, making them invincible"
+			text = "Green viruses and orange invaders also have special powers. Good luck !"
 		4:
 			text = "Green viruses split on death."
 		

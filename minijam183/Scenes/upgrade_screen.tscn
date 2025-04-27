@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=11 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
@@ -7,6 +7,10 @@
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
+[ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="8_gmf5r"]
+[ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="9_kjkj4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fs7ot"]
 
 [node name="UpgradeScreen" type="Control"]
 z_index = 30
@@ -131,6 +135,36 @@ position = Vector2(656, 313)
 scale = Vector2(0.963717, 0.886207)
 texture = ExtResource("5_54md0")
 
+[node name="Tuto1" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 105.0
+offset_top = 36.0
+offset_right = 1048.0
+offset_bottom = 525.0
+theme = ExtResource("8_gmf5r")
+
+[node name="Button" type="Button" parent="Tuto1"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 284.0
+offset_right = 546.0
+offset_bottom = 402.0
+theme = ExtResource("5_2oxtv")
+theme_override_font_sizes/font_size = 30
+text = "Got it !"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tuto1"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 77.0
+offset_right = 818.0
+offset_bottom = 296.0
+theme_override_fonts/normal_font = ExtResource("9_kjkj4")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_fs7ot")
+text = "Each time you finish a wave, you will be offered upgrades. First select an upgrade, then a tower to which it will be applied."
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]
 [connection signal="pressed" from="Button_tower_2" to="." method="_on_button_tower_2_pressed"]
@@ -141,3 +175,4 @@ texture = ExtResource("5_54md0")
 [connection signal="pressed" from="Button_upgrade_1" to="." method="_on_button_upgrade_1_pressed"]
 [connection signal="pressed" from="Button_upgrade_2" to="." method="_on_button_upgrade_2_pressed"]
 [connection signal="pressed" from="Button_upgrade_3" to="." method="_on_button_upgrade_3_pressed"]
+[connection signal="pressed" from="Tuto1/Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,8 @@
-[gd_resource type="Theme" load_steps=11 format=4 uid="uid://d13rylh3aso12"]
+[gd_resource type="Theme" load_steps=11 format=4 uid="uid://dmb1q72vjc6tm"]
 
-[ext_resource type="FontFile" uid="uid://cisx8pyjpju6a" path="res://Assets/Fonts/orbitron-master/Orbitron Bold.ttf" id="1_b8iad"]
-[ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="2_s7had"]
-[ext_resource type="Texture2D" uid="uid://cki4o1vbvwf3e" path="res://Assets/OtherBackgrounds/BackgroudBox-V3.png" id="3_b8iad"]
+[ext_resource type="FontFile" uid="uid://cisx8pyjpju6a" path="res://Assets/Fonts/orbitron-master/Orbitron Bold.ttf" id="1_etmqw"]
+[ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="2_mplr2"]
+[ext_resource type="Texture2D" uid="uid://duf1t0mdcwk5l" path="res://Assets/OtherBackgrounds/BackgroudBox-V3 - BIG.png" id="3_etmqw"]
 
 [sub_resource type="Image" id="Image_1ac14"]
 data = {
@@ -1012,9 +1012,7 @@ content_margin_left = 25.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-texture = ExtResource("3_b8iad")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+texture = ExtResource("3_etmqw")
 
 [resource]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
@@ -1039,10 +1037,10 @@ RichTextLabel/font_sizes/bold_italics_font_size = 16
 RichTextLabel/font_sizes/italics_font_size = 16
 RichTextLabel/font_sizes/mono_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 16
-RichTextLabel/fonts/bold_font = ExtResource("1_b8iad")
+RichTextLabel/fonts/bold_font = ExtResource("1_etmqw")
 RichTextLabel/fonts/bold_italics_font = SubResource("FontVariation_v5q7j")
 RichTextLabel/fonts/italics_font = SubResource("FontVariation_4s3vi")
 RichTextLabel/fonts/mono_font = SubResource("FontFile_nuig0")
-RichTextLabel/fonts/normal_font = ExtResource("2_s7had")
+RichTextLabel/fonts/normal_font = ExtResource("2_mplr2")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_atpi1")
 RichTextLabel/styles/normal = SubResource("StyleBoxTexture_jvl2q")
