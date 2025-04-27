@@ -61,14 +61,23 @@ func pick_upgrades(round_id):
 	var choices3: Array
 	upgrade_1_index = randi_range(0,2)
 	if round_id < 6:
-		upgrade_2_index = randi_range(0,2)
+		var range2 = [0,1,2]
+		range2.erase(upgrade_1_index)
+		range2.shuffle()
+		upgrade_2_index = range2.pop_front()
 		upgrade_3_index = randi_range(3,6)
 	elif round_id < 8:
 		upgrade_2_index = randi_range(3,6)
-		upgrade_3_index = randi_range(3,10)
+		var range3 = range(3,8)
+		range3.erase(upgrade_2_index)
+		range3.shuffle()
+		upgrade_3_index = range3.pop_front()
 	else :
 		upgrade_2_index = randi_range(3,10)
-		upgrade_3_index = randi_range(7,11)
+		var range3 = [7,8,9,10,11]
+		range3.erase(upgrade_2_index)
+		range3.shuffle()
+		upgrade_3_index = range3.pop_front()
 		
 	
 	return [upgrade_1_index, upgrade_2_index, upgrade_3_index]
