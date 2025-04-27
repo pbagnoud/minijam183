@@ -76,8 +76,9 @@ offset_top = 131.0
 offset_right = 900.0
 offset_bottom = 514.0
 theme = ExtResource("8_ynf5e")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 31
 text = "Your turrets will fire on enemies. "
+theme_override_font_sizes/normal_font_size = 31
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
