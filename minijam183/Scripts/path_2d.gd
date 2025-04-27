@@ -30,7 +30,7 @@ func _generate_wave(wave_id:int)-> void:
 	return 
 
 func _speed_up_wave(wave_id:int)->void:
-	spawntime=1-wave_id/MAX_WAVE
+	spawntime=1-pow(.8*wave_id/MAX_WAVE,2)
 
 func _update_life_ennemies(wave_id:int):
 	current_pv = pv_min + int(0.4*wave_id)
