@@ -217,7 +217,7 @@ z_index = 20
 position = Vector2(2.36748, -3.15643)
 scale = Vector2(0.458179, 0.466374)
 sprite_frames = SubResource("SpriteFrames_ueiky")
-animation = &"blue"
+animation = &"red"
 autoplay = "neutral"
 
 [node name="tower_sprite" type="AnimatedSprite2D" parent="Sprites"]
