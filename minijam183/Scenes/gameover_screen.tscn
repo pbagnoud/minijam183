@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs02vi6vonulu"]
 
 [ext_resource type="Script" uid="uid://d3iadwece0ebv" path="res://Scripts/gameover_screen.gd" id="1_tej7u"]
-[ext_resource type="Theme" uid="uid://dx8n4eocr4n2e" path="res://Assets/Themes/nice_buttons_long.tres" id="2_nr11q"]
+[ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="2_nr11q"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_wx2yo"]
-[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="4_xto8p"]
+[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="4_xto8p"]
 
 [node name="gameover_screen" type="Node2D"]
 script = ExtResource("1_tej7u")

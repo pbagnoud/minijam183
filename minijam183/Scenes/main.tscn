@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=12 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://dh7tms48262s1" path="res://Scenes/tutorial_popup.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dr25v2iv5v3ga" path="res://Scenes/tutorial_popup.tscn" id="7_6bp64"]
 [ext_resource type="AudioStream" uid="uid://civdc7h7lkf5s" path="res://Assets/music_background.wav" id="8_344ge"]
+[ext_resource type="Theme" uid="uid://dmb1q72vjc6tm" path="res://Assets/Themes/popup_windows_big.tres" id="8_ynf5e"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
@@ -71,6 +72,7 @@ number = 5
 
 [node name="TutorialPopup" parent="." instance=ExtResource("7_6bp64")]
 visible = false
+theme = ExtResource("8_ynf5e")
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3

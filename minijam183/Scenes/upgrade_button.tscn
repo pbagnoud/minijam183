@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxayp3yxjjy1j"]
 
 [ext_resource type="ButtonGroup" uid="uid://dfoomrblf4nnw" path="res://Scenes/button_group_upgrades.tres" id="1_yieou"]
-[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="1_ymg7c"]
+[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="1_ymg7c"]
 [ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_ymg7c"]
 [ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="4_hk0eq"]
 
