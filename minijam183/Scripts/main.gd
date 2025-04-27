@@ -55,6 +55,10 @@ func _process(_delta):
 			if round_id < 3:
 				start_new_round()
 				has_to_check_empty_screen = false
+			elif round_id == 10:
+				has_to_check_empty_screen = false
+				get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
+				# Show victory screen
 			else :
 				upgrade_screen.reset(round_id)
 				has_to_check_empty_screen = false

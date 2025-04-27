@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://g0uqxenglahl"]
+
+[ext_resource type="Script" uid="uid://duv566gh2msnj" path="res://Scripts/end_screen.gd" id="1_gdxnu"]
+[ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_8yanq"]
+[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="3_fi2y0"]
+[ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="4_em7vc"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdxnu")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(638, 344)
+scale = Vector2(0.963717, 0.886207)
+texture = ExtResource("2_8yanq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 336.0
+offset_top = 160.0
+offset_right = 822.0
+offset_bottom = 234.0
+theme = ExtResource("3_fi2y0")
+theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
+theme_override_font_sizes/font_size = 73
+text = "Well Played !"
+
+[node name="ButtonQuit" type="Button" parent="."]
+offset_left = 614.0
+offset_top = 324.0
+offset_right = 942.0
+offset_bottom = 477.0
+theme = ExtResource("4_em7vc")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="ButtonRestart" type="Button" parent="."]
+offset_left = 228.0
+offset_top = 323.0
+offset_right = 556.0
+offset_bottom = 476.0
+theme = ExtResource("4_em7vc")
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]
