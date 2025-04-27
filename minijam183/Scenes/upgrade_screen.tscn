@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=12 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
@@ -7,6 +7,7 @@
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
+[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="6_kjkj4"]
 [ext_resource type="Theme" uid="uid://dmb1q72vjc6tm" path="res://Assets/Themes/popup_windows_big.tres" id="9_fs7ot"]
 [ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="9_kjkj4"]
 
@@ -96,12 +97,13 @@ text = "Start next wave"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 57.0
-offset_right = 925.0
-offset_bottom = 115.0
-rotation = -0.0174533
-theme_override_font_sizes/normal_font_size = 30
+offset_left = 300.0
+offset_top = 63.0
+offset_right = 929.0
+offset_bottom = 121.0
+rotation = 0.000286761
+theme = ExtResource("6_kjkj4")
+theme_override_font_sizes/normal_font_size = 26
 text = "Choose an update and a tower to apply it :"
 horizontal_alignment = 1
 
