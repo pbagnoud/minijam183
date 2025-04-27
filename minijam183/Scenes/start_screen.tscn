@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddqsy7wjxblkj"]
 
-[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://bokao7e6kltbp" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="2_60ddj"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_ainjc"]
-[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
+[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
 
 [node name="StartScreen" type="Control"]
 z_index = 30
@@ -17,20 +17,32 @@ script = ExtResource("1_i8r30")
 
 [node name="ButtonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 312.0
-offset_right = 544.0
-offset_bottom = 464.0
+offset_left = 196.0
+offset_top = 273.0
+offset_right = 524.0
+offset_bottom = 425.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
+[node name="ButtonSkipTutorial" type="Button" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 605.0
+offset_top = 273.0
+offset_right = 933.0
+offset_bottom = 425.0
+theme = ExtResource("2_60ddj")
+theme_override_font_sizes/font_size = 30
+text = "Skip Tutorial"
+
 [node name="ButtonQuit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 616.0
-offset_top = 312.0
-offset_right = 944.0
-offset_bottom = 465.0
+offset_left = 400.0
+offset_top = 411.0
+offset_right = 728.0
+offset_bottom = 564.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
@@ -53,4 +65,5 @@ theme_override_font_sizes/font_size = 73
 text = "TITRETITRE"
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="ButtonSkipTutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

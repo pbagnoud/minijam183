@@ -7,8 +7,8 @@
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
-[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="6_kjkj4"]
-[ext_resource type="Theme" uid="uid://dmb1q72vjc6tm" path="res://Assets/Themes/popup_windows_big.tres" id="9_fs7ot"]
+[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="6_kjkj4"]
+[ext_resource type="Theme" uid="uid://bpd47jtl2oji" path="res://Assets/Themes/popup_windows_big.tres" id="9_fs7ot"]
 [ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="9_kjkj4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fs7ot"]

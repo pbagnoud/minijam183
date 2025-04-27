@@ -6,6 +6,7 @@ var has_to_check_empty_screen = false
 @onready var path_2d: Path2D = $Path2D
 
 @onready var upgrade_screen: Control = $UpgradeScreen
+@onready var start_screen: Control = $StartScreen
 
 @onready var tower_1: StaticBody2D = $Tower1
 @onready var tower_2: StaticBody2D = $Tower2
@@ -33,8 +34,11 @@ func _ready():
 	tower_3.start_start_timer()
 	tower_4.start_start_timer()
 	
-	_on_upgrade_screen_finished()
+	start_new_round()
+
 	
+	
+
 
 
 func _process(_delta):
@@ -111,3 +115,9 @@ func _on_upgrade_screen_add_tower_5() -> void:
 
 func _on_path_2d_show_tutorial(wave_id: int) -> void:
 	tutorial_popup.show_tuto_window(wave_id)
+
+
+func _on_tutorial_popup_skip_tutorial() -> void:
+	get_tree().paused = false
+	round_id = 3
+	start_new_round()

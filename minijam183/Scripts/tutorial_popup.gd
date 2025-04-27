@@ -1,8 +1,13 @@
 extends RichTextLabel
+@onready var button_2: Button = $Button2
+
+signal skip_tutorial
 
 func show_tuto_window(wave_id):
 	get_tree().paused = true
 	visible = true
+	if wave_id > 2:
+		button_2.visible = false
 	match wave_id:
 		0:
 			text = "Your turrets will fire on enemies. "
@@ -11,7 +16,7 @@ func show_tuto_window(wave_id):
 		2: 
 			text = "Purple bats fly faster !"
 		3: 
-			text = "Green viruses and orange invaders also have special powers. Good luck !"
+			text = "Green viruses and orange \ninvaders also have special \npowers. \n\nGood luck !"
 		4:
 			text = "Green viruses split on death."
 		
@@ -20,3 +25,8 @@ func show_tuto_window(wave_id):
 func _on_button_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+
+
+func _on_button_2_pressed() -> void:
+	visible = false
+	skip_tutorial.emit()

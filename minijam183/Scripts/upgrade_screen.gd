@@ -10,6 +10,14 @@ extends Control
 @onready var button_upgrade_3: Button = $Button_upgrade_3
 @onready var tuto_1: RichTextLabel = $Tuto1
 
+@onready var button_tower_1: Button = $Button_tower_1
+@onready var button_tower_2: Button = $Button_tower_2
+@onready var button_tower_3: Button = $Button_tower_3
+@onready var button_tower_4: Button = $Button_tower_4
+
+
+
+
 
 var upgrade_1_Id: String
 var upgrade_2_Id: String
@@ -61,14 +69,23 @@ func pick_upgrades(round_id):
 	var choices3: Array
 	upgrade_1_index = randi_range(0,2)
 	if round_id < 6:
-		upgrade_2_index = randi_range(0,2)
+		var range2 = [0,1,2]
+		range2.erase(upgrade_1_index)
+		range2.shuffle()
+		upgrade_2_index = range2.pop_front()
 		upgrade_3_index = randi_range(3,6)
 	elif round_id < 8:
 		upgrade_2_index = randi_range(3,6)
-		upgrade_3_index = randi_range(3,10)
+		var range3 = range(3,8)
+		range3.erase(upgrade_2_index)
+		range3.shuffle()
+		upgrade_3_index = range3.pop_front()
 	else :
 		upgrade_2_index = randi_range(3,10)
-		upgrade_3_index = randi_range(7,11)
+		var range3 = [7,8,9,10,11]
+		range3.erase(upgrade_2_index)
+		range3.shuffle()
+		upgrade_3_index = range3.pop_front()
 		
 	
 	return [upgrade_1_index, upgrade_2_index, upgrade_3_index]
@@ -109,6 +126,13 @@ func _on_button_next_wave_pressed() -> void:
 		add_upgrade_signal.emit(selected_upgrade, selected_tower)
 	print("Added upgrade ", selected_upgrade, " to tower ", selected_tower)
 	visible=false
+	button_upgrade_1.set_pressed(false)
+	button_upgrade_2.set_pressed(false)
+	button_upgrade_3.set_pressed(false)
+	button_tower_1.set_pressed(false)
+	button_tower_2.set_pressed(false)
+	button_tower_3.set_pressed(false)
+	button_next_wave.set_pressed(false)
 	round_start.emit()
 	
 func _on_button_tower_1_pressed() -> void:

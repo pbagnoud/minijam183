@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr25v2iv5v3ga"]
+[gd_scene load_steps=4 format=3 uid="uid://dh7tms48262s1"]
 
 [ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="1_er2x6"]
 [ext_resource type="Script" uid="uid://c74o60k0owr8y" path="res://Scripts/tutorial_popup.gd" id="2_uv2lm"]
@@ -21,11 +21,22 @@ script = ExtResource("2_uv2lm")
 process_mode = 2
 z_index = 2
 layout_mode = 0
-offset_left = 275.0
-offset_top = 265.0
-offset_right = 411.0
-offset_bottom = 330.0
+offset_left = 141.0
+offset_top = 255.0
+offset_right = 277.0
+offset_bottom = 320.0
 theme = ExtResource("3_xyudg")
 text = "Understood !"
 
+[node name="Button2" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 331.0
+offset_top = 255.0
+offset_right = 505.0
+offset_bottom = 316.0
+theme = ExtResource("3_xyudg")
+text = "Skip tutorials"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
