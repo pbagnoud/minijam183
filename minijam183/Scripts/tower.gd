@@ -14,7 +14,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_timer: Timer = $tower_timer
 @onready var tower_start_timer: Timer = $tower_start_timer
 @onready var size_change: SizeChange = $SizeChange
-@onready var label = $Label
+@onready var label: RichTextLabel = $Label
 
 @export var number : int
 
@@ -48,6 +48,7 @@ var triple_shot_angle = .75
 func _ready():
 	color_sprite.play("blue")
 	cooldown = 1.5
+	label.visible = false
 
 	
 func change_color(new_color):
@@ -232,6 +233,7 @@ func tower_is_sniper() -> bool:
 		cooldown += 1
 		shot_speed *= 10
 		detection_range *= 2
+		power += 4
 		is_sniper = true
 		return true
 
@@ -262,7 +264,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func _on_mouse_entered() -> void:
 	#color_sprite.modulate = '#edac9b'
 	size_change.size_tween()
-
+	label.visible = true
 	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
 	if has_triple_shoot:
 		label.text += "\n triple shots"
@@ -271,6 +273,6 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	label.text = ""
+	label.visible = false
 	size_change.color_reset()
 	#color_sprite.modulate = '#ffffff'

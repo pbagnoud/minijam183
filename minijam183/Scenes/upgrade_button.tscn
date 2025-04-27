@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxayp3yxjjy1j"]
+[gd_scene load_steps=5 format=3 uid="uid://dxayp3yxjjy1j"]
 
 [ext_resource type="ButtonGroup" uid="uid://dfoomrblf4nnw" path="res://Scenes/button_group_upgrades.tres" id="1_yieou"]
 [ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="1_ymg7c"]
 [ext_resource type="Script" uid="uid://bb4waphwuvftp" path="res://Scripts/button_upgrade_1.gd" id="2_ymg7c"]
+[ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="4_hk0eq"]
 
 [node name="Button_upgrade_1" type="Button"]
 offset_left = 246.0
@@ -22,7 +23,8 @@ offset_left = 204.0
 offset_top = 2.0
 offset_right = 375.0
 offset_bottom = 157.0
-text = "Test test test"
+theme = ExtResource("4_hk0eq")
+text = "Voici un exemple de contenu de la boîte"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,12 +1,12 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://bbu754qq5ulmu"]
 
-[ext_resource type="Texture2D" uid="uid://bojalvmdmbt8n" path="res://Assets/Themes/button_long_unpressed.png" id="1_7dnxb"]
 [ext_resource type="FontFile" uid="uid://bo8b38mv16arh" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.otf" id="1_r8ti0"]
-[ext_resource type="Texture2D" uid="uid://7n0wl0pdvik6" path="res://Assets/Themes/button_long_pressed.png" id="1_xh6o2"]
+[ext_resource type="Texture2D" uid="uid://jhcephns34b6" path="res://Assets/Themes/button_click-0.png" id="3_iesmd"]
+[ext_resource type="Texture2D" uid="uid://c5udmmgph2v6" path="res://Assets/Themes/button_click-1.png" id="4_gqxai"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8ti0"]
-texture = ExtResource("1_xh6o2")
-region_rect = Rect2(1, 17, 53, 21)
+texture = ExtResource("3_iesmd")
+region_rect = Rect2(1, 1, 100, 100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqxai"]
 content_margin_left = 4.0
@@ -30,16 +30,16 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqxai"]
-texture = ExtResource("1_7dnxb")
-region_rect = Rect2(1, 18, 52, 20)
+texture = ExtResource("4_gqxai")
+region_rect = Rect2(1, 1, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iygcq"]
-texture = ExtResource("1_xh6o2")
-region_rect = Rect2(1, 17, 53, 21)
+texture = ExtResource("4_gqxai")
+region_rect = Rect2(1, 1, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iesmd"]
-texture = ExtResource("1_7dnxb")
-region_rect = Rect2(1, 18, 52, 20)
+texture = ExtResource("3_iesmd")
+region_rect = Rect2(1, 1, 100, 100)
 
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)

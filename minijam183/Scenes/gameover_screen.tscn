@@ -1,31 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs02vi6vonulu"]
+[gd_scene load_steps=3 format=3 uid="uid://bs02vi6vonulu"]
 
 [ext_resource type="Script" uid="uid://d3iadwece0ebv" path="res://Scripts/gameover_screen.gd" id="1_tej7u"]
+[ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_wx2yo"]
 
 [node name="gameover_screen" type="Node2D"]
 script = ExtResource("1_tej7u")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 472.0
-offset_top = 81.0
-offset_right = 816.0
-offset_bottom = 159.0
-theme_type_variation = &"HeaderLarge"
-text = "Game Over"
-
 [node name="ButtonStart" type="Button" parent="."]
-offset_left = 419.0
-offset_top = 251.0
-offset_right = 749.0
-offset_bottom = 359.0
+offset_left = 699.0
+offset_top = 288.0
+offset_right = 970.0
+offset_bottom = 393.0
 text = "Return to menu"
 
 [node name="ButtonQuit" type="Button" parent="."]
-offset_left = 412.0
+offset_left = 689.0
 offset_top = 410.0
-offset_right = 747.0
+offset_right = 967.0
 offset_bottom = 526.0
 text = "Quit"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(638, 344)
+scale = Vector2(0.963717, 0.886207)
+texture = ExtResource("2_wx2yo")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 223.0
+offset_top = 146.0
+offset_right = 694.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
+theme_override_font_sizes/font_size = 73
+text = "GAME OVER"
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

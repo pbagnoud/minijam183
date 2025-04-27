@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddqsy7wjxblkj"]
+[gd_scene load_steps=3 format=3 uid="uid://ddqsy7wjxblkj"]
 
-[ext_resource type="Script" uid="uid://bokao7e6kltbp" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_ainjc"]
 
 [node name="StartScreen" type="Control"]
 z_index = 30
@@ -14,19 +15,35 @@ script = ExtResource("1_i8r30")
 
 [node name="ButtonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 389.0
-offset_top = 138.0
-offset_right = 719.0
-offset_bottom = 246.0
+offset_left = 769.0
+offset_top = 250.0
+offset_right = 976.0
+offset_bottom = 366.0
 text = "Start"
 
 [node name="ButtonQuit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 388.0
-offset_top = 302.0
-offset_right = 723.0
-offset_bottom = 418.0
+offset_left = 753.0
+offset_top = 385.0
+offset_right = 989.0
+offset_bottom = 489.0
 text = "Quit"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(638, 344)
+scale = Vector2(0.963717, 0.886207)
+texture = ExtResource("2_ainjc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 146.0
+offset_right = 694.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
+theme_override_font_sizes/font_size = 73
+text = "TITRETITRE"
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
