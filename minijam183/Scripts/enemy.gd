@@ -34,8 +34,9 @@ var pv: int = 4:
 		
 var color: int = 1:
 	set(value):
-		color=value
-		change_color(value)
+		if color<4:
+			color=value
+			change_color(value)
 		
 var is_split: bool
 

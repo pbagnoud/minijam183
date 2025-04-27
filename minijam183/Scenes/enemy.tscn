@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dk1h6dnsl2hej"]
+[gd_scene load_steps=24 format=3 uid="uid://dk1h6dnsl2hej"]
 
 [ext_resource type="Script" uid="uid://81f3glc5devx" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://cpj7eb0et8w1o" path="res://Assets/enemy_0.png" id="2_0830c"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://wrked32hpbt1" path="res://Assets/enemy_1.png" id="3_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://bcn6rd3o7a41k" path="res://Assets/enemies_anim/enemy0-anim - B.png" id="3_tk7xo"]
 [ext_resource type="Texture2D" uid="uid://btl5u1j303ght" path="res://Assets/enemy_2.png" id="4_1dp5w"]
-[ext_resource type="Texture2D" uid="uid://8bnwg1kfduvk" path="res://Assets/enemies_anim/boss.png" id="4_5xdhn"]
+[ext_resource type="Texture2D" uid="uid://yg5y75jkj7gr" path="res://Assets/enemies_anim/Boss-anim1.png" id="4_4jyny"]
 [ext_resource type="Texture2D" uid="uid://c52h7l1wk84vl" path="res://Assets/enemy_3.png" id="5_auwsv"]
+[ext_resource type="Texture2D" uid="uid://bfpxwoyycgkpd" path="res://Assets/enemies_anim/Boss-anim2.png" id="5_vh8xy"]
 [ext_resource type="Script" uid="uid://0b38uskfw86e" path="res://Component/blink.gd" id="6_ghaa6"]
 [ext_resource type="Script" uid="uid://bfwdt8dlrqn1m" path="res://Component/shake.gd" id="7_1dp5w"]
 [ext_resource type="Script" uid="uid://dnaxqeu0w6871" path="res://Component/colorChange.gd" id="8_auwsv"]
@@ -36,11 +37,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_5xdhn")
+"texture": ExtResource("4_4jyny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vh8xy")
 }],
 "loop": true,
 "name": &"boss_enemy",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,6 +108,7 @@ script = ExtResource("1_hghv2")
 sprite_frames = SubResource("SpriteFrames_afpow")
 animation = &"boss_enemy"
 autoplay = "blue_enemy"
+frame_progress = 0.895823
 
 [node name="Area2D" type="Area2D" parent="."]
 
