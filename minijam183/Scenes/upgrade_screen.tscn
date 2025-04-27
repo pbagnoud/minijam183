@@ -7,7 +7,7 @@
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
-[ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="8_gmf5r"]
+[ext_resource type="Theme" uid="uid://dmb1q72vjc6tm" path="res://Assets/Themes/popup_windows_big.tres" id="9_fs7ot"]
 [ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="9_kjkj4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fs7ot"]
@@ -142,28 +142,35 @@ offset_left = 105.0
 offset_top = 36.0
 offset_right = 1048.0
 offset_bottom = 525.0
-theme = ExtResource("8_gmf5r")
+theme = ExtResource("9_fs7ot")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Tuto1"]
 layout_mode = 0
-offset_left = 345.0
-offset_top = 284.0
-offset_right = 546.0
-offset_bottom = 402.0
+offset_left = 384.0
+offset_top = 310.0
+offset_right = 585.0
+offset_bottom = 428.0
 theme = ExtResource("5_2oxtv")
 theme_override_font_sizes/font_size = 30
 text = "Got it !"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tuto1"]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 77.0
+offset_left = 142.0
+offset_top = 98.0
 offset_right = 818.0
 offset_bottom = 296.0
+theme = ExtResource("9_fs7ot")
 theme_override_fonts/normal_font = ExtResource("9_kjkj4")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_fs7ot")
-text = "Each time you finish a wave, you will be offered upgrades. First select an upgrade, then a tower to which it will be applied."
+text = "Each time you finish a wave, you will be offered upgrades. 
+
+First select an upgrade, then a turret to which it will be applied."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]

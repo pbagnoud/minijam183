@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh7tms48262s1"]
+[gd_scene load_steps=4 format=3 uid="uid://dr25v2iv5v3ga"]
 
 [ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="1_er2x6"]
 [ext_resource type="Script" uid="uid://c74o60k0owr8y" path="res://Scripts/tutorial_popup.gd" id="2_uv2lm"]
