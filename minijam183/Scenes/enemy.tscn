@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bcn6rd3o7a41k" path="res://Assets/enemies_anim/enemy0-anim - B.png" id="3_tk7xo"]
 [ext_resource type="Texture2D" uid="uid://btl5u1j303ght" path="res://Assets/enemy_2.png" id="4_1dp5w"]
 [ext_resource type="Texture2D" uid="uid://c52h7l1wk84vl" path="res://Assets/enemy_3.png" id="5_auwsv"]
-[ext_resource type="Script" uid="uid://0b38uskfw86e" path="res://Component/blink.gd" id="6_ghaa6"]
-[ext_resource type="Script" uid="uid://bfwdt8dlrqn1m" path="res://Component/shake.gd" id="7_1dp5w"]
-[ext_resource type="Script" uid="uid://dnaxqeu0w6871" path="res://Component/colorChange.gd" id="8_auwsv"]
 [ext_resource type="Texture2D" uid="uid://1upyxwe4df1y" path="res://Assets/enemies_anim/enemy3-anim-A.png" id="8_scl1n"]
 [ext_resource type="Texture2D" uid="uid://dafowflkb47lc" path="res://Assets/enemies_anim/enemy3-anim-B.png" id="9_dhkrs"]
 [ext_resource type="Texture2D" uid="uid://binwrn6e23j46" path="res://Assets/enemies_anim/enemy2-anim -A.png" id="10_5xdhn"]
@@ -86,6 +83,83 @@ animations = [{
 radius = 31.0
 height = 62.0
 
+[sub_resource type="GDScript" id="GDScript_m4x7e"]
+script/source = "extends Node
+class_name BlinkComponent
+
+@export var image: AnimatedSprite2D
+@export var duration:= 1.5
+@export var amount: = 3
+signal reappear
+
+func blink():
+	var timer_duration = duration/amount/2
+	print(timer_duration)
+	for i in range(amount):
+		image.visible = false
+		await get_tree().create_timer(timer_duration).timeout
+		image.visible = true
+		reappear.emit
+		await get_tree().create_timer(timer_duration).timeout
+"
+
+[sub_resource type="GDScript" id="GDScript_vt4ob"]
+script/source = "#
+# Give the component a class name so it can be instanced as a custom node
+class_name ShakeComponent
+extends Node
+
+# Export the node that this component will be shaking
+@export var node: Node2D
+@export var max_shake_px: = 10.0
+@export var shake_decrease_duration: = 0.6
+@export var shake_increase_duration: = 0.6
+@export var shake_x_axis: = true
+@export var shake_y_axis: = true
+var shake = 0
+
+# This is the function that activates this component
+func tween_shake():
+	# Create a tween
+	var tween = create_tween()
+	
+	# Tween the shake value from current down to 0 over the shake duration
+	tween.tween_property(self, \"shake\",max_shake_px, shake_increase_duration)
+	print('end increase')
+	tween.tween_property(self, \"shake\", 0.0, shake_decrease_duration)
+	print('end decrease')
+func _physics_process(delta: float) -> void:
+	# Manipulate the position of the node by the shake amount every physics frame
+	# Use randf_range to pick a random x and y value using the shake value
+	node.position = Vector2(randf_range(-shake, shake)*int(shake_x_axis), randf_range(-shake, shake)*int(shake_y_axis))
+"
+
+[sub_resource type="GDScript" id="GDScript_hgeoe"]
+script/source = "extends Node
+class_name ColorChange
+signal twin_finished
+@export var duration:= .3
+@export var color:= Color(1,1,1,1)
+@export var target: AnimatedSprite2D
+# Called when the node enters the scene tree for the first time.
+func color_tween():
+	var tween = create_tween()
+	tween.finished.connect(_on_tween_finished)
+	tween.tween_property(target, \"modulate\",color, duration)
+	print('end')
+
+func _on_tween_finished():
+	print('on twin f')
+	emit_signal('twin_finished')
+	color_reset()
+	
+func color_reset():
+	print('in')
+	var tween = create_tween()
+	tween.tween_property(target, \"modulate\",Color(1,1,1,1), .1 )
+	
+"
+
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_hghv2")
 
@@ -102,13 +176,13 @@ position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_287tu")
 
 [node name="BlinkComponent" type="Node" parent="." node_paths=PackedStringArray("image")]
-script = ExtResource("6_ghaa6")
+script = SubResource("GDScript_m4x7e")
 image = NodePath("../EnemySprite2D")
 duration = 0.5
 metadata/_custom_type_script = "uid://0b38uskfw86e"
 
 [node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
-script = ExtResource("7_1dp5w")
+script = SubResource("GDScript_vt4ob")
 node = NodePath("../EnemySprite2D")
 max_shake_px = 8.0
 shake_decrease_duration = 0.4
@@ -116,7 +190,7 @@ shake_increase_duration = 0.01
 metadata/_custom_type_script = "uid://bfwdt8dlrqn1m"
 
 [node name="ColorChange" type="Node" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("8_auwsv")
+script = SubResource("GDScript_hgeoe")
 duration = 0.5
 color = Color(0.180005, 0.180005, 0.180005, 1)
 target = NodePath("../EnemySprite2D")

@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bbu754qq5ulmu" path="res://Assets/Themes/nice_buttons.tres" id="3_l5wmx"]
 [ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
-[ext_resource type="Theme" uid="uid://dx8n4eocr4n2e" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
+[ext_resource type="Theme" uid="uid://cfab8uxegu4im" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
 
 [node name="UpgradeScreen" type="Control"]

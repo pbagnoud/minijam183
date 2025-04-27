@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dx8n4eocr4n2e"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cfab8uxegu4im"]
 
 [ext_resource type="FontFile" uid="uid://bo8b38mv16arh" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.otf" id="1_v653w"]
 [ext_resource type="Texture2D" uid="uid://46745v40skd5" path="res://Assets/Themes/button_long_click-0.png" id="2_v653w"]
