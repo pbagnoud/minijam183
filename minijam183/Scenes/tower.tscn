@@ -92,7 +92,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"orange",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -126,9 +126,8 @@ z_index = 20
 position = Vector2(2.36748, -3.15643)
 scale = Vector2(0.458179, 0.466374)
 sprite_frames = SubResource("SpriteFrames_ueiky")
-animation = &"red"
+animation = &"blue"
 autoplay = "neutral"
-frame_progress = 0.964603
 
 [node name="feet_sprite" type="Sprite2D" parent="Sprites"]
 z_index = 2
