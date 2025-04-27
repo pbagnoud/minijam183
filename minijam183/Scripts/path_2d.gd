@@ -9,6 +9,7 @@ var MAX_WAVE = 10
 var check_empty = false
 var round_id: int
 signal empty_list
+signal show_tutorial(wave_id: int)
 
 var pv_min : int = 2
 var current_pv : int
@@ -19,7 +20,7 @@ func _generate_wave(wave_id:int)-> void:
 		# implement tutorial
 		pass
 	else : 
-		var size_wave = 15 + wave_id * 5
+		var size_wave = 5 + wave_id * 5
 		for _i in range(size_wave):
 			wave.append(rng.randi_range(0, 3))
 	return 
@@ -34,6 +35,7 @@ func new_round(wave_id:int)->float:
 	_generate_wave(wave_id)
 	_speed_up_wave(wave_id)
 	_update_life_ennemies(wave_id)
+	show_tutorial.emit(wave_id)
 	check_empty=true
 	return wave.size()*spawntime
 

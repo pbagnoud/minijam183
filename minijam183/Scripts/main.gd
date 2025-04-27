@@ -12,6 +12,7 @@ var has_to_check_empty_screen = false
 @onready var tower_3: StaticBody2D = $Tower3
 @onready var tower_4: StaticBody2D = $Tower4
 @onready var tower_5: StaticBody2D = $Tower5
+@onready var tutorial_popup: RichTextLabel = $TutorialPopup
 
 @export var round_id = 0
 
@@ -91,3 +92,7 @@ func _on_world_boundary_area_entered(area: Area2D) -> void:
 
 func _on_upgrade_screen_add_tower_5() -> void:
 	tower_5.visible = true
+
+
+func _on_path_2d_show_tutorial(wave_id: int) -> void:
+	tutorial_popup.show_tuto_window(wave_id)

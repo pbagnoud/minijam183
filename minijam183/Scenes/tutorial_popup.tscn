@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr25v2iv5v3ga"]
+
+[ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="1_er2x6"]
+[ext_resource type="Script" uid="uid://c74o60k0owr8y" path="res://Scripts/tutorial_popup.gd" id="2_uv2lm"]
+
+[node name="TutorialPopup" type="RichTextLabel"]
+offset_left = 176.0
+offset_top = 124.0
+offset_right = 862.0
+offset_bottom = 507.0
+theme = ExtResource("1_er2x6")
+theme_override_font_sizes/normal_font_size = 40
+text = "Your towers will  fire on
+enemies. "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_uv2lm")
+
+[node name="Button" type="Button" parent="."]
+process_mode = 2
+z_index = 2
+layout_mode = 0
+offset_left = 275.0
+offset_top = 265.0
+offset_right = 411.0
+offset_bottom = 330.0
+text = "Understood !"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
