@@ -22,6 +22,7 @@ size = Vector2(21, 685)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bo1nx")
+round_id = 9
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -52.0
