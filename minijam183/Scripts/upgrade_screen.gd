@@ -32,21 +32,14 @@ func _ready():
 func reset():
 	visible=true
 	pool_indices.shuffle()
-	#upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
-	# For Debugging, remove next line and uncomment above line to get intented gameplay 
+	
 	upgrade_1_Id = upgrades_list[pool_indices[0]]["Id"]
 	upgrade_2_Id = upgrades_list[pool_indices[1]]["Id"]
-	upgrade_2_Id = upgrades_list[pool_indices[2]]["Id"]
+	upgrade_3_Id = upgrades_list[pool_indices[2]]["Id"]
 	
 	button_upgrade_1.text=upgrades_list[pool_indices[0]]["Name"]
 	button_upgrade_2.text=upgrades_list[pool_indices[1]]["Name"]
 	button_upgrade_3.text=upgrades_list[pool_indices[2]]["Name"]
-	
-	print(upgrades_list)
-	
-	print(upgrades_list[pool_indices[0]]["Description"])
-	print(upgrades_list[pool_indices[1]]["Description"])
-	print(upgrades_list[pool_indices[2]]["Description"])
 	
 	button_upgrade_1.change_description(upgrades_list[pool_indices[0]]["Description"])
 	button_upgrade_2.change_description(upgrades_list[pool_indices[1]]["Description"])
@@ -77,6 +70,7 @@ func _on_button_next_wave_pressed() -> void:
 		add_tower_5.emit()
 	else :
 		add_upgrade_signal.emit(selected_upgrade, selected_tower)
+		print("Added upgrade ", selected_upgrade, " to tower ", selected_tower)
 		visible=false
 		round_start.emit()
 	

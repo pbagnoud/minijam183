@@ -25,7 +25,11 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 var detection_range: int = 200
 var shot_speed: int = 400
 var closestDistance: int
-var cooldown: float = 1.5 #tower_timer.wait_time=cooldown
+var cooldown:
+	set(value):
+		cooldown = value
+		tower_timer.wait_time = cooldown
+		print("le nouveau timer est : ", tower_timer.wait_time )
 var lifespan_bullet : int = 0.8
 var color_power = 0
 var bullet_durability = 0
@@ -43,6 +47,7 @@ var triple_shot_angle = .75
 
 func _ready():
 	color_sprite.play("blue")
+	cooldown = 1.5
 
 	
 func change_color(new_color):
@@ -215,8 +220,8 @@ func tower_is_sniper() -> bool:
 	if is_sniper or is_gatling:
 		return false
 	else:
-		cooldown += 0.5
-		shot_speed *= 2
+		cooldown += 1
+		shot_speed *= 10
 		detection_range *= 2
 		is_sniper = true
 		return true
@@ -226,6 +231,7 @@ func tower_is_gatling() -> bool:
 		return false
 	else:
 		cooldown -= 0.7
+		tower_timer.wait_time -= 0.7
 		is_gatling = true
 		return true
 		
