@@ -95,9 +95,12 @@ func fire():
 	# detect closest enemy
 	var closestEnemy = find_closest_enemy()
 	if closestEnemy != null :
+		var direction 
 		# create new bullet, with speed and rotation and characteristics (?)
-		
-		var direction = closestEnemy.next_position(75) - self.position
+		if is_sniper:
+			direction = closestEnemy.next_position(5) - self.position
+		else:
+			direction = closestEnemy.next_position(75) - self.position
 
 		print(direction)
 		create_bullet(direction)
