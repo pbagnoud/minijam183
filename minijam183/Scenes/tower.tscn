@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
 [ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
-[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
 [ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
 [ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
 [ext_resource type="Texture2D" uid="uid://cbh1sa3h4s4nc" path="res://Assets/Rotation/Rotation3.png" id="8_h264x"]
