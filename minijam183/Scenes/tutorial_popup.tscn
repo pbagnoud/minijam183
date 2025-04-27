@@ -21,20 +21,20 @@ script = ExtResource("2_uv2lm")
 process_mode = 2
 z_index = 2
 layout_mode = 0
-offset_left = 160.0
-offset_top = 273.0
-offset_right = 296.0
-offset_bottom = 338.0
+offset_left = 272.0
+offset_top = 268.0
+offset_right = 408.0
+offset_bottom = 333.0
 theme = ExtResource("3_xyudg")
 text = "Understood !"
 
 [node name="Button2" type="Button" parent="."]
 process_mode = 3
 layout_mode = 0
-offset_left = 350.0
-offset_top = 275.0
-offset_right = 524.0
-offset_bottom = 336.0
+offset_left = 456.0
+offset_top = 268.0
+offset_right = 630.0
+offset_bottom = 329.0
 theme = ExtResource("3_xyudg")
 text = "Skip tutorials"
 
