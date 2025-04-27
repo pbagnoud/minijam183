@@ -15,8 +15,17 @@ var has_to_check_empty_screen = false
 @onready var tower_5: StaticBody2D = $Tower5
 @onready var tutorial_popup: RichTextLabel = $TutorialPopup
 @onready var life: RichTextLabel = $life
+@onready var wave: RichTextLabel = $wave
 
-@export var round_id = 0
+@export var round_id = 0:
+	set(value):
+		round_id=value
+		if value <4:
+			wave.text = 'Tutorial'
+		else:
+			wave.text = 'wave '+ str(value-3)+'/7'
+		
+	
 
 		
 
