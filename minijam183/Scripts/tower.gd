@@ -44,6 +44,9 @@ var has_explosive_bullets = false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
 @export var has_color_change = false
+@export var has_reload : bool = true
+@export var is_specialized = false
+
 
 func _ready():
 	color_sprite.play("blue")
@@ -188,6 +191,7 @@ func increase_damage()->bool:
 
 func decrease_reload_time()->bool:
 	cooldown *=.8
+	has_reload = true
 	return true
 
 func increase_color_damage() -> bool:
@@ -270,11 +274,21 @@ func _on_mouse_entered() -> void:
 	#color_sprite.modulate = '#edac9b'
 	size_change.size_tween()
 	label.visible = true
-	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
+	label.text = "Power=" + str(power) + "\nReload=" + str(cooldown) + " sec"
 	if has_triple_shoot:
-		label.text += "\n triple shots"
+		label.text += "\nTriple shots"
 	if has_color_change:
-		label.text += "\n change color ennemies"
+		label.text += "\nPaintball"
+	if is_sniper:
+		label.text += "\nSniper"
+	if is_gatling:
+		label.text += "\nGatling gun"
+		
+		
+	#is_specialized to add
+	
+
+
 
 
 func _on_mouse_exited() -> void:
