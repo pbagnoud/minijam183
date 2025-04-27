@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
-[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
 [ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
 [ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
 [ext_resource type="Texture2D" uid="uid://cbh1sa3h4s4nc" path="res://Assets/Rotation/Rotation3.png" id="8_h264x"]
