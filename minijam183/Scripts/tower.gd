@@ -97,7 +97,7 @@ func fire():
 	if closestEnemy != null :
 		var direction 
 		# create new bullet, with speed and rotation and characteristics (?)
-		if is_sniper:
+		if is_sniper and closestEnemy.progress_ratio + 5 < 1:
 			direction = closestEnemy.next_position(5) - self.position
 		else:
 			direction = closestEnemy.next_position(55) - self.position
