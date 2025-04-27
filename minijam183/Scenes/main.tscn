@@ -84,7 +84,7 @@ text = "Your turrets will fire on enemies. "
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("8_344ge")
-volume_db = -15.326
+volume_db = -21.326
 autoplay = true
 
 [node name="EndLevel_sound" type="AudioStreamPlayer" parent="."]
