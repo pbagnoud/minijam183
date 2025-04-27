@@ -34,7 +34,7 @@ var has_to_check_empty_screen = false
 @onready var failures_count = 0:
 	set(value):
 		failures_count=value
-		#life.text = str(value)+'/'+str(losing_condition)
+		life.text = str(value)+'/'+str(losing_condition)
 
 
 var losing_condition = 3
