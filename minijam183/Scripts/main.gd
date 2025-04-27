@@ -73,14 +73,14 @@ func _process(_delta):
 			#await get_tree().create_timer(2).timeout
 			if round_id < 3:
 				start_new_round(skip_tuto)
-				wave_id_label.text = "Wave "+str(round_id)
+				#wave_id_label.text = "Wave "+str(round_id)
 				has_to_check_empty_screen = false
 			elif round_id == 10:
 				has_to_check_empty_screen = false
 				get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 				# Show victory screen
 			else :
-				wave_id_label.text = "Wave "+str(round_id)
+				#wave_id_label.text = "Wave "+str(round_id)
 				upgrade_screen.reset(round_id, skip_tuto)
 				has_to_check_empty_screen = false
 
