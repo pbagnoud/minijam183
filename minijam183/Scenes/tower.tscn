@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=28 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
@@ -19,6 +19,7 @@
 [ext_resource type="Theme" uid="uid://bpd47jtl2oji" path="res://Assets/Themes/popup_windows_big.tres" id="24_r7vkl"]
 [ext_resource type="Texture2D" uid="uid://cbuugoanyvx11" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret3.png" id="24_yya82"]
 [ext_resource type="Texture2D" uid="uid://bl5ro5omr2y0a" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret4.png" id="25_28laa"]
+[ext_resource type="AudioStream" uid="uid://bjxup5slmw3v8" path="res://Assets/Sound/click.wav" id="25_38v4t"]
 [ext_resource type="Texture2D" uid="uid://ccxk8ay6fgh4h" path="res://Assets/TurretsV2/RedTurret/RedTurret1.png" id="26_df6ox"]
 [ext_resource type="Texture2D" uid="uid://bsgqo240nhb86" path="res://Assets/TurretsV2/RedTurret/RedTurret2.png" id="27_3ft0g"]
 [ext_resource type="Texture2D" uid="uid://1nbhhf48csv7" path="res://Assets/TurretsV2/RedTurret/RedTurret3.png" id="28_4by6w"]
@@ -163,6 +164,10 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Test"
 fit_content = true
 autowrap_mode = 0
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_38v4t")
+volume_db = 16.138
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

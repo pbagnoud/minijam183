@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=13 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="6_kjkj4"]
 [ext_resource type="Theme" uid="uid://bpd47jtl2oji" path="res://Assets/Themes/popup_windows_big.tres" id="9_fs7ot"]
 [ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="9_kjkj4"]
+[ext_resource type="AudioStream" uid="uid://bjxup5slmw3v8" path="res://Assets/Sound/click.wav" id="11_fs7ot"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fs7ot"]
 
@@ -173,6 +174,10 @@ text = "Each time you finish a wave, you will be offered upgrades.
 First select an upgrade, then a turret to which it will be applied."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_fs7ot")
+volume_db = 16.138
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]

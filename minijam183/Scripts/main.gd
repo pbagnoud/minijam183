@@ -22,6 +22,8 @@ var has_to_check_empty_screen = false
 
 @export var round_id = 0:
 	set(value):
+		if not is_node_ready():
+			await ready
 		round_id=value
 		if value <4:
 			wave.text = 'Tutorial'
