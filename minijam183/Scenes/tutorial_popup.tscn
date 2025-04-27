@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh7tms48262s1"]
 
 [ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="1_er2x6"]
-[ext_resource type="Script" path="res://Scripts/tutorial_popup.gd" id="2_uv2lm"]
-[ext_resource type="Theme" uid="uid://dx8n4eocr4n2e" path="res://Assets/Themes/nice_buttons_long.tres" id="3_xyudg"]
+[ext_resource type="Script" uid="uid://c74o60k0owr8y" path="res://Scripts/tutorial_popup.gd" id="2_uv2lm"]
+[ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="3_xyudg"]
 
 [node name="TutorialPopup" type="RichTextLabel"]
 offset_left = 176.0
