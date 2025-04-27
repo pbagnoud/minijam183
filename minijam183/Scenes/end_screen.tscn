@@ -21,6 +21,7 @@ scale = Vector2(0.963717, 0.886207)
 texture = ExtResource("2_8yanq")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 336.0
 offset_top = 160.0
 offset_right = 822.0
@@ -31,6 +32,7 @@ theme_override_font_sizes/font_size = 73
 text = "Well Played !"
 
 [node name="ButtonQuit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 614.0
 offset_top = 324.0
 offset_right = 942.0
@@ -40,6 +42,7 @@ theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [node name="ButtonRestart" type="Button" parent="."]
+layout_mode = 0
 offset_left = 228.0
 offset_top = 323.0
 offset_right = 556.0
