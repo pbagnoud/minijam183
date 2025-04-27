@@ -7,15 +7,21 @@ var wave = []
 var rng = RandomNumberGenerator.new()
 var MAX_WAVE = 10
 var check_empty = false
+var round_id: int
 signal empty_list
 
 var pv_min : int = 2
 var current_pv : int
 
 func _generate_wave(wave_id:int)-> void:
-	var size_wave = 15 + wave_id * 5
-	for _i in range(size_wave):
-		wave.append(rng.randi_range(0, 3))
+	if wave_id == 0 :
+		wave = [0]
+		# implement tutorial
+		pass
+	else : 
+		var size_wave = 15 + wave_id * 5
+		for _i in range(size_wave):
+			wave.append(rng.randi_range(0, 3))
 	return 
 
 func _speed_up_wave(wave_id:int)->void:

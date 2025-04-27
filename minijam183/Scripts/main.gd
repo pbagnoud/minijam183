@@ -2,7 +2,7 @@ extends Node2D
 
 var is_holding = false
 var has_to_check_empty_screen = false
-@export var round_id=0
+
 @onready var path_2d: Path2D = $Path2D
 
 @onready var upgrade_screen: Control = $UpgradeScreen
@@ -11,6 +11,10 @@ var has_to_check_empty_screen = false
 @onready var tower_2: StaticBody2D = $Tower2
 @onready var tower_3: StaticBody2D = $Tower3
 @onready var tower_4: StaticBody2D = $Tower4
+
+@export var round_id = 0
+
+		
 
 @onready var failures_count = 0
 
@@ -28,6 +32,7 @@ func _ready():
 	tower_4.start_start_timer()
 	
 	_on_upgrade_screen_finished()
+	
 
 
 func _process(_delta):

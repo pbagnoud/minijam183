@@ -29,35 +29,15 @@ expand_mode = 1
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(279, 189)
-number = 0
-color = 0
-power = 1
-has_triple_shoot = false
-has_color_change = false
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(351, 376)
-number = 0
-color = 0
-power = 1
-has_triple_shoot = false
-has_color_change = false
 
 [node name="Tower4" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(733, 171)
-number = 0
-color = 0
-power = 1
-has_triple_shoot = false
-has_color_change = false
 
 [node name="Tower3" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(743, 383)
-number = 0
-color = 0
-power = 1
-has_triple_shoot = false
-has_color_change = false
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jjvhh")
@@ -87,10 +67,6 @@ shape = SubResource("RectangleShape2D_kry3j")
 visible = false
 position = Vector2(515, 195)
 number = 5
-color = 0
-power = 1
-has_triple_shoot = false
-has_color_change = false
 
 [connection signal="empty_list" from="Path2D" to="." method="_on_round_timeout"]
 [connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
