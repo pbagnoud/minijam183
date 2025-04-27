@@ -14,14 +14,18 @@ var has_to_check_empty_screen = false
 @onready var tower_4: StaticBody2D = $Tower4
 @onready var tower_5: StaticBody2D = $Tower5
 @onready var tutorial_popup: RichTextLabel = $TutorialPopup
+@onready var life: RichTextLabel = $life
 
 @export var round_id = 0
 
 		
 
-@onready var failures_count = 0
+@onready var failures_count = 0:
+	set(value):
+		failures_count=value
+		life.text = str(value)+'/'+str(losing_condition)
 
-var losing_condition = 1
+var losing_condition = 3
 
 func _ready():
 	tower_1.set_start_time(0.05)
