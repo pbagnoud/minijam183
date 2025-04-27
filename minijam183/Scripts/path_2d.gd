@@ -22,18 +22,23 @@ func _generate_wave(wave_id:int)-> void:
 	elif wave_id == 2:
 		wave = [0,1,1]
 	elif wave_id == 3:
-		wave = [0,1,0,1,2,2]
+		wave = [0,1,0,1,2,-1,3]
+	
 	else : 
-		var size_wave = 5 + wave_id * 2
-		for _i in range(size_wave):
-			wave.append(rng.randi_range(0, 3))
+		var size_wave = 3 + int(wave_id * 1.5)
+		for i in range(size_wave):
+			if rng.randi_range(0, 3)==0:
+				wave.append(-1)
+			var next_enemy=rng.randi_range(0, 5)%4
+			
+			wave.append(next_enemy)
 	return 
 
 func _speed_up_wave(wave_id:int)->void:
-	spawntime=1-pow(.8*wave_id/MAX_WAVE,2)
+	spawntime=1-pow(.8*wave_id/(3+MAX_WAVE),2)
 
 func _update_life_ennemies(wave_id:int):
-	current_pv = pv_min + int(0.4*wave_id)
+	current_pv = pv_min + int(0.3*wave_id)
 
 func new_round(wave_id:int)->float:
 	_generate_wave(wave_id)

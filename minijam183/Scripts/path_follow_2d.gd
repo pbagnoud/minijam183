@@ -1,7 +1,7 @@
 extends PathFollow2D
 signal new_virus(progress: float)
 
-@export var runspeed = 200
+@export var runspeed = 170
 @onready var character_body_2d: CharacterBody2D = $CharacterBody2D
 
 var speed = runspeed
