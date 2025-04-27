@@ -39,13 +39,18 @@ var has_explosive_bullets = false
 @export var enemy_slowdown = 0
 @export var is_sniper = false
 @export var is_gatling = false
+@export var has_piercing = false
+@export var is_specialized = false
+@export var is_freezing = false
+@export var is_pushback = false
+
 
 @export var has_triple_shoot = false
 var ready_to_start_firing : bool = false
 var triple_shot_angle = .75
 @export var has_color_change = false
 @export var has_reload : bool = true
-@export var is_specialized = false
+@export var is_on_fire = false
 
 
 func _ready():
@@ -195,10 +200,12 @@ func decrease_reload_time()->bool:
 	return true
 
 func increase_color_damage() -> bool:
+	is_specialized = true
 	color_power += 1
 	return true
 
 func increase_bullet_durability() -> bool:
+	has_piercing = true
 	bullet_durability += 1
 	return true
 
@@ -217,10 +224,12 @@ func explode_bullet() -> bool:
 		return true
 
 func increase_damage_over_time()->bool:
+	is_on_fire = true
 	dot_damage += 1
 	return true
 
 func push_back_enemy() -> bool:
+	is_pushback = true
 	enemy_pushback_dist += 1
 	return true
 
@@ -232,6 +241,7 @@ func enable_triple_shoot()->bool:
 		return true
 
 func slow_down_enemy() -> bool:
+	is_freezing = true
 	enemy_slowdown += 1
 	return true
 
@@ -283,9 +293,18 @@ func _on_mouse_entered() -> void:
 		label.text += "\nSniper"
 	if is_gatling:
 		label.text += "\nGatling gun"
+	if has_piercing:
+		label.text += "\nPiercing shots"
+	if is_specialized:
+		label.text += "\nSpecialized"
+	if is_on_fire:
+		label.text += "\nIncendiary"
+	if is_pushback:
+		label.text += "\nPushback"
+	if is_freezing:
+		label.text += "\nFreezing"
 		
 		
-	#is_specialized to add
 	
 
 
