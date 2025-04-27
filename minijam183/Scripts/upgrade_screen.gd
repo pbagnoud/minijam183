@@ -16,9 +16,6 @@ extends Control
 @onready var button_tower_4: Button = $Button_tower_4
 
 
-
-
-
 var upgrade_1_Id: String
 var upgrade_2_Id: String
 var upgrade_3_Id: String
