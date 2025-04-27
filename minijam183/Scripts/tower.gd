@@ -8,6 +8,8 @@ signal new_bullet(direction, speed, characteristics)
 @onready var tower_sprite: AnimatedSprite2D = $Sprites/tower_sprite
 @onready var orange_sprite: AnimatedSprite2D = $Sprites/orange_sprite
 @onready var red_sprite: AnimatedSprite2D = $Sprites/red_sprite
+@onready var green_sprite: AnimatedSprite2D = $Sprites/green_sprite
+@onready var blue_sprite: AnimatedSprite2D = $Sprites/blue_sprite
 
 
 
@@ -46,9 +48,11 @@ var triple_shot_angle = .75
 
 func _ready():
 	tower_sprite.play("tower_rotation")
-	color_sprite.play("default")
+	color_sprite.play("neutral")
 	orange_sprite.play("default")
 	red_sprite.play("default")
+	orange_sprite.play("default")
+	blue_sprite.play("default")
 	
 func change_color(new_color):
 	tower_sprite.frame = new_color

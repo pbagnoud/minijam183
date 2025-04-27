@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=39 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
@@ -18,6 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://dite8issvji0e" path="res://Assets/Pink/Red3.png" id="8_r7vkl"]
 [ext_resource type="Texture2D" uid="uid://bha6tglmcoskd" path="res://Assets/Pink/Red4.png" id="9_38v4t"]
 [ext_resource type="Texture2D" uid="uid://dw1ynn6410qt0" path="res://Assets/Rotation/Rotation4.png" id="9_ixbif"]
+[ext_resource type="Texture2D" uid="uid://dplxn8cnwlcb" path="res://Assets/Blue/Blue1.png" id="10_arclx"]
+[ext_resource type="Texture2D" uid="uid://q7dg6tdrmpy0" path="res://Assets/Dots/Color2 - blue.png" id="10_unk0s"]
+[ext_resource type="Texture2D" uid="uid://mmcvwxxggk4b" path="res://Assets/Blue/Blue2.png" id="11_5csd1"]
+[ext_resource type="Texture2D" uid="uid://i2cdaaub1ghw" path="res://Assets/Dots/Color5 - green.png" id="11_r7vkl"]
+[ext_resource type="Texture2D" uid="uid://bqoqn6gcnurhy" path="res://Assets/Dots/Color1 - neutral.png" id="12_38v4t"]
+[ext_resource type="Texture2D" uid="uid://b0naacd1w7bv2" path="res://Assets/Blue/Blue3.png" id="12_tpvf4"]
+[ext_resource type="Texture2D" uid="uid://cfvm5auyuqi8v" path="res://Assets/Blue/Blue4.png" id="13_co81g"]
+[ext_resource type="Texture2D" uid="uid://in6mj2yat1eg" path="res://Assets/Dots/Color4 - orange.png" id="13_stqcf"]
+[ext_resource type="Texture2D" uid="uid://bjjwb7ogpejka" path="res://Assets/Dots/Color3 - red.png" id="14_0kqso"]
+[ext_resource type="Texture2D" uid="uid://bdk4u44qqp5ei" path="res://Assets/Green/Green1.png" id="27_8xahj"]
+[ext_resource type="Texture2D" uid="uid://dxhdllkx6pqjs" path="res://Assets/Green/Green2.png" id="28_ilhwl"]
+[ext_resource type="Texture2D" uid="uid://m3buw3f7l65j" path="res://Assets/Green/Green3.png" id="29_3ggk1"]
+[ext_resource type="Texture2D" uid="uid://bcs1mupsm325v" path="res://Assets/Green/Green4.png" id="30_iyweu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_unk0s"]
 animations = [{
@@ -61,30 +74,45 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_unk0s")
+}],
 "loop": true,
 "name": &"blue",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_r7vkl")
+}],
 "loop": true,
 "name": &"green",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_38v4t")
+}],
 "loop": true,
 "name": &"neutral",
 "speed": 2.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_stqcf")
+}],
 "loop": true,
 "name": &"orange",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_0kqso")
+}],
 "loop": true,
 "name": &"red",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
@@ -129,6 +157,46 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cac4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_arclx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5csd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tpvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_co81g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfbee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_8xahj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ilhwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3ggk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_iyweu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou3m2"]
 size = Vector2(81, 73)
 
@@ -139,8 +207,8 @@ script = ExtResource("1_ndpwd")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="orange_sprite" type="AnimatedSprite2D" parent="Sprites"]
-position = Vector2(2, -1)
-scale = Vector2(0.425287, 0.392405)
+position = Vector2(2.00001, -2.5)
+scale = Vector2(0.425287, 0.424051)
 sprite_frames = SubResource("SpriteFrames_unk0s")
 autoplay = "default"
 
@@ -150,18 +218,32 @@ scale = Vector2(0.442529, 0.43038)
 sprite_frames = SubResource("SpriteFrames_stqcf")
 
 [node name="color_sprite" type="AnimatedSprite2D" parent="Sprites"]
-position = Vector2(3, -4)
-scale = Vector2(0.435237, 0.4425)
+z_index = 20
+position = Vector2(3.65286, -2.5)
+scale = Vector2(0.472708, 0.458065)
 sprite_frames = SubResource("SpriteFrames_ueiky")
 animation = &"red"
 autoplay = "neutral"
 
 [node name="tower_sprite" type="AnimatedSprite2D" parent="Sprites"]
-position = Vector2(3, -3)
-scale = Vector2(0.435237, 0.4425)
+z_index = 15
+position = Vector2(2.56719, -2.91062)
+scale = Vector2(0.430262, 0.441376)
 sprite_frames = SubResource("SpriteFrames_tghyl")
 animation = &"rotation"
 autoplay = "rotation"
+
+[node name="blue_sprite" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(2.5, -3)
+scale = Vector2(0.396552, 0.443038)
+sprite_frames = SubResource("SpriteFrames_cac4b")
+autoplay = "default"
+
+[node name="green_sprite" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(2.5, -3.5)
+scale = Vector2(0.428571, 0.436709)
+sprite_frames = SubResource("SpriteFrames_gfbee")
+autoplay = "default"
 
 [node name="tower_timer" type="Timer" parent="."]
 wait_time = 1.246
