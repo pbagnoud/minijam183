@@ -6,7 +6,7 @@ var upgrades_list = [{"Name":"Damage+","Id":"damage+", "Description":"Hits harde
 	{"Name":"Specialized","Id":"special", "Description":"Deals even more damage to enemies of the tower's color", "rarity":"common"},
 	{"Name":"Paint Balls","Id":"paint", "Description":"Changes color of hit enemies", "rarity":"medium"},
 	{"Name":"Fire Bullets","Id":"fire", "Description":"Sets enemies on fire, dealing damage over time", "rarity":"medium"},
-	{"Name":"Piercing Shot","Id":"pierce", "Description":"Projectiles pierce an additional enemy", "rarity":"medium"},
+	{"Name":"Piercing Shot","Id":"pierce", "Description":"Projectiles pierce and hit an additional enemy even harder", "rarity":"medium"},
 	{"Name":"Pushing Bullets","Id":"push", "Description":"Hit enemies are pushed back", "rarity":"medium"},
 	{"Name":"Freezing Shot","Id":"freeze", "Description":"Hit enemies are slowed for a while", "rarity":"rare"},
 	{"Name":"Triple Shot","Id":"triple", "Description":"Fires two additional shots", "rarity":"rare"},

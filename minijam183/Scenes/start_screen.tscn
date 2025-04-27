@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddqsy7wjxblkj"]
+[gd_scene load_steps=15 format=3 uid="uid://ddqsy7wjxblkj"]
 
 [ext_resource type="Script" uid="uid://bokao7e6kltbp" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="2_60ddj"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_ainjc"]
-[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
+[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
 [ext_resource type="AudioStream" uid="uid://bjxup5slmw3v8" path="res://Assets/Sound/click.wav" id="5_mtlf8"]
+[ext_resource type="Texture2D" uid="uid://8bnwg1kfduvk" path="res://Assets/enemies_anim/boss.png" id="6_rjuq2"]
+[ext_resource type="Texture2D" uid="uid://bcn6rd3o7a41k" path="res://Assets/enemies_anim/enemy0-anim - B.png" id="7_c1457"]
+[ext_resource type="Texture2D" uid="uid://w3p0167y6raw" path="res://Assets/enemies_anim/enemy1-anim-A.png" id="8_64bn7"]
+[ext_resource type="Texture2D" uid="uid://cdg354eb762vb" path="res://Assets/enemies_anim/enemy2-anim-B.png" id="9_357se"]
+[ext_resource type="Texture2D" uid="uid://1upyxwe4df1y" path="res://Assets/enemies_anim/enemy3-anim-A.png" id="10_hppi5"]
+[ext_resource type="Texture2D" uid="uid://dafowflkb47lc" path="res://Assets/enemies_anim/enemy3-anim-B.png" id="11_hppi5"]
+[ext_resource type="Texture2D" uid="uid://binwrn6e23j46" path="res://Assets/enemies_anim/enemy2-anim -A.png" id="12_poqtw"]
+[ext_resource type="Texture2D" uid="uid://ctuy4upruxprc" path="res://Assets/enemies_anim/enemy1-anim - B.png" id="13_a0dpv"]
+[ext_resource type="Texture2D" uid="uid://bgqe670p2h4dk" path="res://Assets/enemies_anim/enemy0-anim-A.png" id="14_eun7n"]
 
 [node name="StartScreen" type="Control"]
 z_index = 30
@@ -56,18 +65,61 @@ texture = ExtResource("2_ainjc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 160.0
-offset_right = 822.0
-offset_bottom = 234.0
+offset_left = 360.0
+offset_top = 112.0
+offset_right = 1202.0
+offset_bottom = 263.0
 theme = ExtResource("4_5e717")
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
-text = "TITRETITRE"
+text = "ANTIVIRUS"
 
 [node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_mtlf8")
 volume_db = 16.138
+
+[node name="Boss" type="Sprite2D" parent="."]
+position = Vector2(576, 272)
+scale = Vector2(2.625, 2.5)
+texture = ExtResource("6_rjuq2")
+
+[node name="Enemy0-anim-B" type="Sprite2D" parent="."]
+position = Vector2(280, 184)
+scale = Vector2(1.06338, 1.14516)
+texture = ExtResource("7_c1457")
+
+[node name="Enemy1-anim-a" type="Sprite2D" parent="."]
+position = Vector2(288, 512)
+texture = ExtResource("8_64bn7")
+
+[node name="Enemy2-anim-b" type="Sprite2D" parent="."]
+position = Vector2(944, 512)
+scale = Vector2(1.32759, 1.96875)
+texture = ExtResource("9_357se")
+
+[node name="Enemy3-anim-a" type="Sprite2D" parent="."]
+position = Vector2(992, 144)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("10_hppi5")
+
+[node name="Enemy3-anim-b" type="Sprite2D" parent="."]
+position = Vector2(151, 459.5)
+scale = Vector2(1.3, 1.18333)
+texture = ExtResource("11_hppi5")
+
+[node name="Enemy2-anim-a" type="Sprite2D" parent="."]
+position = Vector2(904, 223)
+scale = Vector2(1.20175, 1.9375)
+texture = ExtResource("12_poqtw")
+
+[node name="Enemy1-anim-B" type="Sprite2D" parent="."]
+position = Vector2(131.25, 115)
+scale = Vector2(1.57463, 1.34375)
+texture = ExtResource("13_a0dpv")
+
+[node name="Enemy0-anim-a" type="Sprite2D" parent="."]
+position = Vector2(784, 496)
+texture = ExtResource("14_eun7n")
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonSkipTutorial" to="." method="_on_button_tutorial_pressed"]

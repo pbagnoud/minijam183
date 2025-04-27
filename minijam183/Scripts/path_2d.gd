@@ -39,7 +39,7 @@ func _speed_up_wave(wave_id:int)->void:
 	spawntime=1-pow(.8*wave_id/(3+MAX_WAVE),2)
 
 func _update_life_ennemies(wave_id:int):
-	current_pv = pv_min + int(0.3*wave_id)
+	current_pv = min(pv_min + int(0.3*wave_id),4)
 
 func new_round(wave_id:int, skip_tuto:bool)->float:
 	_generate_wave(wave_id)
