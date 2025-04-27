@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1ehky4yqhv1" path="res://Assets/Orange/Orange3.png" id="4_tpvf4"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
 [ext_resource type="Texture2D" uid="uid://ddgg04floulrp" path="res://Assets/Orange/Orange4.png" id="5_co81g"]
-[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
 [ext_resource type="Texture2D" uid="uid://blkhuujtffap1" path="res://Assets/Pink/Red1.png" id="6_ueiky"]
 [ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
 [ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
@@ -19,14 +19,14 @@
 [ext_resource type="Texture2D" uid="uid://bha6tglmcoskd" path="res://Assets/Pink/Red4.png" id="9_38v4t"]
 [ext_resource type="Texture2D" uid="uid://dw1ynn6410qt0" path="res://Assets/Rotation/Rotation4.png" id="9_ixbif"]
 [ext_resource type="Texture2D" uid="uid://dplxn8cnwlcb" path="res://Assets/Blue/Blue1.png" id="10_arclx"]
-[ext_resource type="Texture2D" uid="uid://q7dg6tdrmpy0" path="res://Assets/Dots/Color2 - blue.png" id="10_unk0s"]
+[ext_resource type="Texture2D" uid="uid://owoisucjkaml" path="res://Assets/Dots/Color2 - blue.png" id="10_unk0s"]
 [ext_resource type="Texture2D" uid="uid://mmcvwxxggk4b" path="res://Assets/Blue/Blue2.png" id="11_5csd1"]
-[ext_resource type="Texture2D" uid="uid://i2cdaaub1ghw" path="res://Assets/Dots/Color5 - green.png" id="11_r7vkl"]
+[ext_resource type="Texture2D" uid="uid://ckia3l8q0sfs0" path="res://Assets/Dots/Color5 - green.png" id="11_r7vkl"]
 [ext_resource type="Texture2D" uid="uid://bqoqn6gcnurhy" path="res://Assets/Dots/Color1 - neutral.png" id="12_38v4t"]
 [ext_resource type="Texture2D" uid="uid://b0naacd1w7bv2" path="res://Assets/Blue/Blue3.png" id="12_tpvf4"]
 [ext_resource type="Texture2D" uid="uid://cfvm5auyuqi8v" path="res://Assets/Blue/Blue4.png" id="13_co81g"]
-[ext_resource type="Texture2D" uid="uid://in6mj2yat1eg" path="res://Assets/Dots/Color4 - orange.png" id="13_stqcf"]
-[ext_resource type="Texture2D" uid="uid://bjjwb7ogpejka" path="res://Assets/Dots/Color3 - red.png" id="14_0kqso"]
+[ext_resource type="Texture2D" uid="uid://cyt8biar400ee" path="res://Assets/Dots/Color4 - orange.png" id="13_stqcf"]
+[ext_resource type="Texture2D" uid="uid://cfpfnqtji5eu5" path="res://Assets/Dots/Color3 - red.png" id="14_0kqso"]
 [ext_resource type="Texture2D" uid="uid://bdk4u44qqp5ei" path="res://Assets/Green/Green1.png" id="27_8xahj"]
 [ext_resource type="Texture2D" uid="uid://dxhdllkx6pqjs" path="res://Assets/Green/Green2.png" id="28_ilhwl"]
 [ext_resource type="Texture2D" uid="uid://m3buw3f7l65j" path="res://Assets/Green/Green3.png" id="29_3ggk1"]
@@ -134,11 +134,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"new_animation_1",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_wnl86")
@@ -219,10 +214,10 @@ sprite_frames = SubResource("SpriteFrames_stqcf")
 
 [node name="color_sprite" type="AnimatedSprite2D" parent="Sprites"]
 z_index = 20
-position = Vector2(3.65286, -2.5)
-scale = Vector2(0.472708, 0.458065)
+position = Vector2(2.36748, -3.15643)
+scale = Vector2(0.458179, 0.466374)
 sprite_frames = SubResource("SpriteFrames_ueiky")
-animation = &"red"
+animation = &"blue"
 autoplay = "neutral"
 
 [node name="tower_sprite" type="AnimatedSprite2D" parent="Sprites"]

@@ -55,7 +55,14 @@ func _ready():
 	blue_sprite.play("default")
 	
 func change_color(new_color):
-	tower_sprite.frame = new_color
+	if new_color ==0:
+		color_sprite.play("blue")
+	if new_color ==1:
+		color_sprite.play("red")
+	if new_color ==2:
+		color_sprite.play("orange")
+	if new_color ==3:
+		color_sprite.play("green")
 	color = new_color
 
 
@@ -240,7 +247,7 @@ func start_start_timer():
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		color = (color + 1) % 4
-		tower_sprite.frame = color
+		change_color(color)
 		print(color)
 
 
