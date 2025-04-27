@@ -1,38 +1,90 @@
-[gd_scene load_steps=18 format=3 uid="uid://uhkrxd3pu5a3"]
+[gd_scene load_steps=24 format=3 uid="uid://uhkrxd3pu5a3"]
 
 [ext_resource type="Script" uid="uid://b8qjmdu0qwapw" path="res://Scripts/tower.gd" id="1_ndpwd"]
 [ext_resource type="Texture2D" uid="uid://t2st05n3haqn" path="res://Assets/pixil-frame-0.png" id="2_81kva"]
+[ext_resource type="Texture2D" uid="uid://2dclniol3kjg" path="res://Assets/Orange/Orange1.png" id="2_arclx"]
+[ext_resource type="Texture2D" uid="uid://dwd4l0kp8iwaf" path="res://Assets/Orange/Orange2.png" id="3_5csd1"]
 [ext_resource type="Texture2D" uid="uid://crxgkpojgasue" path="res://Assets/pixil-frame-1.png" id="3_mxwle"]
 [ext_resource type="Texture2D" uid="uid://51msj3ycui21" path="res://Assets/pixil-frame-2.png" id="4_oh166"]
+[ext_resource type="Texture2D" uid="uid://ce1ehky4yqhv1" path="res://Assets/Orange/Orange3.png" id="4_tpvf4"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
-[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Texture2D" uid="uid://ddgg04floulrp" path="res://Assets/Orange/Orange4.png" id="5_co81g"]
+[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Texture2D" uid="uid://blkhuujtffap1" path="res://Assets/Pink/Red1.png" id="6_ueiky"]
 [ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
 [ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
+[ext_resource type="Texture2D" uid="uid://8jgoi0r7nj8r" path="res://Assets/Pink/Red2.png" id="7_unk0s"]
 [ext_resource type="Texture2D" uid="uid://cbh1sa3h4s4nc" path="res://Assets/Rotation/Rotation3.png" id="8_h264x"]
+[ext_resource type="Texture2D" uid="uid://dite8issvji0e" path="res://Assets/Pink/Red3.png" id="8_r7vkl"]
+[ext_resource type="Texture2D" uid="uid://bha6tglmcoskd" path="res://Assets/Pink/Red4.png" id="9_38v4t"]
 [ext_resource type="Texture2D" uid="uid://dw1ynn6410qt0" path="res://Assets/Rotation/Rotation4.png" id="9_ixbif"]
-[ext_resource type="Texture2D" uid="uid://dplxn8cnwlcb" path="res://Assets/Blue/Blue1.png" id="10_arclx"]
-[ext_resource type="Texture2D" uid="uid://mmcvwxxggk4b" path="res://Assets/Blue/Blue2.png" id="11_5csd1"]
-[ext_resource type="Texture2D" uid="uid://b0naacd1w7bv2" path="res://Assets/Blue/Blue3.png" id="12_tpvf4"]
-[ext_resource type="Texture2D" uid="uid://cfvm5auyuqi8v" path="res://Assets/Blue/Blue4.png" id="13_co81g"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_unk0s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_arclx")
+"texture": ExtResource("2_arclx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_5csd1")
+"texture": ExtResource("3_5csd1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_tpvf4")
+"texture": ExtResource("4_tpvf4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_co81g")
+"texture": ExtResource("5_co81g")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stqcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ueiky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_unk0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r7vkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_38v4t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueiky"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"red",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tghyl"]
@@ -84,13 +136,27 @@ size = Vector2(81, 73)
 input_pickable = true
 script = ExtResource("1_ndpwd")
 
-[node name="color_sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="orange_sprite" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(2, -1)
+scale = Vector2(0.425287, 0.392405)
+sprite_frames = SubResource("SpriteFrames_unk0s")
+autoplay = "default"
+
+[node name="red_sprite" type="AnimatedSprite2D" parent="Sprites"]
+position = Vector2(2.5, -2)
+scale = Vector2(0.442529, 0.43038)
+sprite_frames = SubResource("SpriteFrames_stqcf")
+
+[node name="color_sprite" type="AnimatedSprite2D" parent="Sprites"]
 position = Vector2(3, -4)
 scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_ueiky")
-autoplay = "default"
+animation = &"red"
+autoplay = "neutral"
 
-[node name="tower_sprite" type="AnimatedSprite2D" parent="."]
+[node name="tower_sprite" type="AnimatedSprite2D" parent="Sprites"]
 position = Vector2(3, -3)
 scale = Vector2(0.435237, 0.4425)
 sprite_frames = SubResource("SpriteFrames_tghyl")

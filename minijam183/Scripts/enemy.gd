@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 signal hit
+signal freeze(time)
+signal dot(amount)
+signal push_back(amount)
 signal split
 
 @onready var blink_component: BlinkComponent = $BlinkComponent
@@ -16,7 +19,11 @@ signal split
 @onready var is_invincible = false
 
 var real_position: Vector2
-var pv: int = 4
+var pv: int = 4:
+	set(value):
+		pv=value
+		check_life()
+		
 var color: int = 1:
 	set(value):
 		color=value
@@ -27,21 +34,37 @@ var is_split: bool
 func _ready() -> void:
 	change_color(color)
 
+func get_dot(amount):
+	await get_tree().create_timer(10).timeout
+	pv -= amount*2
+func get_hurt(body):
+	if body.color == color:
+		pv -= body.power * 2 + body.color_power *3
+		blink_component.blink()
+		shake_component.tween_shake()
+		color_change.color_tween()
+	else:
+		pv -= body.power
+		shake_component.tween_shake()
+		color_change.color_tween()
 
+	
+func apply_effect(body):
+	if body.freeze_time>0:
+		freeze.emit(body.freeze_time)
+	if body.has_color_change:
+		change_color(body.color)
+	get_dot(body.dot_damage)
+	push_back.emit(body.enemy_pushback_distance * 100)
+	
+		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("bullet") and not is_invincible:
-		if body.color == color:
-			pv -= body.power * 2
-			blink_component.blink()
-			shake_component.tween_shake()
-			color_change.color_tween()
-		else:
-			pv -= body.power
-			shake_component.tween_shake()
-			color_change.color_tween()
+	if body.is_in_group("bullet") :
+		get_hurt(body)
+		apply_effect(body)
 		body.hit_something()
-		if body.has_color_change:
-			change_color(body.color)
+
+func check_life():
 	if pv <= 0:
 		# If the character is a Green virus, which is not already small, split it
 		if color == 3:

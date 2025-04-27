@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
-[ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
+[ext_resource type="PackedScene" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
 [ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="4_l53bo"]
 [ext_resource type="Theme" uid="uid://dk2rouewsvbob" path="res://Assets/Themes/nice_buttons.tres" id="5_l53bo"]
