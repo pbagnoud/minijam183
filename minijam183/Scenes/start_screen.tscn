@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddqsy7wjxblkj"]
+[gd_scene load_steps=6 format=3 uid="uid://ddqsy7wjxblkj"]
 
 [ext_resource type="Script" uid="uid://bokao7e6kltbp" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="2_60ddj"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_ainjc"]
-[ext_resource type="Theme" uid="uid://dfyp2x2grqp4w" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
+[ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="4_5e717"]
+[ext_resource type="AudioStream" uid="uid://bjxup5slmw3v8" path="res://Assets/Sound/click.wav" id="5_mtlf8"]
 
 [node name="StartScreen" type="Control"]
 z_index = 30
@@ -63,6 +64,10 @@ theme = ExtResource("4_5e717")
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
 text = "TITRETITRE"
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mtlf8")
+volume_db = 16.138
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonSkipTutorial" to="." method="_on_button_tutorial_pressed"]
