@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcs1mupsm325v"
-path="res://.godot/imported/Green4.png-bb499ed05f9f44de0a7b2a5af1b869ba.ctex"
+uid="uid://in6mj2yat1eg"
+path="res://.godot/imported/Color4 - orange.png-01d88383b1953f4fb0d8f7ddf738b047.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Green/Green4.png"
-dest_files=["res://.godot/imported/Green4.png-bb499ed05f9f44de0a7b2a5af1b869ba.ctex"]
+source_file="res://Assets/Dots/Color4 - orange.png"
+dest_files=["res://.godot/imported/Color4 - orange.png-01d88383b1953f4fb0d8f7ddf738b047.ctex"]
 
 [params]
 
