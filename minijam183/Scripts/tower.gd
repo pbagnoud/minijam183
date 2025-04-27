@@ -223,6 +223,7 @@ func tower_is_sniper() -> bool:
 		cooldown += 1
 		shot_speed *= 10
 		detection_range *= 2
+		power += 4
 		is_sniper = true
 		return true
 
