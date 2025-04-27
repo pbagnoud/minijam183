@@ -23,7 +23,8 @@ func _generate_wave(wave_id:int)-> void:
 		wave = [0,1,1]
 	elif wave_id == 3:
 		wave = [0,1,0,1,2,-1,3]
-	
+	elif wave_id == 10:
+		wave = [0,1,2,3,0,1,2,3,-1,-1,4]
 	else : 
 		var size_wave = 3 + int(wave_id * 1.5)
 		for i in range(size_wave):
@@ -63,8 +64,12 @@ func _process(delta: float) -> void:
 			var new_follower = follower.instantiate()
 			new_follower.color=wave.pop_front()
 			add_child(new_follower)
-			new_follower.pv = current_pv 
-			new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
+			if new_follower.color == 4:
+				new_follower.pv = 20
+				new_follower.set_pv(20) 
+			else : 
+				new_follower.pv = current_pv 
+				new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
 			# à cause des virus qui splittent et du timing de quand ils sont instantiés vs quand ils entrent dans l'arbre
 		else :
 			wave.pop_front()
