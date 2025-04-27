@@ -24,8 +24,8 @@ signal split(color: int)
 #Sound assets
 @onready var normal_hit: AudioStreamPlayer2D = $hit_sounds/normal_hit
 @onready var color_hit: AudioStreamPlayer2D = $hit_sounds/color_hit
-
-
+var c=['#00FFC3','#FF00D8','#FFB200','#96FF00','#FFFFFF']
+const EXPLOSION = preload("res://Scenes/explosion.tscn")
 var real_position: Vector2
 var pv: int = 4:
 	set(value):
@@ -91,6 +91,11 @@ func check_life():
 			print(is_split)
 			if not is_split:
 				split.emit(color)
+		var explosion = EXPLOSION.instantiate()
+		explosion.color = c[color]
+		explosion.position = get_parent().position
+		get_tree().root.add_child(explosion)
+		explosion.emitting=true
 		get_parent().queue_free()
 	
 func _process(delta: float) -> void:
