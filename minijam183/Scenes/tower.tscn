@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bs7tnh3elsyie" path="res://Assets/TurretsV2/GreenTurret/GreenTurret4.png" id="17_f7bh3"]
 [ext_resource type="Texture2D" uid="uid://b1tas3hfoun68" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret1.png" id="22_ff3gn"]
 [ext_resource type="Texture2D" uid="uid://bn8apc0au1fev" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret2.png" id="23_rbv28"]
-[ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="24_r7vkl"]
+[ext_resource type="Theme" uid="uid://bpd47jtl2oji" path="res://Assets/Themes/popup_windows_big.tres" id="24_r7vkl"]
 [ext_resource type="Texture2D" uid="uid://cbuugoanyvx11" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret3.png" id="24_yya82"]
 [ext_resource type="Texture2D" uid="uid://bl5ro5omr2y0a" path="res://Assets/TurretsV2/OrangeTurret/OrangeTurret4.png" id="25_28laa"]
 [ext_resource type="Texture2D" uid="uid://ccxk8ay6fgh4h" path="res://Assets/TurretsV2/RedTurret/RedTurret1.png" id="26_df6ox"]
@@ -154,12 +154,16 @@ max_size = Vector2(1.3, 1.3)
 target = NodePath("..")
 
 [node name="Label" type="RichTextLabel" parent="."]
+texture_filter = 2
 offset_left = 51.0
 offset_top = -45.0
 offset_right = 97.0
 offset_bottom = 29.0
 theme = ExtResource("24_r7vkl")
-theme_override_font_sizes/normal_font_size = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Test"
+fit_content = true
+autowrap_mode = 0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
