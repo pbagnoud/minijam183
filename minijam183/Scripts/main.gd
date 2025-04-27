@@ -78,4 +78,4 @@ func _on_upgrade_screen_add_upgrade_signal(id: String, tower: int) -> void:
 func _on_world_boundary_area_entered(area: Area2D) -> void:
 	failures_count = failures_count + 1
 	if failures_count >= losing_condition:
-		get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/gameover_screen.tscn")

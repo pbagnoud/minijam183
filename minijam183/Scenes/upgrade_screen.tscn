@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=5 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
 [ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
-[ext_resource type="Theme" path="res://base_theme.tres" id="4_l53bo"]
-[ext_resource type="Theme" path="res://nice_buttons.tres" id="5_l53bo"]
 
 [node name="UpgradeScreen" type="Control"]
 z_index = 30
@@ -19,7 +17,6 @@ offset_right = -19.0
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_l53bo")
 script = ExtResource("1_o5sws")
 upgrades = ExtResource("2_54md0")
 
@@ -37,7 +34,6 @@ offset_left = 647.0
 offset_top = 102.0
 offset_right = 792.0
 offset_bottom = 225.0
-theme = ExtResource("5_l53bo")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 1"
@@ -48,7 +44,6 @@ offset_left = 840.0
 offset_top = 104.0
 offset_right = 983.0
 offset_bottom = 228.0
-theme = ExtResource("5_l53bo")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 2"
@@ -59,7 +54,6 @@ offset_left = 651.0
 offset_top = 277.0
 offset_right = 792.0
 offset_bottom = 392.0
-theme = ExtResource("5_l53bo")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 3"
@@ -70,7 +64,6 @@ offset_left = 844.0
 offset_top = 277.0
 offset_right = 985.0
 offset_bottom = 393.0
-theme = ExtResource("5_l53bo")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 4"
@@ -81,7 +74,6 @@ offset_left = 600.0
 offset_top = 443.0
 offset_right = 1001.0
 offset_bottom = 539.0
-theme = ExtResource("5_l53bo")
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Start next wave"
@@ -92,7 +84,6 @@ offset_left = 329.0
 offset_top = -12.0
 offset_right = 830.0
 offset_bottom = 67.0
-theme = ExtResource("4_l53bo")
 theme_override_font_sizes/normal_font_size = 30
 text = "Choose an update and a tower to apply it :"
 horizontal_alignment = 1
@@ -103,6 +94,7 @@ offset_left = 72.0
 offset_top = 39.0
 offset_right = 260.0
 offset_bottom = 193.0
+theme = null
 
 [node name="Button_upgrade_2" parent="." instance=ExtResource("4_54md0")]
 layout_mode = 0
@@ -110,6 +102,7 @@ offset_left = 71.0
 offset_top = 221.0
 offset_right = 259.0
 offset_bottom = 375.0
+theme = null
 
 [node name="Button_upgrade_3" parent="." instance=ExtResource("4_54md0")]
 layout_mode = 0
@@ -117,6 +110,7 @@ offset_left = 71.0
 offset_top = 402.0
 offset_right = 259.0
 offset_bottom = 556.0
+theme = null
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]
