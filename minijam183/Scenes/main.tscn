@@ -93,3 +93,4 @@ autoplay = true
 [connection signal="add_upgrade_signal" from="UpgradeScreen" to="." method="_on_upgrade_screen_add_upgrade_signal"]
 [connection signal="round_start" from="UpgradeScreen" to="." method="_on_upgrade_screen_finished"]
 [connection signal="area_entered" from="WorldBoundary" to="." method="_on_world_boundary_area_entered"]
+[connection signal="skip_tutorial" from="TutorialPopup" to="." method="_on_tutorial_popup_skip_tutorial"]

@@ -1,5 +1,7 @@
 extends RichTextLabel
 
+signal skip_tutorial
+
 func show_tuto_window(wave_id):
 	get_tree().paused = true
 	visible = true
@@ -20,3 +22,8 @@ func show_tuto_window(wave_id):
 func _on_button_pressed() -> void:
 	visible = false
 	get_tree().paused = false
+
+
+func _on_button_2_pressed() -> void:
+	visible = false
+	skip_tutorial.emit()
