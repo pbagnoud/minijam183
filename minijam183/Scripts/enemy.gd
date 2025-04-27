@@ -45,8 +45,8 @@ func get_hurt(body):
 
 	
 func apply_effect(body):
-	if body.freeze>0:
-		freeze.emit(freeze)
+	if body.freeze_time>0:
+		freeze.emit(body.freeze_time)
 	if body.has_color_change:
 		change_color(body.color)
 	get_dot(body.dot_damage)

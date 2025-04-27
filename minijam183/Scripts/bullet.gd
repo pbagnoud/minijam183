@@ -8,7 +8,11 @@ var color: int:
 	
 var characteristics : Array
 var power:int = 1
+var color_power = 0
+var freeze_time = 0
 var has_color_change : bool
+var dot_damage = 0
+var enemy_pushback_distance = 0
 #func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	#queue_free()
 
