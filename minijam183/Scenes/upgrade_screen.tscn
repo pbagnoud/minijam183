@@ -76,9 +76,9 @@ text = "Tower 4"
 
 [node name="Button_next_wave" type="Button" parent="."]
 layout_mode = 0
-offset_left = 600.0
-offset_top = 443.0
-offset_right = 1001.0
+offset_left = 557.0
+offset_top = 411.0
+offset_right = 1082.0
 offset_bottom = 539.0
 theme = ExtResource("5_l53bo")
 theme_override_font_sizes/font_size = 30
