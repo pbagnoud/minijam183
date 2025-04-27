@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs02vi6vonulu"]
+[gd_scene load_steps=6 format=3 uid="uid://bs02vi6vonulu"]
 
 [ext_resource type="Script" uid="uid://d3iadwece0ebv" path="res://Scripts/gameover_screen.gd" id="1_tej7u"]
 [ext_resource type="Theme" uid="uid://gncnsqmk06nv" path="res://Assets/Themes/nice_buttons_long.tres" id="2_nr11q"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_wx2yo"]
 [ext_resource type="Theme" path="res://Assets/Themes/base_theme.tres" id="4_xto8p"]
+[ext_resource type="AudioStream" uid="uid://bjxup5slmw3v8" path="res://Assets/Sound/click.wav" id="5_sn2e5"]
 
 [node name="gameover_screen" type="Node2D"]
 script = ExtResource("1_tej7u")
@@ -41,6 +42,10 @@ theme = ExtResource("4_xto8p")
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
 text = "GAME OVER"
+
+[node name="Click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sn2e5")
+volume_db = 16.138
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

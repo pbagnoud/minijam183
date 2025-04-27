@@ -1,5 +1,6 @@
 extends RichTextLabel
 @onready var button_2: Button = $Button2
+@onready var click_sound: AudioStreamPlayer2D = $Click_sound
 
 signal skip_tutorial
 
@@ -23,10 +24,12 @@ func show_tuto_window(wave_id):
 		
 
 func _on_button_pressed() -> void:
+	click_sound.playing = true
 	visible = false
 	get_tree().paused = false
 
 
 func _on_button_2_pressed() -> void:
+	click_sound.playing = true
 	visible = false
 	skip_tutorial.emit()

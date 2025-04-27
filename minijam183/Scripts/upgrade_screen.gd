@@ -25,6 +25,7 @@ var upgrade_3_Id: String
 @onready var selected_tower=0
 
 @onready var an_update_is_selected = false
+@onready var click_sound: AudioStreamPlayer2D = $Click_sound
 
 signal round_start
 signal add_upgrade_signal(id: String, tower: int)
@@ -99,6 +100,7 @@ func disable_button_fifth_tower(disable:bool):
 	$Button_next_wave.disabled = not disable
 		
 func _on_button_upgrade_1_pressed() -> void:
+	click_sound.playing = true
 	selected_upgrade= upgrade_1_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
@@ -107,6 +109,7 @@ func _on_button_upgrade_1_pressed() -> void:
 		disable_button_fifth_tower(false)
 
 func _on_button_upgrade_2_pressed() -> void:
+	click_sound.playing = true
 	selected_upgrade= upgrade_2_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
@@ -115,6 +118,7 @@ func _on_button_upgrade_2_pressed() -> void:
 		disable_button_fifth_tower(false)
 	
 func _on_button_upgrade_3_pressed() -> void:
+	click_sound.playing = true
 	selected_upgrade= upgrade_3_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
@@ -123,6 +127,7 @@ func _on_button_upgrade_3_pressed() -> void:
 		disable_button_fifth_tower(false)
 
 func _on_button_next_wave_pressed() -> void:
+	click_sound.playing = true
 	if selected_upgrade == "addTower":
 		add_tower_5.emit()
 	else :
@@ -139,15 +144,19 @@ func _on_button_next_wave_pressed() -> void:
 	round_start.emit()
 	
 func _on_button_tower_1_pressed() -> void:
+	click_sound.playing = true
 	selected_tower=1
 
 func _on_button_tower_2_pressed() -> void:
+	click_sound.playing = true
 	selected_tower=2
 
 func _on_button_tower_3_pressed() -> void:
+	click_sound.playing = true
 	selected_tower=3
 
 func _on_button_tower_4_pressed() -> void:
+	click_sound.playing = true
 	selected_tower=4
 	
 func show_upgrading_tuto():
@@ -155,4 +164,5 @@ func show_upgrading_tuto():
 	tuto_was_shown = true
 	
 func _on_button_pressed() -> void:
+	click_sound.playing = true
 	tuto_1.visible = false

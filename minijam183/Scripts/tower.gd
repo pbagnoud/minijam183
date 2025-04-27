@@ -15,6 +15,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_start_timer: Timer = $tower_start_timer
 @onready var size_change: SizeChange = $SizeChange
 @onready var label: RichTextLabel = $Label
+@onready var click_sound: AudioStreamPlayer2D = $Click_sound
 
 @export var number : int
 
@@ -275,6 +276,7 @@ func start_start_timer():
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		click_sound.playing = true
 		color = (color + 1) % 4
 		change_color(color)
 		print(color)
