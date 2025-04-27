@@ -22,6 +22,7 @@ var has_to_check_empty_screen = false
 @onready var failures_count = 0
 
 var losing_condition = 1
+var skip_tuto = false
 
 func _ready():
 	tower_1.set_start_time(0.05)
@@ -34,7 +35,7 @@ func _ready():
 	tower_3.start_start_timer()
 	tower_4.start_start_timer()
 	
-	start_new_round()
+	start_new_round(skip_tuto)
 
 	
 	
@@ -53,24 +54,24 @@ func _process(_delta):
 			print(round_id)
 			#await get_tree().create_timer(2).timeout
 			if round_id < 3:
-				start_new_round()
+				start_new_round(skip_tuto)
 				has_to_check_empty_screen = false
 			elif round_id == 10:
 				has_to_check_empty_screen = false
 				get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 				# Show victory screen
 			else :
-				upgrade_screen.reset(round_id)
+				upgrade_screen.reset(round_id, skip_tuto)
 				has_to_check_empty_screen = false
 
 
 	
 func _on_upgrade_screen_finished():
-	start_new_round()
+	start_new_round(skip_tuto)
 	
-func start_new_round():
+func start_new_round(skip_tuto):
 	print('new_round :', round_id )
-	path_2d.new_round(round_id)
+	path_2d.new_round(round_id, skip_tuto)
 	if round_id == 1:
 		tower_1.change_color(1)
 		tower_2.change_color(1)
@@ -122,6 +123,7 @@ func _on_path_2d_show_tutorial(wave_id: int) -> void:
 
 
 func _on_tutorial_popup_skip_tutorial() -> void:
+	skip_tuto = true
 	get_tree().paused = false
 	round_id = 3
-	start_new_round()
+	start_new_round(skip_tuto)
