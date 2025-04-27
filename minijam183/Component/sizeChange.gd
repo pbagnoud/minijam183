@@ -9,20 +9,23 @@ signal twin_finished
 # Called when the node enters the scene tree for the first time.
 func size_tween():
 	var tween = create_tween()
-	tween.finished.connect(_on_tween_finished)
+	#tween.finished.connect(_on_tween_finished)
 	tween.tween_property(target, "scale",max_size, duration)
 	print('end')
 
 func _ready():
-	size_change.size_tween()
+	#size_change.size_tween()
+	pass
 	
 func _on_tween_finished():
-	print('on twin f')
+	#print('on twin f')
 	emit_signal('twin_finished')
 	color_reset()
 	
 func color_reset():
-	print('in')
+	#print('in')
 	var tween = create_tween()
 	tween.tween_property(target, "scale",Vector2(1,1), .1 )
+	
+
 	
