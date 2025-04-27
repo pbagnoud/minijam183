@@ -22,7 +22,7 @@ var bullet_scene = load("res://Scenes/bullet.tscn")
 @export var color: int = 0
 @export var power: int = 1
 
-var detection_range: int = 200
+var detection_range: int = 300
 var shot_speed: int = 400
 var closestDistance: int
 var cooldown:
@@ -30,9 +30,9 @@ var cooldown:
 		cooldown = value
 		tower_timer.wait_time = cooldown
 		print("le nouveau timer est : ", tower_timer.wait_time )
-var lifespan_bullet : int = 0.8
+var lifespan_bullet : int = 1
 var color_power = 0
-var bullet_durability = 0
+var bullet_durability = 1
 var has_explosive_bullets = false
 @export var dot_damage = 0
 @export var enemy_pushback_dist = 0
@@ -100,7 +100,7 @@ func fire():
 		if is_sniper:
 			direction = closestEnemy.next_position(5) - self.position
 		else:
-			direction = closestEnemy.next_position(75) - self.position
+			direction = closestEnemy.next_position(55) - self.position
 
 		print(direction)
 		create_bullet(direction)
@@ -132,6 +132,7 @@ func create_bullet(direction):
 	else:
 		bullet.power = power
 	
+	bullet.durability=bullet_durability
 	bullet.freeze_time=enemy_slowdown
 	bullet.color_power = color_power
 	bullet.enemy_pushback_distance = enemy_pushback_dist

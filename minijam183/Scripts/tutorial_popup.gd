@@ -7,7 +7,7 @@ func show_tuto_window(wave_id):
 		0:
 			text = "Your turrets will fire on enemies. "
 		1:
-			text = "Turrets deal more damage to same-color enemies ! Change tower color by clicking."
+			text = "Turrets deal more damage to\n same-color enemies !\n\n Change turret color by clicking."
 		2: 
 			text = "Purple bats fly faster !"
 		3: 

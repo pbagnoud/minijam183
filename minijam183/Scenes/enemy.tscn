@@ -107,6 +107,13 @@ image = NodePath("../EnemySprite2D")
 duration = 0.5
 metadata/_custom_type_script = "uid://0b38uskfw86e"
 
+[node name="BlinkDOT" type="Node" parent="." node_paths=PackedStringArray("image")]
+script = ExtResource("6_ghaa6")
+image = NodePath("../EnemySprite2D")
+duration = 3.0
+amount = 12
+metadata/_custom_type_script = "uid://0b38uskfw86e"
+
 [node name="ShakeComponent" type="Node" parent="." node_paths=PackedStringArray("node")]
 script = ExtResource("7_1dp5w")
 node = NodePath("../EnemySprite2D")
@@ -119,6 +126,13 @@ metadata/_custom_type_script = "uid://bfwdt8dlrqn1m"
 script = ExtResource("8_auwsv")
 duration = 0.5
 color = Color(0.180005, 0.180005, 0.180005, 1)
+target = NodePath("../EnemySprite2D")
+metadata/_custom_type_script = "uid://dnaxqeu0w6871"
+
+[node name="DOT" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("8_auwsv")
+duration = 3.0
+color = Color(1, 1, 1, 0.309804)
 target = NodePath("../EnemySprite2D")
 metadata/_custom_type_script = "uid://dnaxqeu0w6871"
 
