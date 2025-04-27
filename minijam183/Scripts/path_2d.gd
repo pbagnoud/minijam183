@@ -24,7 +24,7 @@ func _generate_wave(wave_id:int)-> void:
 	elif wave_id == 3:
 		wave = [0,1,0,1,2,-1,3]
 	elif wave_id == 10:
-		wave = [0,1,2,3,0,1,2,3,-1,-1,4]
+		wave = [0,1,2,3,0,1,2,3,4,0]
 	else : 
 		var size_wave = 3 + int(wave_id * 1.5)
 		for i in range(size_wave):
