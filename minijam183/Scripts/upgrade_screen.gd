@@ -112,6 +112,7 @@ func _on_button_tower_4_pressed() -> void:
 	
 func show_upgrading_tuto():
 	tuto_1.visible = true
+	tuto_was_shown = true
 	
 func _on_button_pressed() -> void:
 	tuto_1.visible = false
