@@ -41,11 +41,11 @@ func _speed_up_wave(wave_id:int)->void:
 func _update_life_ennemies(wave_id:int):
 	current_pv = pv_min + int(0.3*wave_id)
 
-func new_round(wave_id:int)->float:
+func new_round(wave_id:int, skip_tuto:bool)->float:
 	_generate_wave(wave_id)
 	_speed_up_wave(wave_id)
 	_update_life_ennemies(wave_id)
-	if wave_id < 4:
+	if wave_id < 4 and skip_tuto == false:
 		print("la wave est :", wave, "et j'affiche le tuto")
 		show_tutorial.emit(wave_id)
 	check_empty=true
