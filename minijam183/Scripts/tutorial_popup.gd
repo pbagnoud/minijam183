@@ -16,7 +16,7 @@ func show_tuto_window(wave_id):
 		2: 
 			text = "Purple bats fly faster !"
 		3: 
-			text = "Green viruses and orange invaders also have special powers. Good luck !"
+			text = "Green viruses and orange \ninvaders also have special \npowers. \n\nGood luck !"
 		4:
 			text = "Green viruses split on death."
 		
