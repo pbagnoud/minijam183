@@ -17,6 +17,7 @@ var has_to_check_empty_screen = false
 @onready var life: RichTextLabel = $life
 @onready var wave: RichTextLabel = $wave
 @onready var end_level_sound: AudioStreamPlayer = $EndLevel_sound
+@onready var game_over_sound: AudioStreamPlayer2D = $GameOver_sound
 
 @export var round_id = 0:
 	set(value):
@@ -127,6 +128,7 @@ func _on_world_boundary_area_entered(area: Area2D) -> void:
 	if area.get_parent().color == 4:
 		failures_count +=2
 	if failures_count >= losing_condition:
+		game_over_sound.playing = true
 		get_tree().change_scene_to_file("res://Scenes/gameover_screen.tscn")
 		
 	
