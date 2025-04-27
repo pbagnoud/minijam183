@@ -54,6 +54,7 @@ func _ready():
 	tower_3.start_start_timer()
 	tower_4.start_start_timer()
 	
+	
 	start_new_round(skip_tuto)
 
 	
