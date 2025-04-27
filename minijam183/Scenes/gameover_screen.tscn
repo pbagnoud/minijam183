@@ -8,19 +8,19 @@
 script = ExtResource("1_tej7u")
 
 [node name="ButtonStart" type="Button" parent="."]
-offset_left = 640.0
-offset_top = 216.0
-offset_right = 968.0
-offset_bottom = 368.0
+offset_left = 216.0
+offset_top = 312.0
+offset_right = 544.0
+offset_bottom = 464.0
 theme = ExtResource("2_nr11q")
 theme_override_font_sizes/font_size = 30
 text = "Return to menu"
 
 [node name="ButtonQuit" type="Button" parent="."]
-offset_left = 640.0
-offset_top = 344.0
-offset_right = 968.0
-offset_bottom = 496.0
+offset_left = 616.0
+offset_top = 312.0
+offset_right = 944.0
+offset_bottom = 464.0
 theme = ExtResource("2_nr11q")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
@@ -32,10 +32,10 @@ scale = Vector2(0.963717, 0.886207)
 texture = ExtResource("2_wx2yo")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 136.0
-offset_top = 264.0
-offset_right = 568.0
-offset_bottom = 368.0
+offset_left = 376.0
+offset_top = 112.0
+offset_right = 808.0
+offset_bottom = 216.0
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
 text = "GAME OVER"

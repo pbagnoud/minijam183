@@ -16,20 +16,20 @@ script = ExtResource("1_i8r30")
 
 [node name="ButtonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 216.0
-offset_right = 968.0
-offset_bottom = 368.0
+offset_left = 216.0
+offset_top = 312.0
+offset_right = 544.0
+offset_bottom = 464.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
 [node name="ButtonQuit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 344.0
-offset_right = 968.0
-offset_bottom = 497.0
+offset_left = 616.0
+offset_top = 312.0
+offset_right = 944.0
+offset_bottom = 465.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
@@ -42,10 +42,10 @@ texture = ExtResource("2_ainjc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 264.0
-offset_right = 568.0
-offset_bottom = 368.0
+offset_left = 384.0
+offset_top = 112.0
+offset_right = 776.0
+offset_bottom = 216.0
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
 text = "TITRETITRE"
