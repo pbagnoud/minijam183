@@ -46,11 +46,15 @@ func _process(delta: float) -> void:
 	
 	
 
+var not_freezed =true
 
 func _on_freeze(time) -> void:
-	speed *=.8
-	await get_tree().create_timer(time).timeout
-	speed *= 1.25
+	if not_freezed:
+		not_freezed =false
+		speed -= 120
+		await get_tree().create_timer(time).timeout
+		speed += 120
+		not_freezed =true
 	
 func _on_push_back(amount):
 	set_progress(progress - amount)

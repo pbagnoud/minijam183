@@ -133,6 +133,7 @@ func create_bullet(direction):
 	bullet.color_power = color_power
 	bullet.enemy_pushback_distance = enemy_pushback_dist
 	bullet.has_color_change = has_color_change
+	bullet.dot_damage=dot_damage
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(bullet)

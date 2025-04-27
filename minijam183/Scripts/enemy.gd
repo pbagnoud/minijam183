@@ -35,8 +35,13 @@ func _ready() -> void:
 	change_color(color)
 
 func get_dot(amount):
-	await get_tree().create_timer(10).timeout
+	if amount==0:
+		return
+	await get_tree().create_timer(6).timeout
 	pv -= amount*2
+	shake_component.tween_shake()
+	color_change.color_tween()
+	
 func get_hurt(body):
 	if body.color == color:
 		pv -= body.power * 2 + body.color_power *3
