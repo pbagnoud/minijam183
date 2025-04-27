@@ -20,6 +20,7 @@ var upgrade_3_Id: String
 
 signal round_start
 signal add_upgrade_signal(id: String, tower: int)
+signal add_tower_5
 
 func _ready():
 	visible=false
@@ -72,9 +73,12 @@ func _on_button_upgrade_3_pressed() -> void:
 	an_update_is_selected = true
 
 func _on_button_next_wave_pressed() -> void:
-	add_upgrade_signal.emit(selected_upgrade, selected_tower)
-	visible=false
-	round_start.emit()
+	if selected_upgrade == "addTower":
+		add_tower_5.emit()
+	else :
+		add_upgrade_signal.emit(selected_upgrade, selected_tower)
+		visible=false
+		round_start.emit()
 	
 func _on_button_tower_1_pressed() -> void:
 	selected_tower=1

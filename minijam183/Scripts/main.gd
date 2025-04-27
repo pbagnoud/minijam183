@@ -11,6 +11,7 @@ var has_to_check_empty_screen = false
 @onready var tower_2: StaticBody2D = $Tower2
 @onready var tower_3: StaticBody2D = $Tower3
 @onready var tower_4: StaticBody2D = $Tower4
+@onready var tower_5: StaticBody2D = $Tower5
 
 @export var round_id = 0
 
@@ -84,3 +85,9 @@ func _on_world_boundary_area_entered(area: Area2D) -> void:
 	failures_count = failures_count + 1
 	if failures_count >= losing_condition:
 		get_tree().change_scene_to_file("res://Scenes/gameover_screen.tscn")
+		
+	
+
+
+func _on_upgrade_screen_add_tower_5() -> void:
+	tower_5.visible = true
