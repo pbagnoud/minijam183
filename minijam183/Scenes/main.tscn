@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://dr25v2iv5v3ga" path="res://Scenes/tutorial_popup.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" path="res://Scenes/tutorial_popup.tscn" id="7_6bp64"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
