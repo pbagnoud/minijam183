@@ -20,12 +20,14 @@ script = ExtResource("2_ymg7c")
 visible = false
 z_index = 10
 layout_mode = 0
-offset_left = 204.0
-offset_top = 2.0
-offset_right = 375.0
-offset_bottom = 157.0
+offset_left = 270.0
+offset_top = -5.0
+offset_right = 441.0
+offset_bottom = 150.0
 theme = ExtResource("4_hk0eq")
 text = "Voici un exemple de contenu de la boîte"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
