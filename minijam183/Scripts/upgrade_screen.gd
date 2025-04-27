@@ -8,10 +8,13 @@ extends Control
 @onready var button_upgrade_2: Button = $Button_upgrade_2
 @onready var button_next_wave: Button = $Button_next_wave
 @onready var button_upgrade_3: Button = $Button_upgrade_3
+@onready var tuto_1: RichTextLabel = $Tuto1
+
 
 var upgrade_1_Id: String
 var upgrade_2_Id: String
 var upgrade_3_Id: String
+@onready var tuto_was_shown: bool = false
 
 @onready var selected_upgrade = ""
 @onready var selected_tower=0
@@ -23,6 +26,7 @@ signal add_upgrade_signal(id: String, tower: int)
 signal add_tower_5
 
 func _ready():
+
 	visible=false
 	upgrades_list = upgrades.upgrades_list
 	pool_indices = range(len(upgrades_list))
@@ -30,6 +34,8 @@ func _ready():
 	#reset()
 	
 func reset():
+	if not tuto_was_shown:
+		show_upgrading_tuto()
 	visible=true
 	pool_indices.shuffle()
 	
@@ -85,3 +91,11 @@ func _on_button_tower_3_pressed() -> void:
 
 func _on_button_tower_4_pressed() -> void:
 	selected_tower=4
+	
+func show_upgrading_tuto():
+	tuto_1.visible = true
+	
+
+
+func _on_button_pressed() -> void:
+	tuto_1.visible = false

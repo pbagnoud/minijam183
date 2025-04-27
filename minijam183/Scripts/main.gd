@@ -46,14 +46,28 @@ func _process(_delta):
 		Engine.physics_ticks_per_second = 60
 	if has_to_check_empty_screen:
 		if get_tree().get_nodes_in_group("enemy").is_empty():
-			upgrade_screen.reset()
-			has_to_check_empty_screen = false
+			print(round_id)
+			#await get_tree().create_timer(2).timeout
+			if round_id < 3:
+				start_new_round()
+				has_to_check_empty_screen = false
+			else :
+				upgrade_screen.reset()
+				has_to_check_empty_screen = false
 
 
 	
 func _on_upgrade_screen_finished():
-	print('new_round')
+	start_new_round()
+	
+func start_new_round():
+	print('new_round :', round_id )
 	path_2d.new_round(round_id)
+	if round_id == 1:
+		tower_1.change_color(1)
+		tower_2.change_color(1)
+		tower_3.change_color(1)
+		tower_4.change_color(1)
 	round_id +=1
 	failures_count = 0
 
