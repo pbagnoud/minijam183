@@ -59,7 +59,7 @@ func apply_effect(body):
 	
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("bullet") :
+	if body.is_in_group("bullet") and not is_invincible :
 		get_hurt(body)
 		apply_effect(body)
 		body.hit_something()

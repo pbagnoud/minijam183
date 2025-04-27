@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1ehky4yqhv1" path="res://Assets/Orange/Orange3.png" id="4_tpvf4"]
 [ext_resource type="Texture2D" uid="uid://cxbq7vfs8m4fs" path="res://Assets/pixil-frame-3.png" id="5_8xwd3"]
 [ext_resource type="Texture2D" uid="uid://ddgg04floulrp" path="res://Assets/Orange/Orange4.png" id="5_co81g"]
-[ext_resource type="Script" uid="uid://bwjs44atw8pfw" path="res://Component/sizeChange.gd" id="6_mxwle"]
+[ext_resource type="Script" path="res://Component/sizeChange.gd" id="6_mxwle"]
 [ext_resource type="Texture2D" uid="uid://blkhuujtffap1" path="res://Assets/Pink/Red1.png" id="6_ueiky"]
 [ext_resource type="Texture2D" uid="uid://cvnhr7y5klx1u" path="res://Assets/Rotation/Rotation1.png" id="6_wnl86"]
 [ext_resource type="Texture2D" uid="uid://d08mhx23qxfr" path="res://Assets/Rotation/Rotation2.png" id="7_a4lnx"]
