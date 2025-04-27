@@ -30,6 +30,7 @@ expand_mode = 1
 
 [node name="Tower1" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(279, 189)
+dot_damage = 8
 
 [node name="Tower2" parent="." instance=ExtResource("2_8gbba")]
 position = Vector2(351, 376)

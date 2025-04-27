@@ -34,11 +34,11 @@ var lifespan_bullet : int = 0.8
 var color_power = 0
 var bullet_durability = 0
 var has_explosive_bullets = false
-var dot_damage = 0
-var enemy_pushback_dist = 0
-var enemy_slowdown = 0
-var is_sniper = false
-var is_gatling = false
+@export var dot_damage = 0
+@export var enemy_pushback_dist = 0
+@export var enemy_slowdown = 0
+@export var is_sniper = false
+@export var is_gatling = false
 
 @export var has_triple_shoot = false
 var ready_to_start_firing : bool = false
@@ -122,7 +122,16 @@ func create_bullet(direction):
 	bullet.linear_velocity = direction.normalized()*shot_speed
 	bullet.position = direction.normalized()
 	bullet.color = color
-	bullet.power = power
+	if is_gatling:
+		bullet.power = power * .1
+	elif is_sniper:
+		bullet.power = power * 5
+	else:
+		bullet.power = power
+	
+	bullet.freeze_time=enemy_slowdown
+	bullet.color_power = color_power
+	bullet.enemy_pushback_distance = enemy_pushback_dist
 	bullet.has_color_change = has_color_change
 
 	# Spawn the mob by adding it to the Main scene.
@@ -203,7 +212,7 @@ func increase_damage_over_time()->bool:
 	return true
 
 func push_back_enemy() -> bool:
-	enemy_pushback_dist += 0.1
+	enemy_pushback_dist += 1
 	return true
 
 func enable_triple_shoot()->bool:

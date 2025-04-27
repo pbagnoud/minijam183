@@ -12,4 +12,5 @@ script = ExtResource("1_a0hxn")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_qdug8")]
 
 [connection signal="freeze" from="CharacterBody2D" to="." method="_on_freeze"]
+[connection signal="push_back" from="CharacterBody2D" to="." method="_on_push_back"]
 [connection signal="split" from="CharacterBody2D" to="." method="_on_character_body_2d_split"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=7 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
 [ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
+[ext_resource type="Texture2D" uid="uid://jhcephns34b6" path="res://Assets/Themes/button_click-0.png" id="4_l53bo"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
 
 [node name="UpgradeScreen" type="Control"]
@@ -34,11 +35,15 @@ color = Color(0.646029, 0.646029, 0.646029, 1)
 layout_mode = 0
 offset_left = 647.0
 offset_top = 102.0
-offset_right = 792.0
+offset_right = 765.0
 offset_bottom = 225.0
+scale = Vector2(1.2, 1.2)
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 1"
+icon = ExtResource("4_l53bo")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button_tower_2" type="Button" parent="."]
 layout_mode = 0
@@ -82,10 +87,11 @@ text = "Start next wave"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 329.0
-offset_top = -12.0
-offset_right = 830.0
-offset_bottom = 67.0
+offset_left = 274.0
+offset_top = 66.0
+offset_right = 908.0
+offset_bottom = 124.0
+rotation = -0.0523599
 theme_override_font_sizes/normal_font_size = 30
 text = "Choose an update and a tower to apply it :"
 horizontal_alignment = 1
