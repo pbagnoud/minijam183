@@ -9,7 +9,6 @@ signal new_bullet(direction, speed, characteristics)
 
 
 
-
  #------------------------------------------------------
 var bullet_scene = load("res://Scenes/bullet.tscn")
 @onready var tower_timer: Timer = $tower_timer
@@ -43,8 +42,8 @@ var triple_shot_angle = .75
 @export var has_color_change = false
 
 func _ready():
-	color_sprite.play("neutral")
-	feet_sprite.visible=false
+	color_sprite.play("blue")
+
 
 
 	
@@ -58,7 +57,7 @@ func change_color(new_color):
 	if new_color ==3:
 		color_sprite.play("green")
 		
-	feet_sprite.visible=true
+
 	color = new_color
 
 
@@ -249,6 +248,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _on_mouse_entered() -> void:
 	color_sprite.modulate = '#edac9b'
+
 	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
 	if has_triple_shoot:
 		label.text += "\n triple shots"

@@ -15,6 +15,7 @@ func size_tween():
 
 func _ready():
 	size_change.size_tween()
+	
 func _on_tween_finished():
 	print('on twin f')
 	emit_signal('twin_finished')
