@@ -72,6 +72,10 @@ shape = SubResource("RectangleShape2D_kry3j")
 visible = false
 position = Vector2(520, 184)
 number = 5
+power = 3
+is_freezing = true
+has_triple_shoot = true
+is_on_fire = true
 
 [node name="TutorialPopup" parent="." instance=ExtResource("7_6bp64")]
 offset_left = 214.0
