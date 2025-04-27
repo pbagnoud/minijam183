@@ -5,10 +5,12 @@ signal freeze(time)
 signal dot(amount)
 signal push_back(amount)
 signal split
+@onready var dot_change: ColorChange = $DOT
 
 @onready var blink_component: BlinkComponent = $BlinkComponent
 @onready var shake_component: ShakeComponent = $ShakeComponent
 @onready var color_change: ColorChange = $ColorChange
+@onready var blink_dot: BlinkComponent = $BlinkDOT
 
 @onready var enemy_sprite_2d: AnimatedSprite2D = $EnemySprite2D
 
@@ -37,7 +39,9 @@ func _ready() -> void:
 func get_dot(amount):
 	if amount==0:
 		return
-	await get_tree().create_timer(6).timeout
+	dot_change.color_tween()
+	blink_dot.blink()
+	await get_tree().create_timer(3).timeout
 	pv -= amount*2
 	shake_component.tween_shake()
 	color_change.color_tween()
@@ -59,6 +63,8 @@ func apply_effect(body):
 		freeze.emit(body.freeze_time)
 	if body.has_color_change:
 		change_color(body.color)
+		
+	print('dot',body.dot_damage)
 	get_dot(body.dot_damage)
 	push_back.emit(body.enemy_pushback_distance * 100)
 	
