@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmncqxuqr8v2a"]
+[gd_scene load_steps=10 format=3 uid="uid://cmncqxuqr8v2a"]
 
 [ext_resource type="Script" uid="uid://u30m5v5kx01q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://uhkrxd3pu5a3" path="res://Scenes/tower.tscn" id="2_8gbba"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c2l8gofjp1y23" path="res://Scripts/path_2d.gd" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bygoxtbqyrhyo" path="res://Scenes/path_follow_2d.tscn" id="4_kry3j"]
 [ext_resource type="PackedScene" uid="uid://fk1sfppmxfiq" path="res://Scenes/upgrade_screen.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dr25v2iv5v3ga" path="res://Scenes/tutorial_popup.tscn" id="7_6bp64"]
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
@@ -67,7 +68,11 @@ visible = false
 position = Vector2(515, 195)
 number = 5
 
+[node name="TutorialPopup" parent="." instance=ExtResource("7_6bp64")]
+visible = false
+
 [connection signal="empty_list" from="Path2D" to="." method="_on_round_timeout"]
+[connection signal="show_tutorial" from="Path2D" to="." method="_on_path_2d_show_tutorial"]
 [connection signal="button_down" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_down"]
 [connection signal="button_up" from="ButtonAcceleration" to="." method="_on_button_acceleration_button_up"]
 [connection signal="add_tower_5" from="UpgradeScreen" to="." method="_on_upgrade_screen_add_tower_5"]
