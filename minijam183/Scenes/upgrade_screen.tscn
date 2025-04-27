@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=8 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
+[ext_resource type="Theme" uid="uid://bbu754qq5ulmu" path="res://Assets/Themes/nice_buttons.tres" id="3_l5wmx"]
 [ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
-[ext_resource type="Texture2D" uid="uid://jhcephns34b6" path="res://Assets/Themes/button_click-0.png" id="4_l53bo"]
+[ext_resource type="Theme" uid="uid://dx8n4eocr4n2e" path="res://Assets/Themes/nice_buttons_long.tres" id="5_2oxtv"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
 
 [node name="UpgradeScreen" type="Control"]
@@ -33,92 +34,96 @@ color = Color(0.646029, 0.646029, 0.646029, 1)
 
 [node name="Button_tower_1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 647.0
-offset_top = 102.0
-offset_right = 765.0
-offset_bottom = 225.0
+offset_left = 675.0
+offset_top = 113.0
+offset_right = 793.0
+offset_bottom = 236.0
 scale = Vector2(1.2, 1.2)
+theme = ExtResource("3_l5wmx")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 1"
-icon = ExtResource("4_l53bo")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button_tower_2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 840.0
-offset_top = 104.0
-offset_right = 983.0
-offset_bottom = 228.0
+offset_left = 819.0
+offset_top = 113.0
+offset_right = 962.0
+offset_bottom = 258.0
+theme = ExtResource("3_l5wmx")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 2"
 
 [node name="Button_tower_3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 651.0
-offset_top = 277.0
-offset_right = 792.0
+offset_left = 675.0
+offset_top = 249.0
+offset_right = 816.0
 offset_bottom = 392.0
+theme = ExtResource("3_l5wmx")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 3"
 
 [node name="Button_tower_4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 844.0
-offset_top = 277.0
-offset_right = 985.0
+offset_left = 819.0
+offset_top = 249.0
+offset_right = 960.0
 offset_bottom = 393.0
+theme = ExtResource("3_l5wmx")
 toggle_mode = true
 button_group = ExtResource("4_kfdqr")
 text = "Tower 4"
 
 [node name="Button_next_wave" type="Button" parent="."]
 layout_mode = 0
-offset_left = 557.0
-offset_top = 411.0
-offset_right = 1082.0
-offset_bottom = 539.0
+offset_left = 651.0
+offset_top = 401.0
+offset_right = 984.0
+offset_bottom = 529.0
+theme = ExtResource("5_2oxtv")
 theme_override_font_sizes/font_size = 30
 disabled = true
 text = "Start next wave"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 66.0
-offset_right = 908.0
-offset_bottom = 124.0
-rotation = -0.0523599
+offset_left = 291.0
+offset_top = 57.0
+offset_right = 925.0
+offset_bottom = 115.0
+rotation = -0.0174533
 theme_override_font_sizes/normal_font_size = 30
 text = "Choose an update and a tower to apply it :"
 horizontal_alignment = 1
 
 [node name="Button_upgrade_1" parent="." instance=ExtResource("4_54md0")]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 39.0
-offset_right = 260.0
-offset_bottom = 193.0
-theme = null
+offset_left = 235.0
+offset_top = 97.0
+offset_right = 511.0
+offset_bottom = 251.0
+theme = ExtResource("5_2oxtv")
 
 [node name="Button_upgrade_2" parent="." instance=ExtResource("4_54md0")]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 221.0
-offset_right = 259.0
-offset_bottom = 375.0
-theme = null
+offset_left = 235.0
+offset_top = 209.0
+offset_right = 507.0
+offset_bottom = 363.0
+theme = ExtResource("5_2oxtv")
 
 [node name="Button_upgrade_3" parent="." instance=ExtResource("4_54md0")]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 402.0
-offset_right = 259.0
-offset_bottom = 556.0
-theme = null
+offset_left = 235.0
+offset_top = 321.0
+offset_right = 507.0
+offset_bottom = 475.0
+theme = ExtResource("5_2oxtv")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
