@@ -61,20 +61,38 @@ func _on_push_back(amount):
 		
 
 
-func _on_character_body_2d_split() -> void:
-	var twin1 = PATH_FOLLOW_2D.instantiate()
-	twin1.progress=progress-25
-	twin1.color = 3
-	twin1.is_split = true
-	twin1.pv = 1
-	twin1.scale = Vector2(0.7, 0.7)
-	twin1.speed *= 0.6
-	get_parent().add_child(twin1)
-	var twin2 = PATH_FOLLOW_2D.instantiate()
-	twin2.progress=progress+50
-	twin2.color = 3
-	twin2.is_split = true
-	twin2.pv = 1
-	twin2.scale = Vector2(0.7, 0.7)
-	twin2.speed *= 0.6
-	get_parent().add_child(twin2)
+func _on_character_body_2d_split(color) -> void:
+	if color == 3:
+		var twin1 = PATH_FOLLOW_2D.instantiate()
+		twin1.progress=progress-25
+		twin1.color = 3
+		twin1.is_split = true
+		twin1.pv = 1
+		twin1.scale = Vector2(0.7, 0.7)
+		twin1.speed *= 0.6
+		get_parent().add_child(twin1)
+		var twin2 = PATH_FOLLOW_2D.instantiate()
+		twin2.progress=progress+50
+		twin2.color = 3
+		twin2.is_split = true
+		twin2.pv = 1
+		twin2.scale = Vector2(0.7, 0.7)
+		twin2.speed *= 0.6
+		get_parent().add_child(twin2)
+	if color == 4:
+		var twin1 = PATH_FOLLOW_2D.instantiate()
+		twin1.progress=progress-25
+		twin1.color = 4
+		twin1.is_split = true
+		twin1.pv = 10
+		twin1.scale = Vector2(0.7, 0.7)
+		twin1.speed *= 0.6
+		get_parent().add_child(twin1)
+		var twin2 = PATH_FOLLOW_2D.instantiate()
+		twin2.progress=progress+50
+		twin2.color = 4
+		twin2.is_split = true
+		twin2.pv = 10
+		twin2.scale = Vector2(0.7, 0.7)
+		twin2.speed *= 0.6
+		get_parent().add_child(twin2)

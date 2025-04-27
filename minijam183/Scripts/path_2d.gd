@@ -23,7 +23,8 @@ func _generate_wave(wave_id:int)-> void:
 		wave = [0,1,1]
 	elif wave_id == 3:
 		wave = [0,1,0,1,2,-1,3]
-	
+	elif wave_id == 10:
+		wave = [0,1,2,3,0,1,2,3,-1,-1,4]
 	else : 
 		var size_wave = 3 + int(wave_id * 1.5)
 		for i in range(size_wave):
@@ -40,11 +41,11 @@ func _speed_up_wave(wave_id:int)->void:
 func _update_life_ennemies(wave_id:int):
 	current_pv = pv_min + int(0.3*wave_id)
 
-func new_round(wave_id:int)->float:
+func new_round(wave_id:int, skip_tuto:bool)->float:
 	_generate_wave(wave_id)
 	_speed_up_wave(wave_id)
 	_update_life_ennemies(wave_id)
-	if wave_id < 4:
+	if wave_id < 4 and skip_tuto == false:
 		print("la wave est :", wave, "et j'affiche le tuto")
 		show_tutorial.emit(wave_id)
 	check_empty=true
@@ -63,8 +64,12 @@ func _process(delta: float) -> void:
 			var new_follower = follower.instantiate()
 			new_follower.color=wave.pop_front()
 			add_child(new_follower)
-			new_follower.pv = current_pv 
-			new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
+			if new_follower.color == 4:
+				new_follower.pv = 20
+				new_follower.set_pv(20) 
+			else : 
+				new_follower.pv = current_pv 
+				new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
 			# à cause des virus qui splittent et du timing de quand ils sont instantiés vs quand ils entrent dans l'arbre
 		else :
 			wave.pop_front()

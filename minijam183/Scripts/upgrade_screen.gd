@@ -38,8 +38,8 @@ func _ready():
 	# Comment next line to get out of debugging
 	#reset()
 	
-func reset(round_id):
-	if not tuto_was_shown:
+func reset(round_id, skip_tuto):
+	if not tuto_was_shown and skip_tuto == false:
 		show_upgrading_tuto()
 	visible=true
 	var chosen_upgrades = pick_upgrades(round_id)
@@ -91,30 +91,36 @@ func _process(delta)-> void:
 	if selected_tower >0.5 and an_update_is_selected:
 		button_next_wave.disabled=false
 
-func disable_button_fifth_tower():
-	$Button_tower_1.disabled = true
-	$Button_tower_2.disabled = true
-	$Button_tower_3.disabled = true
-	$Button_tower_4.disabled = true
-	$Button_next_wave.disabled = false
+func disable_button_fifth_tower(disable:bool):
+	$Button_tower_1.disabled = disable
+	$Button_tower_2.disabled = disable
+	$Button_tower_3.disabled = disable
+	$Button_tower_4.disabled = disable
+	$Button_next_wave.disabled = not disable
 		
 func _on_button_upgrade_1_pressed() -> void:
 	selected_upgrade= upgrade_1_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
-		disable_button_fifth_tower()
+		disable_button_fifth_tower(true)
+	else:
+		disable_button_fifth_tower(false)
 
 func _on_button_upgrade_2_pressed() -> void:
 	selected_upgrade= upgrade_2_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
-		disable_button_fifth_tower()
+		disable_button_fifth_tower(true)
+	else:
+		disable_button_fifth_tower(false)
 	
 func _on_button_upgrade_3_pressed() -> void:
 	selected_upgrade= upgrade_3_Id
 	an_update_is_selected = true
 	if selected_upgrade == "addTower":
-		disable_button_fifth_tower()
+		disable_button_fifth_tower(true)
+	else:
+		disable_button_fifth_tower(false)
 
 func _on_button_next_wave_pressed() -> void:
 	if selected_upgrade == "addTower":

@@ -4,7 +4,7 @@ signal hit
 signal freeze(time)
 signal dot(amount)
 signal push_back(amount)
-signal split
+signal split(color: int)
 @onready var dot_change: ColorChange = $DOT
 
 @onready var blink_component: BlinkComponent = $BlinkComponent
@@ -86,10 +86,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func check_life():
 	if pv <= 0:
 		# If the character is a Green virus, which is not already small, split it
-		if color == 3:
+		if color == 3 or color == 4:
 			print(is_split)
 			if not is_split:
-				split.emit()
+				split.emit(color)
 		get_parent().queue_free()
 	
 func _process(delta: float) -> void:
@@ -110,6 +110,8 @@ func change_color(new_color:int):
 		vulnerable_timer.start()
 	if new_color == 3:
 		enemy_sprite_2d.play("green_enemy")
+	if new_color == 4:
+		enemy_sprite_2d.play("boss_enemy")
 	if not new_color == 2:
 		is_invincible = false
 		shield_sprite.visible = false
