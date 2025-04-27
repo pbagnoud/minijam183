@@ -55,7 +55,6 @@ text = ">>"
 
 [node name="UpgradeScreen" parent="." instance=ExtResource("5_kry3j")]
 visible = false
-theme = null
 
 [node name="WorldBoundary" type="Area2D" parent="."]
 
