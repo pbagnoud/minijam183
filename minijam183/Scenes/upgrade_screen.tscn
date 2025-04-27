@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fk1sfppmxfiq"]
+[gd_scene load_steps=6 format=3 uid="uid://fk1sfppmxfiq"]
 
 [ext_resource type="Script" uid="uid://b4bakhf1s03xn" path="res://Scripts/upgrade_screen.gd" id="1_o5sws"]
 [ext_resource type="Resource" uid="uid://e2duk4jpubao" path="res://upgrades.tres" id="2_54md0"]
 [ext_resource type="PackedScene" uid="uid://dxayp3yxjjy1j" path="res://Scenes/upgrade_button.tscn" id="4_54md0"]
 [ext_resource type="ButtonGroup" uid="uid://d3m534ofkni8y" path="res://Scenes/button_group_selection_tower.tres" id="4_kfdqr"]
+[ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="5_54md0"]
 
 [node name="UpgradeScreen" type="Control"]
 z_index = 30
@@ -21,6 +22,7 @@ script = ExtResource("1_o5sws")
 upgrades = ExtResource("2_54md0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 18.0
 offset_top = -41.0
@@ -111,6 +113,12 @@ offset_top = 402.0
 offset_right = 259.0
 offset_bottom = 556.0
 theme = null
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(656, 313)
+scale = Vector2(0.963717, 0.886207)
+texture = ExtResource("5_54md0")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="pressed" from="Button_tower_1" to="." method="_on_button_tower_1_pressed"]
