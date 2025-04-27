@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cisx8pyjpju6a" path="res://Assets/Fonts/orbitron-master/Orbitron Bold.ttf" id="1_b8iad"]
 [ext_resource type="FontFile" uid="uid://cj7u45bak0qop" path="res://Assets/Fonts/orbitron-master/Orbitron Medium.ttf" id="2_s7had"]
-[ext_resource type="Texture2D" uid="uid://cqs2srvqvy2ll" path="res://Assets/OtherBackgrounds/ThemeBox_v0.png" id="3_8sbek"]
+[ext_resource type="Texture2D" uid="uid://cki4o1vbvwf3e" path="res://Assets/OtherBackgrounds/BackgroudBox-V3.png" id="3_b8iad"]
 
 [sub_resource type="Image" id="Image_1ac14"]
 data = {
@@ -1012,8 +1012,7 @@ content_margin_left = 25.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-texture = ExtResource("3_8sbek")
-region_rect = Rect2(0, 0, 220, 279)
+texture = ExtResource("3_b8iad")
 
 [resource]
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
