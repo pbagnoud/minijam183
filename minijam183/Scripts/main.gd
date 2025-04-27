@@ -92,6 +92,7 @@ func _on_world_boundary_area_entered(area: Area2D) -> void:
 
 func _on_upgrade_screen_add_tower_5() -> void:
 	tower_5.visible = true
+	tower_5.start_start_timer()
 
 
 func _on_path_2d_show_tutorial(wave_id: int) -> void:
