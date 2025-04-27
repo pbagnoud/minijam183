@@ -130,7 +130,6 @@ animation = &"blue"
 autoplay = "neutral"
 
 [node name="feet_sprite" type="Sprite2D" parent="Sprites"]
-z_index = 2
 position = Vector2(2.5, -3.5)
 scale = Vector2(0.456647, 0.464968)
 texture = ExtResource("29_esfv5")
