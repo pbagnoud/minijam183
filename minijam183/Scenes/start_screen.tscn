@@ -17,10 +17,10 @@ script = ExtResource("1_i8r30")
 
 [node name="ButtonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 321.0
-offset_right = 537.0
-offset_bottom = 473.0
+offset_left = 216.0
+offset_top = 312.0
+offset_right = 544.0
+offset_bottom = 464.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Start"
@@ -39,10 +39,10 @@ text = "Skip Tutorial"
 
 [node name="ButtonQuit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 614.0
-offset_top = 324.0
-offset_right = 942.0
-offset_bottom = 477.0
+offset_left = 608.0
+offset_top = 312.0
+offset_right = 936.0
+offset_bottom = 465.0
 theme = ExtResource("2_60ddj")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
