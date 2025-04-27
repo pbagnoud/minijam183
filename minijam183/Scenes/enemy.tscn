@@ -156,7 +156,6 @@ texture = ExtResource("17_tk7xo")
 [node name="normal_hit" type="AudioStreamPlayer2D" parent="hit_sounds"]
 stream = ExtResource("18_dhkrs")
 volume_db = 10.758
-stream_paused = true
 
 [node name="color_hit" type="AudioStreamPlayer2D" parent="hit_sounds"]
 stream = ExtResource("19_5xdhn")
