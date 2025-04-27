@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bygoxtbqyrhyo"]
+[gd_scene load_steps=5 format=3 uid="uid://bygoxtbqyrhyo"]
 
 [ext_resource type="Script" uid="uid://bsw1qqufhwspe" path="res://Scripts/path_follow_2d.gd" id="1_a0hxn"]
 [ext_resource type="PackedScene" uid="uid://dk1h6dnsl2hej" path="res://Scenes/enemy.tscn" id="2_qdug8"]
+[ext_resource type="AudioStream" uid="uid://bi1rkt4ekpskw" path="res://Assets/Sound/Hit.wav" id="3_42rih"]
+[ext_resource type="AudioStream" uid="uid://l2x2wshwtims" path="res://Assets/Sound/explosion.wav" id="4_r8hgx"]
 
 [node name="PathFollow2D" type="PathFollow2D" groups=["enemy"]]
 rotation = -0.00425529
@@ -10,6 +12,16 @@ loop = false
 script = ExtResource("1_a0hxn")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_qdug8")]
+
+[node name="hit_sounds2" type="Node2D" parent="CharacterBody2D"]
+
+[node name="normal_hit" type="AudioStreamPlayer2D" parent="CharacterBody2D/hit_sounds2"]
+stream = ExtResource("3_42rih")
+volume_db = 10.758
+
+[node name="color_hit" type="AudioStreamPlayer2D" parent="CharacterBody2D/hit_sounds2"]
+stream = ExtResource("4_r8hgx")
+volume_db = -5.414
 
 [connection signal="freeze" from="CharacterBody2D" to="." method="_on_freeze"]
 [connection signal="push_back" from="CharacterBody2D" to="." method="_on_push_back"]
