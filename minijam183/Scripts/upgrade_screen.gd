@@ -10,6 +10,14 @@ extends Control
 @onready var button_upgrade_3: Button = $Button_upgrade_3
 @onready var tuto_1: RichTextLabel = $Tuto1
 
+@onready var button_tower_1: Button = $Button_tower_1
+@onready var button_tower_2: Button = $Button_tower_2
+@onready var button_tower_3: Button = $Button_tower_3
+@onready var button_tower_4: Button = $Button_tower_4
+
+
+
+
 
 var upgrade_1_Id: String
 var upgrade_2_Id: String
@@ -109,6 +117,13 @@ func _on_button_next_wave_pressed() -> void:
 		add_upgrade_signal.emit(selected_upgrade, selected_tower)
 	print("Added upgrade ", selected_upgrade, " to tower ", selected_tower)
 	visible=false
+	button_upgrade_1.set_pressed(false)
+	button_upgrade_2.set_pressed(false)
+	button_upgrade_3.set_pressed(false)
+	button_tower_1.set_pressed(false)
+	button_tower_2.set_pressed(false)
+	button_tower_3.set_pressed(false)
+	button_next_wave.set_pressed(false)
 	round_start.emit()
 	
 func _on_button_tower_1_pressed() -> void:
