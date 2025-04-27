@@ -52,7 +52,7 @@ func _process(_delta):
 				start_new_round()
 				has_to_check_empty_screen = false
 			else :
-				upgrade_screen.reset()
+				upgrade_screen.reset(round_id)
 				has_to_check_empty_screen = false
 
 
