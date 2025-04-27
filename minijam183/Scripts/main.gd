@@ -16,8 +16,18 @@ var has_to_check_empty_screen = false
 @onready var tower_5: StaticBody2D = $Tower5
 @onready var tutorial_popup: RichTextLabel = $TutorialPopup
 @onready var life: RichTextLabel = $life
+@onready var wave: RichTextLabel = $wave
+@onready var end_level_sound: AudioStreamPlayer = $EndLevel_sound
 
-@export var round_id = 0
+@export var round_id = 0:
+	set(value):
+		round_id=value
+		if value <4:
+			wave.text = 'Tutorial'
+		else:
+			wave.text = 'wave '+ str(value-3)+'/7'
+		
+	
 
 		
 
@@ -56,8 +66,10 @@ func _process(_delta):
 		Engine.time_scale = 1.0
 		Engine.physics_ticks_per_second = 60
 	if has_to_check_empty_screen:
+	
 		if get_tree().get_nodes_in_group("enemy").is_empty():
 			print(round_id)
+			end_level_sound.playing = true
 			#await get_tree().create_timer(2).timeout
 			if round_id < 3:
 				start_new_round(skip_tuto)
