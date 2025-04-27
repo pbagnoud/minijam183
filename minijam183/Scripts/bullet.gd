@@ -18,6 +18,7 @@ var enemy_pushback_distance = 0
 
 func hit_something():
 	durability-=1
+	power +=3
 	if durability==0:
 		queue_free()
 
