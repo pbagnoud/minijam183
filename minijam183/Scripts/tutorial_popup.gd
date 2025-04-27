@@ -12,7 +12,7 @@ func show_tuto_window(wave_id):
 		2: 
 			text = "Purple bats fly faster !"
 		3: 
-			text = "Orange invaders are sometimes shielded, making them invincible"
+			text = "Green viruses and orange invaders also have special powers. Good luck !"
 		4:
 			text = "Green viruses split on death."
 		

@@ -21,6 +21,8 @@ func _generate_wave(wave_id:int)-> void:
 		wave = [0,0,0,0]
 	elif wave_id == 2:
 		wave = [0,1,1]
+	elif wave_id == 3:
+		wave = [0,1,0,1,2,2]
 	else : 
 		var size_wave = 5 + wave_id * 5
 		for _i in range(size_wave):
@@ -37,8 +39,9 @@ func new_round(wave_id:int)->float:
 	_generate_wave(wave_id)
 	_speed_up_wave(wave_id)
 	_update_life_ennemies(wave_id)
-	print("la wave est :", wave, "et j'affiche le tuto")
-	show_tutorial.emit(wave_id)
+	if wave_id < 4:
+		print("la wave est :", wave, "et j'affiche le tuto")
+		show_tutorial.emit(wave_id)
 	check_empty=true
 	return wave.size()*spawntime
 
