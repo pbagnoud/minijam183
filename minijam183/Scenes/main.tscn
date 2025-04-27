@@ -13,7 +13,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_jjvhh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 18, 95, 0, 0, 0, 0, 417, 96, 0, 0, 0, 0, 424, 280, 0, 0, 0, 0, 235, 288, 0, 0, 0, 0, 242, 484, 0, 0, 0, 0, 875, 488, 0, 0, 0, 0, 867, 272, 0, 0, 0, 0, 650, 268, 0, 0, 0, 0, 649, 96, 0, 0, 0, 0, 1166, 81)
+"points": PackedVector2Array(0, 0, 0, 0, -32, 96, 0, 0, 0, 0, 416, 96, 0, 0, 0, 0, 424, 280, 0, 0, 0, 0, 235, 288, 0, 0, 0, 0, 242, 484, 0, 0, 0, 0, 875, 488, 0, 0, 0, 0, 867, 272, 0, 0, 0, 0, 650, 268, 0, 0, 0, 0, 649, 96, 0, 0, 0, 0, 1166, 81)
 }
 point_count = 10
 
@@ -48,7 +48,7 @@ curve = SubResource("Curve2D_jjvhh")
 script = ExtResource("3_jjvhh")
 
 [node name="PathFollow2D" parent="Path2D" instance=ExtResource("4_kry3j")]
-position = Vector2(18, 95)
+position = Vector2(-32, 96)
 
 [node name="ButtonAcceleration" type="Button" parent="."]
 offset_left = 1109.0
