@@ -71,7 +71,10 @@ position = Vector2(520, 184)
 number = 5
 
 [node name="TutorialPopup" parent="." instance=ExtResource("7_6bp64")]
-visible = false
+offset_left = 214.0
+offset_top = 131.0
+offset_right = 900.0
+offset_bottom = 514.0
 theme = ExtResource("8_ynf5e")
 text = "Your turrets will fire on enemies. "
 
