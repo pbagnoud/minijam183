@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dk1h6dnsl2hej"]
+[gd_scene load_steps=20 format=3 uid="uid://dk1h6dnsl2hej"]
 
 [ext_resource type="Script" uid="uid://81f3glc5devx" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://cpj7eb0et8w1o" path="res://Assets/enemy_0.png" id="2_0830c"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cdg354eb762vb" path="res://Assets/enemies_anim/enemy2-anim-B.png" id="11_4jyny"]
 [ext_resource type="Texture2D" uid="uid://ctuy4upruxprc" path="res://Assets/enemies_anim/enemy1-anim - B.png" id="12_vh8xy"]
 [ext_resource type="Texture2D" uid="uid://w3p0167y6raw" path="res://Assets/enemies_anim/enemy1-anim-A.png" id="13_qjcj6"]
+[ext_resource type="Texture2D" uid="uid://1bb1gd2lfco0" path="res://Assets/shield.png" id="17_tk7xo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afpow"]
 animations = [{
@@ -90,9 +91,8 @@ script = ExtResource("1_hghv2")
 
 [node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_afpow")
-animation = &"green_enemy"
+animation = &"orange_enemy"
 autoplay = "blue_enemy"
-frame_progress = 0.528747
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -122,4 +122,18 @@ color = Color(0.180005, 0.180005, 0.180005, 1)
 target = NodePath("../EnemySprite2D")
 metadata/_custom_type_script = "uid://dnaxqeu0w6871"
 
+[node name="vulnerableTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="invincibleTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ShieldSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, 1)
+scale = Vector2(0.147276, 0.167927)
+texture = ExtResource("17_tk7xo")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="vulnerableTimer" to="." method="_on_vulnerable_timer_timeout"]
+[connection signal="timeout" from="invincibleTimer" to="." method="_on_invincible_timer_timeout"]

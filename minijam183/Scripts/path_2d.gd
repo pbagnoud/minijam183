@@ -45,4 +45,5 @@ func _process(delta: float) -> void:
 		add_child(new_follower)
 		new_follower.pv = current_pv 
 		new_follower.set_pv(current_pv) # Je sais que set(value) est censé éviter ce genre de mochetés, mais j'ai pas réussi à faire sans
+		# à cause des virus qui splittent et du timing de quand ils sont instantiés vs quand ils entrent dans l'arbre
 		timer = 0
