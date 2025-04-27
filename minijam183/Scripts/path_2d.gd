@@ -47,7 +47,9 @@ func new_round(wave_id:int, skip_tuto:bool)->float:
 	_update_life_ennemies(wave_id)
 	if wave_id < 4 and skip_tuto == false:
 		print("la wave est :", wave, "et j'affiche le tuto")
+
 		show_tutorial.emit(wave_id)
+	
 	check_empty=true
 	return wave.size()*spawntime
 
