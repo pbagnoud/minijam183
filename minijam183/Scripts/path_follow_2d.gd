@@ -34,3 +34,6 @@ func _on_freeze(time) -> void:
 	speed *=.8
 	await get_tree().create_timer(time).timeout
 	speed *= 1.25
+	
+func _on_push_back(amount):
+	set_progress(progress - amount)
