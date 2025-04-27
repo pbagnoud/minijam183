@@ -5,11 +5,7 @@ signal new_bullet(direction, speed, characteristics)
 
  #Sprites ----------------------------------------------
 @onready var color_sprite: AnimatedSprite2D = $Sprites/color_sprite
-@onready var tower_sprite: AnimatedSprite2D = $Sprites/tower_sprite
-@onready var orange_sprite: AnimatedSprite2D = $Sprites/orange_sprite
-@onready var red_sprite: AnimatedSprite2D = $Sprites/red_sprite
-@onready var green_sprite: AnimatedSprite2D = $Sprites/green_sprite
-@onready var blue_sprite: AnimatedSprite2D = $Sprites/blue_sprite
+@onready var feet_sprite: Sprite2D = $Sprites/feet_sprite
 
 
 
@@ -47,12 +43,10 @@ var triple_shot_angle = .75
 @export var has_color_change = false
 
 func _ready():
-	tower_sprite.play("tower_rotation")
 	color_sprite.play("neutral")
-	orange_sprite.play("default")
-	red_sprite.play("default")
-	orange_sprite.play("default")
-	blue_sprite.play("default")
+	feet_sprite.visible=false
+
+
 	
 func change_color(new_color):
 	if new_color ==0:
@@ -63,6 +57,8 @@ func change_color(new_color):
 		color_sprite.play("orange")
 	if new_color ==3:
 		color_sprite.play("green")
+		
+	feet_sprite.visible=true
 	color = new_color
 
 
@@ -252,7 +248,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_mouse_entered() -> void:
-	tower_sprite.modulate = '#edac9b'
+	color_sprite.modulate = '#edac9b'
 	label.text = "damages=" + str(power) + "\n reload=" + str(shot_speed)
 	if has_triple_shoot:
 		label.text += "\n triple shots"
@@ -262,4 +258,4 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	label.text = ""
-	tower_sprite.modulate = '#ffffff'
+	color_sprite.modulate = '#ffffff'
