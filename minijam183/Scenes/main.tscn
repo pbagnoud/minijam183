@@ -73,6 +73,7 @@ number = 5
 [node name="TutorialPopup" parent="." instance=ExtResource("7_6bp64")]
 visible = false
 theme = ExtResource("8_ynf5e")
+text = "Your turrets will fire on enemies. "
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
