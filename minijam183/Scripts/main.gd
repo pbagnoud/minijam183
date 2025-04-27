@@ -119,5 +119,5 @@ func _on_path_2d_show_tutorial(wave_id: int) -> void:
 
 func _on_tutorial_popup_skip_tutorial() -> void:
 	get_tree().paused = false
-	round_id = 4
+	round_id = 3
 	start_new_round()

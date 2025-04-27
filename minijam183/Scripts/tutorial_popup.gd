@@ -1,10 +1,13 @@
 extends RichTextLabel
+@onready var button_2: Button = $Button2
 
 signal skip_tutorial
 
 func show_tuto_window(wave_id):
 	get_tree().paused = true
 	visible = true
+	if wave_id > 2:
+		button_2.visible = false
 	match wave_id:
 		0:
 			text = "Your turrets will fire on enemies. "
