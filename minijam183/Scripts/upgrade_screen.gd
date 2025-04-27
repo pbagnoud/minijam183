@@ -85,18 +85,31 @@ func pick_upgrades(round_id):
 func _process(delta)-> void:
 	if selected_tower >0.5 and an_update_is_selected:
 		button_next_wave.disabled=false
+
+func disable_button_fifth_tower():
+	$Button_tower_1.disabled = true
+	$Button_tower_2.disabled = true
+	$Button_tower_3.disabled = true
+	$Button_tower_4.disabled = true
+	$Button_next_wave.disabled = false
 		
 func _on_button_upgrade_1_pressed() -> void:
 	selected_upgrade= upgrade_1_Id
 	an_update_is_selected = true
+	if selected_upgrade == "addTower":
+		disable_button_fifth_tower()
 
 func _on_button_upgrade_2_pressed() -> void:
 	selected_upgrade= upgrade_2_Id
 	an_update_is_selected = true
+	if selected_upgrade == "addTower":
+		disable_button_fifth_tower()
 	
 func _on_button_upgrade_3_pressed() -> void:
 	selected_upgrade= upgrade_3_Id
 	an_update_is_selected = true
+	if selected_upgrade == "addTower":
+		disable_button_fifth_tower()
 
 func _on_button_next_wave_pressed() -> void:
 	if selected_upgrade == "addTower":
@@ -121,6 +134,7 @@ func _on_button_tower_4_pressed() -> void:
 	
 func show_upgrading_tuto():
 	tuto_1.visible = true
+	tuto_was_shown = true
 	
 func _on_button_pressed() -> void:
 	tuto_1.visible = false

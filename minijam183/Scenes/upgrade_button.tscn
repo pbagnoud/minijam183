@@ -6,10 +6,10 @@
 [ext_resource type="Theme" uid="uid://d13rylh3aso12" path="res://Assets/Themes/popup_windows.tres" id="4_hk0eq"]
 
 [node name="Button_upgrade_1" type="Button"]
-offset_left = 246.0
-offset_top = 110.0
-offset_right = 434.0
-offset_bottom = 264.0
+offset_left = 312.0
+offset_top = 107.0
+offset_right = 500.0
+offset_bottom = 261.0
 theme = ExtResource("1_ymg7c")
 toggle_mode = true
 keep_pressed_outside = true
