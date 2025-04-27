@@ -20,6 +20,12 @@ signal split
 
 @onready var is_invincible = false
 
+
+#Sound assets
+@onready var normal_hit: AudioStreamPlayer2D = $hit_sounds/normal_hit
+@onready var color_hit: AudioStreamPlayer2D = $hit_sounds/color_hit
+
+
 var real_position: Vector2
 var pv: int = 4:
 	set(value):
@@ -48,11 +54,13 @@ func get_dot(amount):
 	
 func get_hurt(body):
 	if body.color == color:
+		color_hit.playing = true
 		pv -= body.power * 2 + body.color_power *3
 		blink_component.blink()
 		shake_component.tween_shake()
 		color_change.color_tween()
 	else:
+		normal_hit.playing = true
 		pv -= body.power
 		shake_component.tween_shake()
 		color_change.color_tween()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dk1h6dnsl2hej"]
+[gd_scene load_steps=22 format=3 uid="uid://dk1h6dnsl2hej"]
 
 [ext_resource type="Script" uid="uid://81f3glc5devx" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://cpj7eb0et8w1o" path="res://Assets/enemy_0.png" id="2_0830c"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://ctuy4upruxprc" path="res://Assets/enemies_anim/enemy1-anim - B.png" id="12_vh8xy"]
 [ext_resource type="Texture2D" uid="uid://w3p0167y6raw" path="res://Assets/enemies_anim/enemy1-anim-A.png" id="13_qjcj6"]
 [ext_resource type="Texture2D" uid="uid://1bb1gd2lfco0" path="res://Assets/shield.png" id="17_tk7xo"]
+[ext_resource type="AudioStream" uid="uid://bi1rkt4ekpskw" path="res://Assets/Sound/Hit.wav" id="18_dhkrs"]
+[ext_resource type="AudioStream" uid="uid://l2x2wshwtims" path="res://Assets/Sound/explosion.wav" id="19_5xdhn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afpow"]
 animations = [{
@@ -149,6 +151,17 @@ visible = false
 position = Vector2(-1, 1)
 scale = Vector2(0.147276, 0.167927)
 texture = ExtResource("17_tk7xo")
+
+[node name="hit_sounds" type="Node2D" parent="."]
+
+[node name="normal_hit" type="AudioStreamPlayer2D" parent="hit_sounds"]
+stream = ExtResource("18_dhkrs")
+volume_db = 10.758
+stream_paused = true
+
+[node name="color_hit" type="AudioStreamPlayer2D" parent="hit_sounds"]
+stream = ExtResource("19_5xdhn")
+volume_db = -5.414
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="vulnerableTimer" to="." method="_on_vulnerable_timer_timeout"]
