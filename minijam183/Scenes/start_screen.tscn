@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddqsy7wjxblkj"]
+[gd_scene load_steps=4 format=3 uid="uid://ddqsy7wjxblkj"]
 
-[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://bokao7e6kltbp" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Theme" uid="uid://dx8n4eocr4n2e" path="res://Assets/Themes/nice_buttons_long.tres" id="2_60ddj"]
 [ext_resource type="Texture2D" uid="uid://35n12xy1ku1n" path="res://Assets/OtherBackgrounds/Background-screens-V1.png" id="2_ainjc"]
 
 [node name="StartScreen" type="Control"]
@@ -15,18 +16,22 @@ script = ExtResource("1_i8r30")
 
 [node name="ButtonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 250.0
-offset_right = 976.0
-offset_bottom = 366.0
+offset_left = 640.0
+offset_top = 216.0
+offset_right = 968.0
+offset_bottom = 368.0
+theme = ExtResource("2_60ddj")
+theme_override_font_sizes/font_size = 30
 text = "Start"
 
 [node name="ButtonQuit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 753.0
-offset_top = 385.0
-offset_right = 989.0
-offset_bottom = 489.0
+offset_left = 640.0
+offset_top = 344.0
+offset_right = 968.0
+offset_bottom = 497.0
+theme = ExtResource("2_60ddj")
+theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -37,10 +42,10 @@ texture = ExtResource("2_ainjc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 146.0
-offset_right = 694.0
-offset_bottom = 321.0
+offset_left = 176.0
+offset_top = 264.0
+offset_right = 568.0
+offset_bottom = 368.0
 theme_override_colors/font_color = Color(0.997053, 0.997053, 0.997053, 1)
 theme_override_font_sizes/font_size = 73
 text = "TITRETITRE"
